@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark" />
+<title>Storyboard V2 — Rusia y Ucrania</title>
+<link rel="preconnect" href="https://upload.wikimedia.org" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{--bg:#090d13;--ink:#101722;--bone:#f4efe6;--gold:#c4a47b;--light:#d5d7d7;--muted:#a1a9b4;--line:#c0a47d55;--ui:'DM Sans',Arial,sans-serif;--serif:'Cormorant Garamond',Georgia,serif}
+*{box-sizing:border-box}html{background:var(--bg)}body{margin:0;background:radial-gradient(circle at 50% 20%,#172435,#070b10 65%);color:var(--bone);font-family:var(--ui);min-height:100vh;padding:27px 22px 30px}button{font:inherit}
+.shell{max-width:1380px;margin:0 auto}.topbar,.bottom{display:flex;justify-content:space-between;align-items:center;gap:20px}.topbar{margin-bottom:13px}.eyebrow{font-size:10px;letter-spacing:.3em;color:var(--gold);font-weight:700}.bar-title{font-size:14px;color:#dce0e5;letter-spacing:.015em;margin-top:6px}.proof{padding:8px 11px;border:1px solid #ffffff35;border-radius:6px;color:#b8c0cb;font-size:11px;letter-spacing:.05em}
+.viewport{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#111b28;border:1px solid #9d866450;isolation:isolate;box-shadow:0 18px 70px #000a}
+.scene{position:absolute;inset:0;overflow:hidden;opacity:0;visibility:hidden;pointer-events:none;transform:scale(1.02);transition:opacity .85s ease,transform 1.6s ease,visibility 0s linear .85s;z-index:1}.scene.active{visibility:visible;opacity:1;transform:scale(1);pointer-events:auto;transition:opacity 1s ease,transform 1.55s ease,visibility 0s;z-index:3}
+.visual{position:absolute;inset:0;background-position:center;background-size:cover;transform:scale(1.035);filter:saturate(.72) contrast(1.04)}.visual img{display:block;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease}.visual img.loaded{opacity:1}
+.photo{background:radial-gradient(circle at 60% 40%,#61727a,#26313c 48%,#151b22 80%)}
+.cover .visual img{object-position:center 52%;animation:slowZoom 26s linear both paused}.cover.active .visual img{animation-play-state:running}
+@keyframes slowZoom{to{transform:scale(1.13)}}
+.cover-grad{position:absolute;inset:0;background:linear-gradient(180deg,#060a11a6 0%,#0a0e1670 26%,#070b119d 60%,#080b11dc 100%)}
+.cover-haze{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 47%,transparent 5%,#05090c35 60%,#05090cab 100%)}
+.texture{position:absolute;inset:0;pointer-events:none;opacity:.28;background:repeating-linear-gradient(90deg,#ffffff05 0,#ffffff05 1px,transparent 1px,transparent 13px),radial-gradient(circle at 20% 80%,#ffffff0c 0,transparent 65%)}
+.frame{position:absolute;inset:4.25%;border:1px solid #efe7d032;pointer-events:none}.edge{position:absolute;top:6.75%;left:7.15%;font-size:clamp(8px,.77vw,11px);letter-spacing:.29em;color:#d6d0c8d9;font-weight:600}
+.covercenter{position:absolute;inset:29% 5% auto;display:flex;align-items:center;flex-direction:column;text-align:center;text-shadow:0 3px 17px #000b}
+.supertitle{font:500 clamp(12px,1.48vw,22px)/1 var(--serif);letter-spacing:.28em;color:#e4d4bd;opacity:0;transform:translateY(19px)}
+.cover-title{font:500 clamp(50px,7.05vw,114px)/1 var(--serif);letter-spacing:.115em;white-space:nowrap;margin:13px 0 16px;color:#fff8eb;text-transform:uppercase;opacity:0;transform:translateY(22px)}
+.rule{width:120px;height:1px;background:#d4b385;opacity:0;transform:scaleX(.3)}.coversub{font:400 clamp(14px,1.75vw,28px)/1.5 var(--serif);letter-spacing:.035em;color:#ede8dd;margin:18px 0 0;opacity:0;transform:translateY(15px)}
+.cover.active .supertitle{animation:rise 1.2s .18s both}.cover.active .cover-title{animation:rise 1.28s .46s both}.cover.active .rule{animation:lineIn 1.05s 1s both}.cover.active .coversub{animation:rise 1s 1.22s both}
+@keyframes rise{to{opacity:1;transform:none}}@keyframes lineIn{to{opacity:1;transform:scaleX(1)}}
+.credit{position:absolute;left:7.2%;bottom:6.8%;font-size:clamp(7px,.65vw,9px);max-width:66%;line-height:1.5;color:#dee0e4a8}.counter{position:absolute;right:7.15%;bottom:6.8%;font-size:clamp(9px,.83vw,12px);letter-spacing:.16em;color:#d0c4b4a3}
+/* Scene 2 uses the cover photo as a faint background, so the wipe feels like one continuous documentary. */
+.intro{background:#0c131c;clip-path:inset(0 0 0 100%);transition:clip-path 1.1s cubic-bezier(.25,.75,.2,1),opacity .75s ease,transform 1.2s ease,visibility 0s linear 1.1s}
+.intro.active{clip-path:inset(0 0 0 0);transition:clip-path 1.18s cubic-bezier(.25,.75,.2,1),opacity 1s ease,transform 1.2s ease,visibility 0s}
+.intro-bg{position:absolute;inset:0;background:linear-gradient(90deg,#0b111bee,#0b111be3),url('https://upload.wikimedia.org/wikipedia/commons/2/28/Kyiv_after_shelling_on_26_June_2022_%2801%29.jpg') center/cover}
+.intro-head{position:absolute;left:6.8%;right:6.8%;top:8%;display:flex;justify-content:space-between;align-items:flex-end;gap:18px;border-bottom:1px solid #c7ad8455;padding-bottom:15px}.intro-head h2{font:500 clamp(24px,3.08vw,48px)/1 var(--serif);letter-spacing:.035em;margin:0;color:#fff2e7}.kicker{font-size:10px;letter-spacing:.23em;color:#cbb08b;white-space:nowrap}
+.cards{position:absolute;inset:23% 6.8% 12.8%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2.25%}
+.card{position:relative;overflow:hidden;border:1px solid #d0bfa449;background:#222c35;transform:translateY(15px);opacity:.45;filter:grayscale(.7);transition:transform .8s cubic-bezier(.2,.7,.18,1),opacity .7s ease,filter .8s ease,border-color .8s ease;box-shadow:0 12px 38px #0007}
+.card.revealed{opacity:1;transform:translateY(0);filter:none;border-color:#d9bf976b}
+.card-photo{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.04);transition:transform 8s ease;filter:saturate(.7)}.card.revealed .card-photo{transform:scale(1.14)}
+.card .lightwash{position:absolute;inset:0;background:linear-gradient(180deg,#08101a22 0%,transparent 33%,#09101982 57%,#060d17f5 98%)}
+.historyphoto{background-color:#7a6851;background-image:url('https://upload.wikimedia.org/wikipedia/commons/e/eb/Old_map_of_Ukraine.jpg');background-position:center 50%}
+.economyphoto{background-color:#4d5a62;background-image:url('https://upload.wikimedia.org/wikipedia/commons/7/70/EUGAL-Baustelle.jpg');background-position:54% 50%}
+.humanphoto{background-color:#665b5a;background-image:url('https://upload.wikimedia.org/wikipedia/commons/d/d2/Free_meals_for_Ukrainian_refugees_at_Krak%C3%B3w_G%C5%82%C3%B3wny_train_station%2C_2022.jpg');background-position:48% 52%}
+.card:not(.revealed):after{content:'';position:absolute;inset:0;background:#0c151da0}
+.card-content{position:absolute;z-index:2;bottom:7%;left:8%;right:7%}.card-num{font-size:clamp(10px,.96vw,14px);color:#ddbd90;letter-spacing:.2em;font-weight:600}.card-title{font:500 clamp(23px,2.5vw,39px)/1.07 var(--serif);margin:9px 0;color:#fff6e9}.card-desc{font-size:clamp(11px,1vw,15px);line-height:1.45;color:#dde0e5;max-width:310px}.card-presenter{margin-top:13px;padding-top:10px;border-top:1px solid #ffffff55;color:#d7b785;font-size:clamp(9px,.82vw,12px);letter-spacing:.12em;font-weight:600}
+.intro-footer{position:absolute;bottom:6.4%;left:6.8%;font-size:9px;letter-spacing:.08em;color:#b6bcc5b3}
+/* When we enter chapter I, only the historical card expands into the map's final right-hand position. */
+.intro.departing .intro-head,.intro.departing .intro-footer{opacity:0;transform:translateY(-13px);transition:opacity .65s ease,transform .9s ease}
+.intro.departing .card{opacity:0;transform:translateY(20px) scale(.98);filter:grayscale(.85);transition:opacity .75s ease,transform 1.25s ease}
+/* Scene 3 begins with a fluid expansion of the first map card. */
+.chapter{background:#12161b}.chapter-map{position:absolute;inset:-4% -2% -4% 35%;background:url('https://upload.wikimedia.org/wikipedia/commons/e/eb/Old_map_of_Ukraine.jpg') center/cover,#716b55;filter:sepia(.17) brightness(.68);transform:scale(1.04)}.chapter.active .chapter-map{animation:mapDrift 19s ease both}@keyframes mapDrift{to{transform:scale(1.18) translateX(-1.5%)}}
+.chapter-shade{position:absolute;inset:0;background:linear-gradient(90deg,#090f17 0%,#090f17fc 24%,#0a1019e5 38%,#101521b8 59%,#1219254a 90%)}
+.chapter-text{position:absolute;left:8%;top:22%;max-width:59%;}.chapter-tag{font-size:clamp(10px,1vw,14px);letter-spacing:.3em;color:#ddbd8d;font-weight:600}.chapter-title{font:500 clamp(45px,6vw,98px)/.96 var(--serif);letter-spacing:.025em;color:#fff5e9;margin:19px 0 22px}.chapter-divider{height:1px;width:114px;background:var(--gold)}.chapter-desc{font:400 clamp(17px,2vw,30px)/1.3 var(--serif);color:#d0d0ce;margin-top:18px}
+.chapter-sub{position:absolute;left:8%;bottom:8%;color:#c5c7cead;font-size:clamp(8px,.8vw,12px);letter-spacing:.09em}
+.chapter .appear{opacity:0;transform:translateY(28px)}.chapter.active .appear{animation:rise 1.06s .45s both}.chapter.active .chapter-title.appear{animation-delay:.64s}.chapter.active .chapter-divider.appear{animation:lineIn .9s .88s both}.chapter.active .chapter-desc.appear{animation-delay:1.03s}
+.flight{display:none;position:absolute;z-index:10;background:#7a6851 url('https://upload.wikimedia.org/wikipedia/commons/e/eb/Old_map_of_Ukraine.jpg') center/cover;box-shadow:0 0 55px #0008;pointer-events:none;will-change:transform}
+.flight.inmotion{display:block}
+.bottom{margin-top:14px;flex-wrap:wrap}.controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.btn{border:1px solid #526071;background:#19232e;color:#f4f4f1;border-radius:5px;padding:11px 15px;cursor:pointer;font-weight:600;font-size:12px}.btn:hover{background:#273747}.btn.primary{background:#d0ae80;border-color:#d0ae80;color:#181d23}.btn.primary:hover{background:#e4c197}.btn:disabled{opacity:.35;cursor:default}.status{font-size:12px;letter-spacing:.045em;color:#bfc7d0}.keys{font-size:11px;color:#a9b4c0}.notes{color:#bdc5d0;border-top:1px solid #344050;margin-top:20px;padding-top:15px;font-size:12px;line-height:1.6}.notes summary{cursor:pointer;color:#e9d1af;font-weight:600}.notes a{color:#e8c89c}.notes p{margin:7px 0}.asset-status{font-size:11px;color:#9eadbb}
+@media(max-width:760px){body{padding:12px 8px}.topbar{margin-bottom:8px}.bar-title{font-size:11px}.proof{font-size:9px}.intro-head{top:6%;padding-bottom:7px}.intro-head h2{font-size:20px}.kicker{font-size:7px}.cards{top:22%;bottom:12%;gap:5px}.card-title{font-size:17px;margin:4px 0}.card-desc{font-size:9px}.card-content{left:6%;right:4%;bottom:5%}.card-num{font-size:8px}.card-presenter{font-size:7px;margin-top:6px;padding-top:6px}.cover-title{font-size:7vw;letter-spacing:.07em}.coversub{font-size:12px}.supertitle{font-size:10px}.chapter-title{font-size:5vw}.chapter-desc{font-size:12px}.keys{display:none}.status{font-size:10px}.btn{padding:9px 10px;font-size:10px}.credit{font-size:6px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="topbar"><div><div class="eyebrow">STORYBOARD VISUAL · VERSIÓN 2.1 · TRANSICIÓN REFINADA</div><div class="bar-title">Rusia y Ucrania — apertura documental</div></div><div class="proof">BORRADOR V2.1 · NO DEFINITIVO</div></header>
+<main class="viewport" id="viewport" aria-label="Borrador animado de la presentación">
+  <section class="scene cover active" id="cover" aria-label="Portada">
+    <div class="visual photo"><img id="coverImage" src="https://upload.wikimedia.org/wikipedia/commons/2/28/Kyiv_after_shelling_on_26_June_2022_%2801%29.jpg" alt="Fotografía real de daños en un edificio de Kiev, junio de 2022" /></div>
+    <div class="cover-grad"></div><div class="cover-haze"></div><div class="texture"></div><div class="frame"></div>
+    <div class="edge">UNA EXPOSICIÓN DOCUMENTAL</div>
+    <div class="covercenter"><div class="supertitle">HISTORIA &nbsp;·&nbsp; ECONOMÍA &nbsp;·&nbsp; HUMANIDAD</div><h1 class="cover-title">RUSIA Y UCRANIA</h1><div class="rule"></div><p class="coversub">Conflicto, impacto económico y humanitario</p></div>
+    <div class="credit">Imagen: Servicio Estatal de Emergencias de Ucrania, Kiev, 26/06/2022 · CC BY 4.0 · Recorte y oscurecimiento para presentación</div><div class="counter">01 / 03</div>
+  </section>
+  <section class="scene intro" id="intro" aria-label="Tres perspectivas, un conflicto">
+    <div class="intro-bg"></div><div class="texture"></div>
+    <div class="intro-head"><h2>TRES PERSPECTIVAS, UN CONFLICTO</h2><span class="kicker">NUESTRO RECORRIDO</span></div>
+    <div class="cards">
+      <article class="card" id="card0"><div class="card-photo historyphoto"></div><div class="lightwash"></div><div class="card-content"><div class="card-num">01 / HISTORIA</div><h3 class="card-title">Origen y<br/>evolución</h3><div class="card-desc">Antecedentes, causas y cronología</div><div class="card-presenter">EXPOSITOR 1</div></div></article>
+      <article class="card" id="card1"><div class="card-photo economyphoto"></div><div class="lightwash"></div><div class="card-content"><div class="card-num">02 / ECONOMÍA</div><h3 class="card-title">Impacto<br/>económico</h3><div class="card-desc">Energía, alimentos y repercusiones en Perú</div><div class="card-presenter">EXPOSITOR 2</div></div></article>
+      <article class="card" id="card2"><div class="card-photo humanphoto"></div><div class="lightwash"></div><div class="card-content"><div class="card-num">03 / HUMANIDAD</div><h3 class="card-title">Consecuencias<br/>humanitarias</h3><div class="card-desc">Desplazamiento, derecho internacional y paz</div><div class="card-presenter">EXPOSITOR 3</div></div></article>
+    </div>
+    <div class="intro-footer">FOTOGRAFÍAS DOCUMENTALES Y MAPA HISTÓRICO · CRÉDITOS EN «FUENTES»</div><div class="counter">02 / 03</div>
+  </section>
+  <section class="scene chapter" id="chapter" aria-label="Inicio de la parte histórica">
+    <div class="chapter-map"></div><div class="chapter-shade"></div><div class="texture"></div><div class="frame"></div>
+    <div class="chapter-text"><div class="chapter-tag appear">CAPÍTULO I</div><h2 class="chapter-title appear">EL ORIGEN DE<br/>UN CONFLICTO</h2><div class="chapter-divider appear"></div><p class="chapter-desc appear">Una historia que precede a 2014.</p></div>
+    <div class="chapter-sub">A CONTINUACIÓN · UBICACIÓN GEOGRÁFICA Y ANTECEDENTES HISTÓRICOS</div><div class="counter">03 / 03</div>
+  </section>
+  <div class="flight" id="flight"></div>
+</main>
+<div class="bottom"><div class="controls"><button id="back" class="btn">← Anterior</button><div id="status" class="status">Portada</div><button id="next" class="btn primary">Siguiente clic →</button><button id="fullscreen" class="btn">⛶ Pantalla completa</button></div><div class="keys">Clic en la imagen, espacio o → para avanzar · ← para retroceder</div></div>
+<div class="notes"><div id="image-status" class="asset-status">Las fotografías reales se cargan desde Wikimedia Commons al abrir el archivo con internet.</div><details><summary>Fuentes de las imágenes, créditos y decisiones de diseño</summary>
+<p><a href="https://commons.wikimedia.org/wiki/File:Kyiv_after_shelling_on_26_June_2022_(01).jpg" target="_blank" rel="noreferrer">Portada: Kiev después de bombardeos, 26/06/2022</a> — Servicio Estatal de Emergencias de Ucrania (dsns.gov.ua), CC BY 4.0. Imagen recortada y oscurecida para diseño.</p>
+<p><a href="https://commons.wikimedia.org/wiki/File:Old_map_of_Ukraine.jpg" target="_blank" rel="noreferrer">Historia: mapa histórico de Ucrania de 1648</a> — Guillaume Le Vasseur de Beauplan / Archivos Nacionales de Suecia; dominio público. Es un mapa antiguo, no representa fronteras contemporáneas.</p>
+<p><a href="https://commons.wikimedia.org/wiki/File:EUGAL-Baustelle.jpg" target="_blank" rel="noreferrer">Economía: obras de un gasoducto en Alemania</a> — Hanno Böck, CC0. Imagen temática de energía, no de la guerra.</p>
+<p><a href="https://commons.wikimedia.org/wiki/File:Free_meals_for_Ukrainian_refugees_at_Krak%C3%B3w_G%C5%82%C3%B3wny_train_station,_2022.jpg" target="_blank" rel="noreferrer">Humanidad: centro de ayuda a refugiados en estación de Cracovia, 11/05/2022</a> — Kgbo, CC BY-SA 4.0; imagen editada para composición. Los créditos deben mantenerse y respetarse las condiciones de la licencia.</p>
+<p>Las imágenes no se han generado mediante IA. Este HTML es un prototipo en línea: necesitará acceso a Wikimedia Commons para mostrar las fotografías; las versiones finales deberían guardar los recursos con sus permisos y créditos para evitar fallos de carga.</p>
+</details></div>
+</div>
+<script>
+(() => {
+const scenes=[document.querySelector('#cover'),document.querySelector('#intro'),document.querySelector('#chapter')];
+const cards=[0,1,2].map(i=>document.querySelector('#card'+i));
+let scene=0, revealed=0, busy=false;
+const nextBtn=document.querySelector('#next'),prevBtn=document.querySelector('#back'),status=document.querySelector('#status'),flight=document.querySelector('#flight'),viewport=document.querySelector('#viewport');
+function draw(){scenes.forEach((x,i)=>x.classList.toggle('active',i===scene)); cards.forEach((c,i)=>c.classList.toggle('revealed',i<revealed));status.textContent=scene===0?'Escena 1 · Portada':scene===1?'Escena 2 · '+revealed+' de 3 paneles':'Escena 3 · Capítulo I';prevBtn.disabled=busy||(scene===0);nextBtn.disabled=busy||(scene===2)}
+function animateToChapter(){
+  busy=true;
+  nextBtn.disabled=prevBtn.disabled=true;
+  // The historical card grows naturally into the map area on the right.
+  // Unlike V2, it does not cover the complete screen.
+  const r=cards[0].getBoundingClientRect(),vr=viewport.getBoundingClientRect();
+  flight.style.transition='none';
+  flight.style.opacity='1';
+  flight.style.left=(r.left-vr.left)+'px';
+  flight.style.top=(r.top-vr.top)+'px';
+  flight.style.width=r.width+'px';
+  flight.style.height=r.height+'px';
+  flight.style.borderRadius='3px';
+  flight.classList.add('inmotion');
+  void flight.offsetWidth;
+  scenes[1].classList.add('departing');
+  flight.style.transition='left 2.25s cubic-bezier(.19,.67,.18,1), top 2.25s cubic-bezier(.19,.67,.18,1), width 2.25s cubic-bezier(.19,.67,.18,1), height 2.25s cubic-bezier(.19,.67,.18,1), border-radius 2.25s ease, opacity .7s ease';
+  flight.style.left='35%';
+  flight.style.top='-4%';
+  flight.style.width='67%';
+  flight.style.height='108%';
+  flight.style.borderRadius='0';
+  // Reveal the chapter while the moving map is settling into place.
+  setTimeout(()=>{scene=2;draw()},1250);
+  setTimeout(()=>{flight.style.opacity='0'},1900);
+  setTimeout(()=>{
+    flight.classList.remove('inmotion');
+    flight.style.transition='none';
+    flight.style.opacity='1';
+    scenes[1].classList.remove('departing');
+    busy=false;draw()
+  },2600)
+}
+function next(){if(busy)return;if(scene===1&&revealed<3){revealed++;draw();return}if(scene===1&&revealed===3){animateToChapter();return}if(scene<2){scene++;revealed=0;draw()}}
+function prev(){if(busy)return;if(scene===1&&revealed>0){revealed--;draw();return}if(scene>0){scene--;revealed=scene===1?3:0;draw()}}
+nextBtn.onclick=next;prevBtn.onclick=prev;
+viewport.addEventListener('click',next);
+document.querySelector('#fullscreen').addEventListener('click',()=>{if(document.fullscreenElement)document.exitFullscreen();else viewport.requestFullscreen?.()});
+document.addEventListener('keydown',e=>{if(['ArrowRight',' ','PageDown','Enter'].includes(e.key)){e.preventDefault();next()}if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){e.preventDefault();prev()}if(e.key.toLowerCase()==='f'&&!e.ctrlKey&&!e.metaKey)document.querySelector('#fullscreen').click()});
+const coverImg=document.getElementById('coverImage');const indicator=document.getElementById('image-status');const src=coverImg.src;
+coverImg.onload=()=>{coverImg.classList.add('loaded');indicator.textContent='Fotografía principal cargada desde Wikimedia Commons. Otras fotografías se cargan al entrar en la escena 2.'};
+coverImg.onerror=()=>{indicator.textContent='No se pudo cargar la fotografía principal: revisa la conexión a internet o el acceso de la laptop a Wikimedia Commons. El fondo degradado es solo de reserva.'};
+if(coverImg.complete&&coverImg.naturalWidth){coverImg.classList.add('loaded');indicator.textContent='Fotografía principal cargada desde Wikimedia Commons.'}
+draw();
+})();
+</script>
+</body>
+</html>
