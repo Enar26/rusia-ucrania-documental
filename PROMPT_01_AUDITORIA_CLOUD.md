@@ -1,17 +1,26 @@
-# Primer mensaje de Codex Cloud: auditoría sin modificar archivos
+# Primer encargo a Codex Cloud — Auditoría completa de escenas 4 a 15 (sin programar)
 
-Trabaja como ingeniero front-end sénior y diseñador de movimiento para presentaciones documentales, con criterio editorial histórico y responsabilidad al verificar fuentes. El objetivo es una exposición escolar seria, clara y visualmente cinematográfica. Evita embellecer superficialmente un diseño incorrecto.
+Actúa como ingeniero front-end sénior, diseñador de motion graphics para documentales interactivos y revisor editorial de presentaciones históricas. Sé crítico y no valides por defecto el diseño existente.
 
-Estoy trabajando en el repositorio `Enar26/rusia-ucrania-documental`. Antes de hacer cambios, **lee completamente** estos archivos en la raíz: `AGENTS.md`, `PROYECTO_MAESTRO_V5.md`, `PLAN_HISTORICO_V4.md` y `FUENTES_PENDIENTES.md`. Examina los dos HTML en `referencias/`, dando prioridad a `v2_1_APERTURA_APROBADA.html` para las escenas 1–3. El V3 es un prototipo fallido para escenas 4 en adelante, no la plantilla que debes reproducir.
+Estamos trabajando en `Enar26/rusia-ucrania-documental`, una presentación web en español sobre Rusia y Ucrania. **Antes de proponer nada**, lee completos: `AGENTS.md`, `PROYECTO_MAESTRO_V5.md`, `PLAN_HISTORICO_V4.md`, `CORRECCIONES_04_15_V5_1.md` y `FUENTES_PENDIENTES.md`. Inspecciona los HTML y capturas en `referencias/`.
 
-**Esta primera tarea es únicamente de lectura, auditoría y propuesta. No edites archivos, no implementes escenas, no publiques GitHub Pages y no abras un PR todavía.**
+### Qué conservar
+- **Escena 1:** portada «RUSIA Y UCRANIA» con subtítulo «Conflicto, impacto económico y humanitario»; fotografía real, tono oscuro y tipografía elegante; sin «2014–2026».
+- **Escena 2:** «Tres perspectivas, un conflicto», tres paneles que se iluminan por clic.
+- **Escena 3:** entrada del capítulo histórico con movimiento suave, pausado y conectado a la segunda escena.
+- El HTML V2.1 es la referencia aprobada para estas tres escenas. El V3 **NO** es plantilla aprobada para escenas 4–15.
 
-Entrega en español:
-1. Un resumen breve y preciso de lo que ya está aprobado frente a lo que requiere reconstrucción.
-2. Una evaluación de los puntos débiles del V3, tanto de la narrativa (insuficiente relación histórica) como de la composición (repetición de fondos azules, listas 1/2/3 y transiciones).
-3. La arquitectura concreta que recomiendas para una presentación web estática alojable en GitHub Pages, con recursos locales, notas del expositor, navegación clic/flechas, retroceso, responsive 16:9 y respaldo offline. Justifica sin añadir complejidad innecesaria.
-4. Un mini-storyboard de las **escenas 4, 5, 6 y 7**, explicando para cada una: objetivo didáctico, composición visual, tipo de mapa o fotografía real necesaria, transición diferenciada, cantidad razonable de pasos/clics, y contexto para el guion oral.
-5. Una lista de riesgos y verificaciones: mapas históricos, fecha y licencia de fotos, afirmaciones históricas controvertidas, fuentes no comprobadas, enlaces y limitaciones del entorno Cloud.
-6. Un plan de implementación por etapas y una lista corta de criterios comprobables para aprobar el primer prototipo.
+### Qué hay que rediseñar
+**TODAS las escenas 4–15**, no solamente las 4–7. Problemas del V3: fondo azul constante, misma composición repetida, revelado de viñetas 1/2/3, fotos y mapas poco satisfactorios y escasez de contexto histórico. No resuelvas la falta de profundidad colocando párrafos enormes en pantalla: especifica el contenido central visible y lo que explicará el presentador en las notas orales.
 
-No inventes el contenido de videos de YouTube ni afirmes haberlos visto enteros; si no hay acceso a una fuente, márcala pendiente. No reemplaces decisiones ya aprobadas sin explicar motivos. **Termina solicitando revisión de este plan antes de programar.**
+### Entregables de ESTA PRIMERA TAREA, EN ESPAÑOL
+1. Auditoría del código y del recorrido completo: qué conservar, qué falla, riesgos de navegación/animación/carga de imágenes, accesibilidad y funcionamiento en GitHub Pages.
+2. Arquitectura web concreta y sobria (archivos, rutas, mapas, bibliografía y notas del presentador); justificar tecnología y experiencia con clic, flechas, retroceso y mando compatible.
+3. **Storyboard de TODAS las escenas 4–15**, en orden, sin repetir la cronología. Para cada escena entregar: propósito histórico, vínculo explícito con la guerra, información actual insuficiente, composición visual, recurso real requerido, transición singular con justificación, pasos de clic estimados, notas del expositor y fuentes por verificar. Utiliza `CORRECCIONES_04_15_V5_1.md` como lista obligatoria de problemas a responder.
+4. Propuesta de línea de tiempo continua y atractiva desde los antecedentes medievales hasta noviembre de 2026, separada visualmente por capítulos pero sin recapitulaciones redundantes. Más profundidad desde 1991, sobre todo 2014–2026. Indica qué sucesos deben ir en pantalla y cuáles en guion.
+5. Catálogo de necesidades visuales: fotos auténticas y mapas geográficos correctos, históricos fechados, licencia y atribución, recursos locales para que funcionen en GitHub Pages. No inventes una fotografía ni uses mapas anacrónicos.
+6. Identifica afirmaciones que requieren verificación, disputas historiográficas, discursos políticos y estatus jurídico, separando esas categorías. Los videos de YouTube son referencias, no fuentes finales verificadas.
+7. Plan en sprints con criterios de aceptación: primero escenas 4–7, después 8–11, después 12–15, **siempre después de mi aprobación**. No programes todavía.
+
+### RESTRICCIÓN ABSOLUTA
+Esta primera tarea es **solo análisis**. No edites ni crees archivos del repositorio, no ejecutes implementación, no abras PR, no hagas commits ni publiques GitHub Pages. Si alguna fuente o archivo no es accesible desde Cloud, indica exactamente cuál y continúa con lo verificable, sin fingir que lo has revisado. Termina con una propuesta concreta para que yo la revise antes de programar.

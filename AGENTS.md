@@ -11,7 +11,7 @@ Presentación documental web e interactiva, en español, sobre **Rusia y Ucrania
 
 ## Contenido e integridad editorial
 - Leer `PROYECTO_MAESTRO_V5.md`, `PLAN_HISTORICO_V4.md` y `FUENTES_PENDIENTES.md` antes de modificar código.
-- Primer objetivo de implementación (cuando sea autorizado): mejorar **solo escenas 4–7**, sin desarrollar todavía capítulos económicos, humanitarios ni cierre.
+- La **auditoría inicial** debe abarcar **todas las escenas 4–15** y la transición entre ellas, identificando problemas de fondo, no solo detalles estéticos. La **primera implementación, cuando el usuario la autorice**, puede limitarse a las escenas 4–7 para evaluar la calidad antes de programar el resto. No empezar a programar por cuenta propia.
 - Mantener **una única cronología narrativa** desde antecedentes medievales hasta noviembre de 2026, con mayor atención a 1991–2026 y sin duplicaciones.
 - Cada escena debe ayudar a entender **qué ocurrió, por qué importa y cómo se relaciona con el conflicto contemporáneo**. Breve texto visible; explicación completa en notas editables. No reducir la investigación a eslóganes.
 - Diferenciar hechos acreditados, argumentos de actores políticos, disputas historiográficas y valoración jurídica. No equiparar pasado compartido, reivindicaciones históricas o control territorial a soberanía reconocida.
@@ -32,6 +32,6 @@ Presentación documental web e interactiva, en español, sobre **Rusia y Ucrania
 - Si el entorno no permite internet, navegador o capturas, **informar con precisión lo que se probó y lo que quedó pendiente**.
 
 ## Proceso por fases
-1. En primera tarea: **SOLO AUDITAR Y PLANIFICAR**. No modificar código ni publicar. Usar `PROMPT_01_AUDITORIA_CLOUD.md`.
+1. En primera tarea: **SOLO AUDITAR Y PLANIFICAR LAS ESCENAS 4–15 COMPLETAS**. No modificar código ni publicar. Leer `CORRECCIONES_04_15_V5_1.md` y usar `PROMPT_01_AUDITORIA_CLOUD.md`.
 2. Tras aprobación del usuario: implementar escenas 4–7 y probar. Usar `PROMPT_02_IMPLEMENTACION.md`.
 3. Revisar capturas y ajustar; continuar con el resto del bloque histórico después de esa revisión.
