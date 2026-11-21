@@ -1063,3 +1063,36 @@ dialog::backdrop {
 .economia-titulo { position: absolute; left: 7%; bottom: 18%; }
 .economia-titulo h2 { font-size: 8.2cqw; line-height: .86; margin-top: 1.5cqw; }
 .preview-link { display: inline-block; margin: 1.2rem 0 .5rem; text-underline-offset: .25em; }
+/* El carril mantiene fija la posición de lectura y desplaza el período seleccionado. */
+.carril { background: linear-gradient(118deg,#18272c,#171b23 65%,#322e2a); }
+.carril-cab,.plaza-cab,.testimonio-cab,.causal-head { position:absolute; top:9%; left:6%; right:6%; }
+.rail { position:absolute; display:flex; left:6%; top:28%; width:max-content; border-bottom:1px solid #a0a395; }
+.rail time { width:21cqw; padding:0 .8cqw 1.6cqw 0; font:500 2cqw var(--serif); color:#a0a6a1; position:relative; }
+.rail time::after {content:"";position:absolute;bottom:-.35cqw;left:0;width:.65cqw;height:.65cqw;background:currentColor;border-radius:50%}
+.rail .activo {color:#f1cf91;font-weight:700;}
+.carril-lectura {position:absolute;top:48%;left:6%;width:78%}
+.carril-lectura h2,.plaza-lectura h2,.testimonio-lectura h2,.causal-lectura h2 {font-size:5.8cqw;margin-bottom:1.6cqw}
+.carril-lectura p,.plaza-lectura p,.testimonio-lectura p,.causal-lectura p {max-width:65cqw;font-size:2.05cqw}
+.plaza {background:linear-gradient(155deg,#293a4b,#19232f 45%,#261819)}
+.plaza-fondo,.eco-palabra {position:absolute;right:-1%;top:13%;font:700 18cqw/1 var(--sans);letter-spacing:-.075em;color:#ffffff12;}
+.plaza-cab {display:flex;justify-content:space-between;align-items:center}.plaza-cab time,.testimonio-lectura time{font-size:1.65cqw;color:#e5c896}
+.plaza-lectura {position:absolute;left:7%;bottom:19%;width:80%}
+.foco-img {position:absolute;right:0;width:80%;height:100%;object-fit:contain;background:#162b2d}
+.foco-sombra {position:absolute;inset:0;background:linear-gradient(90deg,#101c1b 5%,#121e1dfa 26%,#142020c4 36%,transparent 57%),linear-gradient(0deg,#111b19 0%,transparent 15%)}
+.foco-lectura {position:absolute;top:19%;left:5%;width:35%}.foco-lectura h2,.umbral-lectura h2{margin:1.7cqw 0}
+.testimonio {background:linear-gradient(135deg,#33291f,#131716 62%)}.testimonio-lectura{position:absolute;left:8%;top:40%;width:84%}.testimonio-lectura h2{margin-top:1cqw}
+.umbral{background:linear-gradient(110deg,#211c20,#332425 44%,#181b20 44%)}
+.umbral-fecha{position:absolute;left:6%;top:20%;font:500 19cqw/.95 var(--serif);color:#ecd1ae}
+.umbral-fecha span{display:block;border-top:1px solid #a58c78;font:600 2cqw var(--sans);letter-spacing:.3em;padding-top:1cqw}
+.umbral-lectura{position:absolute;left:48%;right:6%;top:25%}
+.causal {background:radial-gradient(ellipse at 50% 30%,#384138,#171e1b 68%)}
+.nodos {position:absolute;top:28%;left:8%;right:8%;display:flex;align-items:center;gap:1.6cqw}
+.nodos span{font:500 3.8cqw var(--serif);color:#a9b0a4}.nodos .nodo-activo{color:#ffdb97}
+.nodos i{height:1px;flex:1;background:#918976}.causal-lectura{position:absolute;left:8%;top:49%;right:6%}
+.causal-lectura h2{margin:.8cqw 0}
+.cierre-foto,.cierre-velo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cierre-velo{background:linear-gradient(0deg,#10161bf5,#10161bb0 45%,transparent)}
+.cierre-lectura{position:absolute;bottom:15%;left:7%;right:8%}.cierre-lectura h2{max-width:72cqw;margin:1.3cqw 0}
+.scene.quiz{padding:0;background:linear-gradient(105deg,#171f24,#292f32)}
+.scene.quiz>.quiz{padding:5% 7%}.quiz .options{display:grid;grid-template-columns:repeat(3,1fr);gap:1cqw}
+.quiz .options button{padding:1.3cqw;font-size:1.55cqw;line-height:1.2;text-align:left}

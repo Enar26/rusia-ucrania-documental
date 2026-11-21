@@ -322,7 +322,7 @@ const capitulos = [
           paso("1991", "Ucrania decide", "La ciudadanía ratificó en referéndum el Acta de Independencia aprobada por el Parlamento.", "",
             "24 de agosto: el Parlamento ucraniano proclama la independencia. 1 de diciembre: la ciudadanía vota sobre esa decisión y la aprueba. Separa los dos actos y sus protagonistas. El fragmento que vemos procede del preámbulo constitucional de 1996, que recuerda la decisión popular de 1991. Lee la traducción y pregunta quién da legitimidad a la declaración."),
           paso("Diciembre de 1991", "Fronteras de un Estado", "Al disolverse la URSS, Crimea quedó dentro de las fronteras de la Ucrania independiente.", "soberania",
-            "Localiza Kiev y recorre con la mirada el territorio hasta Crimea. En 1954 cambió una división interna de la URSS. En 1991 ese territorio formaba parte del Estado ucraniano que obtuvo reconocimiento internacional. Estados Unidos, por ejemplo, reconoció su independencia el 25 de diciembre. El color representa soberanía reconocida, sin representar posiciones militares ni resultados electorales regionales."),
+            "Localiza Kiev y recorre con la mirada el territorio hasta Crimea. En 1954 cambió una división interna de la URSS. En 1991 ese territorio formaba parte del Estado ucraniano que obtuvo reconocimiento internacional. El Estado heredó una importante base industrial, infraestructura energética y regiones agrícolas de suelos negros. Estados Unidos, por ejemplo, reconoció su independencia el 25 de diciembre. El color representa soberanía reconocida, sin representar posiciones militares ni resultados electorales regionales."),
           paso("5 de diciembre de 1994", "El compromiso de Budapest", "Rusia, Estados Unidos y el Reino Unido reafirmaron el respeto a la soberanía y a las fronteras existentes de Ucrania.", "",
             "Tras la disolución soviética quedaron armas nucleares en territorio ucraniano. El memorándum acompañó la adhesión de Ucrania al Tratado sobre la No Proliferación como Estado sin armas nucleares. El primer párrafo se refiere a independencia, soberanía y fronteras existentes. El segundo aborda la amenaza o el uso de la fuerza. El sexto prevé consultas. Explica la diferencia entre estos compromisos y una obligación automática de defensa militar colectiva, que el texto no establece. Esta distinción importará al estudiar 2014."),
         ],
@@ -336,11 +336,11 @@ const puenteEconomia = [
   {
     id: "regreso", tipo: "regreso", capitulo: "Transición de capítulo",
     titulo: "Tres perspectivas, un conflicto", fuentes: ["archivo", "mar"],
-    pasos: [paso("", "Cambio de expositor", "", "", "Vista de revisión del futuro regreso tras el quiz y la conclusión de Historia. Avanza para entregar la palabra al segundo expositor.")],
+    pasos: [paso("", "Cambio de expositor", "", "", "Tras el quiz y la conclusión, Historia queda completada. Avanza para entregar la palabra al segundo expositor.")],
   },
   {
     id: "portada-economia", tipo: "portadaEconomia", capitulo: "Capítulo II",
     titulo: "Consecuencias económicas", fuentes: ["mar"],
-    pasos: [paso("", "Capítulo II", "", "", "La imagen conserva el encuadre de la Cámara de Comercio de Odesa. Aquí termina la vista de revisión.")],
+    pasos: [paso("", "Capítulo II", "", "", "La imagen conserva el encuadre de la Cámara de Comercio de Odesa. Aquí termina la intervención histórica.")],
   },
 ];

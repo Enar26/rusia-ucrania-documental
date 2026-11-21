@@ -11,6 +11,8 @@ Object.assign(fuentes, {
   cereal: ["Naciones Unidas · Iniciativa del Mar Negro", "https://www.un.org/en/black-sea-grain-initiative", "Acuerdo de julio de 2022 y fin de la participación rusa en julio de 2023."],
   suiza: ["Consejo Federal suizo · Cumbre sobre la paz en Ucrania", "https://www.eda.admin.ch/eda/en/fdfa/fdfa/aktuell/dossiers/konferenz-zum-frieden-ukraine.html", "Comunicado conjunto de Bürgenstock, 16 de junio de 2024."],
   onu25: ["Consejo de Seguridad · resolución 2774, 24 de febrero de 2025", "https://docs.un.org/es/S/RES/2774(2025)", "Llamamiento a un fin rápido del conflicto y a una paz duradera."],
+  berlin: ["BBC y Deutsche Welle · reunión de Berlín, noviembre de 2026", "https://github.com/ihelfrich/worldscope/blob/6424a74b5395521d65476ebcf2fa997c4e27b725/lake/sections/foreign_news/2026-11-20/raw.jsonl", "Despachos originales de los medios en el archivo RSS del 20 de noviembre. Se cotejaron los titulares y entradillas de BBC, DW y France 24."],
+  dw: ["Deutsche Welle · European leaders present united front in push for peace in Ukraine", "https://www.dw.com/en/european-leaders-present-united-front-in-push-for-peace-in-ukraine/live-79986520", "Crónica de la reunión de Berlín. Los aliados europeos solicitaron representación en las negociaciones futuras."],
   alertas: ["Registro de alertas oficiales · archivo de Vadimkin", "https://github.com/Vadimkin/ukrainian-air-raid-sirens-dataset/blob/61b78be02013d3fc3f7f875bdb2781f38d76404f/datasets/official_data_en.csv", "Consulta del CSV en UTC. El 7 de septiembre de 2026 registra avisos en los distritos de Konotop y Kamianske. Una alerta acredita un aviso de protección civil."],
 });
 const escenaHistorica = (id, tipo, titulo, fuentes, filas) => ({
@@ -45,11 +47,11 @@ const historiaReciente = [
     ["Octubre de 2022","Cuatro anexiones rechazadas","La Asamblea General condenó el intento ruso de anexionar Donetsk, Lugansk, Jersón y Zaporiyia.","Las proclamaciones rusas abarcaban territorios que sus fuerzas ni siquiera controlaban por completo. La resolución ES-11/4 pidió a los Estados que no reconocieran la alteración de las fronteras. Vuelve a separar control y soberanía."],
     ["Julio de 2023","Se interrumpe la iniciativa","Rusia puso fin a su participación en el acuerdo del mar Negro.","La interrupción mostró la fragilidad de un acuerdo parcial cuando continuaba la guerra. Distingue el fin de este mecanismo concreto del conjunto de la navegación y de las conversaciones diplomáticas."],
   ]),
-  escenaHistorica("hasta-2026","carril","¿Qué llegó a negociarse?",["suiza","onu25","alertas"],[
+  escenaHistorica("hasta-2026","carril","¿Qué llegó a negociarse?",["suiza","onu25","alertas","berlin","dw"],[
     ["Junio de 2024","La cumbre de Suiza","La reunión de Bürgenstock abordó seguridad nuclear, alimentos y cuestiones humanitarias.","Ucrania participó y Rusia estuvo ausente. El comunicado incluyó el intercambio de prisioneros y el regreso de menores trasladados. El encuentro definió asuntos para la diplomacia sin cerrar un tratado entre los beligerantes."],
     ["Febrero de 2025","Un llamamiento del Consejo","La resolución 2774 del Consejo de Seguridad instó a un fin rápido del conflicto y a una paz duradera.","Distingue una resolución diplomática de la firma y aplicación de un alto el fuego. El Consejo podía formular un llamamiento incluso cuando sus miembros discrepaban sobre cómo describir responsabilidades."],
     ["7 septiembre 2026","La guerra en el registro civil","El archivo de alertas consigna avisos a la población en los distritos de Konotop y Kamianske.","Son dos entradas fechadas de una recopilación de avisos oficiales. Permiten documentar la persistencia de medidas de protección civil. Una alerta por sí sola no acredita un impacto ni permite contar víctimas."],
-    ["20 noviembre 2026","Corte de la investigación","Último registro cotejado aquí: 7 de septiembre. La actualización hasta el 20 de noviembre está pendiente.","Este es el límite documental de esta edición. No extrapoles los avisos de septiembre ni anuncies acuerdos o cambios de control en noviembre sin una fuente fechada."],
+    ["20 noviembre 2026","Berlín y la mesa de negociación","Los aliados europeos de Ucrania reunidos en Berlín pidieron participar en futuras conversaciones de paz.","Corte al 20 de noviembre. BBC informó de la posición negociadora común anunciada en Berlín y Deutsche Welle documentó la petición de representación europea. France 24 recogió el día 19 la propuesta de Macron de reabrir la cuestión de la adhesión ucraniana a la OTAN. Distingue las propuestas de los gobiernos de un acuerdo firmado."],
   ]),
   escenaHistorica("sintesis","causal","Cómo se relacionan las causas",["constitucion","bucarest","kremlin","onu","onu22"],[
     ["Memoria → legitimación","El uso político del pasado","El Kremlin convirtió una memoria compartida en argumento sobre el presente.","Recupera la Rus de Kiev como herencia medieval plural. La relación causal aquí es el uso de la historia por un dirigente contemporáneo. Un origen cultural no determina una frontera jurídica."],
@@ -67,3 +69,33 @@ const historiaReciente = [
 ];
 capitulos[1].escenas.push(...historiaReciente, puenteEconomia[0]);
 capitulos.push({id:"economia",titulo:"Capítulo II",escenas:[puenteEconomia[1]]});
+
+const lectura = p => `<h2>${esc(p.titulo)}</h2><p>${esc(p.texto)}</p>`;
+const pieHistorico = s => fig(fuentes[s.fuentes[0]][0], "Capítulo I · Historia");
+Object.assign(vistas,{
+  carril(s,p,i) {
+    return `<div class="carril-cab">${tag(s.titulo)}</div><div class="rail" style="transform:translateX(-${i*21}cqw)">${s.pasos.map((e,n)=>`<time class="${n===i?"activo":""}">${esc(e.fecha)}</time>`).join("")}</div>
+      <div class="carril-lectura">${lectura(p)}</div>${pieHistorico(s)}`;
+  },
+  plaza(s,p,i) {
+    return `<div class="plaza-fondo" aria-hidden="true">Майдан</div><div class="plaza-cab">${tag("Kiev · Plaza de la Independencia")}<time>${esc(p.fecha)}</time></div>
+      <div class="plaza-lectura">${lectura(p)}</div>${pieHistorico(s)}`;
+  },
+  doblefoco(s,p) {
+    return `<img class="foco-img" src="${mapa(p.recurso)}" alt="Localizador geográfico de ${esc(p.titulo)}"><div class="foco-sombra"></div><div class="foco-lectura">${tag(p.fecha)}${lectura(p)}</div>
+      ${fig("Natural Earth · localizador actual, sin líneas de control", "Crimea y Donbás")}`;
+  },
+  testimonio(s,p,i) {
+    return `<div class="eco-palabra" aria-hidden="true">${["Historia","Seguridad","Política"][i]}</div><div class="testimonio-cab">${tag("Argumentos del Gobierno ruso")}</div><div class="testimonio-lectura"><time>${esc(p.fecha)}</time>${lectura(p)}</div>
+      ${fig(i===0?"Ensayo de Putin · julio de 2021":"Discurso de Putin · documento ONU S/2022/154","Paráfrasis atribuida")}`;
+  },
+  umbral(s,p,i) {
+    return `<div class="umbral-fecha">${i?"02":"24"}<span>${i?"MAR":"FEB"} · 2022</span></div><div class="umbral-lectura">${tag(i?"Asamblea General de la ONU":"Ucrania · Invasión a gran escala")}${lectura(p)}</div>${pieHistorico(s)}`;
+  },
+  causal(s,p,i) {
+    return `<div class="causal-head">${tag(s.titulo)}</div><div class="nodos">${["Memoria","Seguridad","Decisión"].map((n,k)=>`<span class="${i===k?"nodo-activo":""}">${n}</span>`).join("<i></i>")}</div><div class="causal-lectura"><small>${esc(p.fecha)}</small>${lectura(p)}</div>${fig("Síntesis del expositor · referencias en Fuentes","Historia")}`;
+  },
+  cierre(s,p) {
+    return `<img class="cierre-foto" src="${archivo(p.recurso)}" alt="El Dniéper en Kiev, edición de 1909"><div class="cierre-velo"></div><div class="cierre-lectura">${tag(p.fecha)}${lectura(p)}</div>${fig("El Dniéper en Kiev · fotografía publicada en 1909","Ed. Esther Singleton")}`;
+  }
+});

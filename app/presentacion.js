@@ -8,7 +8,7 @@
       .filter((s) => s.tipo !== "quiz" || s.preguntas.length)
       .map((s) => ({ ...s, capitulo: cap.titulo })),
   );
-  let escenas = documental;
+  const escenas = documental;
   const pasos = (s) =>
     s.tipo === "quiz" ? s.preguntas.length * 2 : s.pasos.length;
   const opciones = new Map();
@@ -217,6 +217,13 @@
               );
             }
           }
+          const rail = nuevo.querySelector(".rail");
+          if (rail) {
+            const distance = (Number(antes.dataset.paso) - pasoActual) * -21;
+            mover(rail, [{translate: distance + "cqw 0"}, {translate: "0 0"}], 950);
+          }
+          const foco = nuevo.querySelector(".foco-img, .eco-palabra, .nodo-activo");
+          if (foco) mover(foco, [{opacity:.25, transform:"scale(1.08)"},{opacity:1,transform:"none"}], 900);
           const title = nuevo.querySelector("h2");
           if (title)
             mover(
@@ -237,9 +244,7 @@
       String(escenas.length).padStart(2, "0");
     get("step-count").textContent =
       pasos(s) > 1 ? pasoActual + 1 + " / " + pasos(s) + " pasos" : "";
-    get("section").textContent = escenas === puenteEconomia
-      ? "Ensayo · " + s.titulo
-      : s.tipo === "portada" ? "Portada" : s.titulo;
+    get("section").textContent = s.tipo === "portada" ? "Portada" : s.titulo;
     get("meter").innerHTML = escenas
       .map((_, i) => '<i class="' + (i <= escena ? "done" : "") + '"></i>')
       .join("");
@@ -247,7 +252,7 @@
     const ultimo = escena === escenas.length - 1 && pasoActual === pasos(s) - 1;
     get("next").disabled = ultimo;
     get("next").querySelector("span").textContent = ultimo
-      ? "Fin de la etapa"
+      ? "Fin"
       : s.tipo === "regreso"
         ? "Abrir Economía"
         : escena === 0
@@ -308,9 +313,6 @@
               `<button data-ir="${i}" class="index-row" ${i === escena ? 'aria-current="step"' : ""}><span>${String(i + 1).padStart(2, "0")}</span>${esc(e.titulo)}</button>`,
           )
           .join("") +
-        (escenas === documental
-          ? '<a class="preview-link" href="#revision-economia">Ensayar el regreso a Economía</a>'
-          : '<a class="preview-link" href="#independencia">Volver a la independencia de Ucrania</a>') +
         '<p class="help">Clic, →, espacio o Av Pág para avanzar. ← o Re Pág para volver. F alterna la pantalla completa, H los controles y P la pausa del movimiento.</p>';
     }
     if (!dialog.open) dialog.showModal();
@@ -424,9 +426,8 @@
   });
   reduce.addEventListener("change", () => dibujar());
   function abrirRecorrido() {
-    const ensayo = location.hash === "#revision-economia";
-    escenas = ensayo ? puenteEconomia : documental;
-    escena = Math.max(0, escenas.findIndex(s => "#" + s.id === location.hash));
+    const destino = location.hash === "#revision-economia" ? "#regreso" : location.hash;
+    escena = Math.max(0, escenas.findIndex(s => "#" + s.id === destino));
     pasoActual = 0;
     if (dialog.open) dialog.close();
     dibujar();
