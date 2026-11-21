@@ -13,3 +13,13 @@
 - **Tres defectos observados.** Las fotografías remotas de V2.1 quedaron vacías en este entorno. El nuevo puente conserva su composición y emplea copias acreditadas locales. La base cartográfica incluía divisiones actuales ajenas a 1991. La lámina aísla la frontera de Ucrania sobre relieve Natural Earth. El zoom duplicaba la fachada durante el movimiento. Ahora una sola fotografía cambia de encuadre hasta que entra el título. [Comparación visual](revision/v7/comparacion.jpg) · [Movimiento grabado en Chromium](revision/v7/puente-economia.mp4).
 - **Pruebas.** Chromium recorrió los 24 estados históricos y de apertura en ambos sentidos y en el HTML autónomo sin red. Se comprobó el paso 1954 → 1991, pausa, cambios rápidos de sentido, fuentes, notas, pantalla completa, teclado, controles y movimiento reducido. El puente se probó por separado, incluida la vuelta al documental. Capturas de [1920×1080](revision/v7/1920x1080), [1280×720](revision/v7/1280x720) y [1366×768](revision/v7/1366x768). Mando físico y proyección en aula pendientes.
 - **Siguiente entrega.** Escena 9, con una cronología de 2004, 2008 y 2013–2014 sustentada en fotografías fechadas y el documento de Bucarest. Después siguen Crimea, Donbás, la invasión de 2022 y la evolución hasta el corte de noviembre de 2026. Faltan síntesis, quiz, conclusión y ensayo cronometrado de los 20 minutos.
+
+## Entrega V8 · Capítulo I
+
+Rama `capitulo-historico-v8`, construida a partir de V7 `3165f9e` y las instrucciones de `origin/main` en `7349572`. El recorrido principal contiene 20 escenas y 58 pasos. La conclusión conduce directamente al panel de Historia, al relevo con Economía y a la portada II.
+
+[HTML autónomo](descargas/Documental-V8.html) · [Tres capturas de Chromium](revision/v8) · [Catálogo de fuentes](fuentes.csv).
+
+El corte del 20/11/2026 se sustenta en despachos de BBC y Deutsche Welle sobre la reunión de Berlín y la posición europea ante futuras conversaciones. Se cotejaron las entradillas en la captura RSS fechada. El registro de septiembre procede del CSV de avisos oficiales. El Acta de 1991 se muestra en edición de consulta y el informe del ACNUDH documenta la represión del Maidán. No se consiguió confirmar la licencia de la foto de la protesta localizada.
+
+Una ronda de Chromium comprobó todos los estados hacia delante y atrás tanto en la web como en el HTML sin red, las tres preguntas, recursos, notas y créditos. Se probaron pantalla completa, movimiento reducido, pausa y las dos transiciones del relevo. Reproducir con `node tools/revisar-v8.cjs URL descargas/Documental-V8.html revision/v8`. Quedan para el aula la duración oral efectiva y la prueba con mando y proyector físicos.
