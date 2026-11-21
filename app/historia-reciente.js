@@ -6,6 +6,7 @@ Object.assign(fuentes, {
   satelite: ["Copernicus Sentinel-2 · Bajo Dniéper, 18 de junio de 2023","https://github.com/Vante52/kakhovka-postevent-satellite-ml-classification/tree/e2ce1270e0ee86c8e533638250638271643484ce","Imagen Sentinel-2 modificada, 2023. Falso color y polígonos del estudio de S. Chitiva, V. Caycedo, S. Campos, E. Salazar y J. E. Díaz. Figura training_polygons_falsecolor, Apache 2.0. Conversión a WebP."],
   osce04: ["OSCE/ODIHR · Elección presidencial de Ucrania, 2004", "https://www.osce.org/odihr/elections/ukraine/14674", "Informe final de observación electoral, 2005."],
   bucarest: ["OTAN · Declaración de Bucarest, 3 de abril de 2008", "https://www.nato.int/cps/en/natolive/official_texts_8443.htm", "Párrafo 23. Declaración de los aliados sobre Ucrania y Georgia."],
+  ohchr14: ["ACNUDH · Informe del 15 de junio de 2014, § 24", "https://github.com/decolonial-ist/archive/tree/5ea3b662888d722ab18046a5bb115d5c0b7dcc1e/322", "El informe describe la dispersión del 30 de noviembre como detonante de nuevas protestas. Fragmento de la edición inglesa, p. 7."],
   maidan: ["Consejo de Europa · International Advisory Panel, 2015", "https://www.coe.int/en/web/portal/international-advisory-panel", "Informe sobre las investigaciones de la violencia durante las protestas del Maidán."],
   minsk: ["Consejo de Seguridad · resolución 2202 (2015)", "https://docs.un.org/es/S/RES/2202(2015)", "El anexo reproduce el paquete de medidas para la aplicación de los acuerdos de Minsk."],
   kremlin: ["Presidencia rusa · ensayo del 12 de julio de 2021", "http://en.kremlin.ru/events/president/news/66181", "Fuente primaria del argumento histórico de Vladímir Putin. Expresa su posición política."],
@@ -28,7 +29,7 @@ const historiaReciente = [
     ["2008","La promesa de Bucarest","Los aliados declararon que Ucrania y Georgia llegarían a ser miembros de la OTAN.","La declaración dejó abierta la cuestión del calendario. Ucrania seguía fuera de la Alianza y de su defensa colectiva. Moscú describía la ampliación como una amenaza, mientras que gobiernos vecinos la buscaban como protección."],
     ["2013","Una firma suspendida","El gobierno de Yanukóvich suspendió los preparativos del acuerdo de asociación con la Unión Europea.","Yanukóvich había llegado a la presidencia en 2010. Las presiones rusas, las relaciones comerciales y las preferencias de distintos sectores ucranianos pesaban sobre la decisión. La suspensión de noviembre trasladó el debate a la calle."],
   ]),
-  escenaHistorica("maidan","plaza","La plaza se convierte en protesta",["maidan"],[
+  escenaHistorica("maidan","plaza","La plaza se convierte en protesta",["maidan","ohchr14"],[
     ["Noviembre de 2013","La plaza de la Independencia","En Kiev, la protesta por el acuerdo europeo creció tras la violencia policial.","Maidán significa plaza. Estudiantes y otros manifestantes se reunieron tras la suspensión del acuerdo. La represión de finales de noviembre amplió la protesta hacia el abuso de poder y la responsabilidad de las autoridades."],
     ["Febrero de 2014","Una ruptura política","Tras jornadas de violencia mortal, Yanukóvich abandonó Kiev. El Parlamento convocó elecciones anticipadas.","Participaron grupos con proyectos distintos y la movilización tuvo apoyos desiguales. Rusia calificó el cambio de poder de golpe de Estado. Esa caracterización política no resuelve la cuestión jurídica de las fronteras ucranianas."],
   ]),
@@ -85,6 +86,7 @@ Object.assign(vistas,{
       <div class="carril-lectura">${lectura(p)}</div>${pieHistorico(s)}`;
   },
   plaza(s,p,i) {
+    if (i === 0) return `<div class="plaza-cab">${tag("Kiev · Plaza de la Independencia")}<time>${esc(p.fecha)}</time></div><div class="plaza-titulo">${lectura(p)}</div><div class="recorte-informe"><img src="${archivo("maidan-informe")}" alt="Fragmento del informe del ACNUDH sobre la dispersión de manifestantes del 30 de noviembre de 2013"></div>${fig("ACNUDH · informe del 15 de junio de 2014","Párrafo 24 · fragmento")}`;
     return `<div class="plaza-fondo" aria-hidden="true">Майдан</div><div class="plaza-cab">${tag("Kiev · Plaza de la Independencia")}<time>${esc(p.fecha)}</time></div>
       <div class="plaza-lectura">${lectura(p)}</div>${pieHistorico(s)}`;
   },
@@ -101,7 +103,12 @@ Object.assign(vistas,{
     return `<div class="umbral-fecha">${i?"02":"24"}<span>${i?"MAR":"FEB"} · 2022</span></div><div class="umbral-lectura">${tag(i?"Asamblea General de la ONU":"Ucrania · Invasión a gran escala")}${lectura(p)}</div>${pieHistorico(s)}`;
   },
   causal(s,p,i) {
-    return `<div class="causal-head">${tag(s.titulo)}</div><div class="nodos">${["Memoria","Seguridad","Decisión"].map((n,k)=>`<span class="${i===k?"nodo-activo":""}">${n}</span>`).join("<i></i>")}</div><div class="causal-lectura"><small>${esc(p.fecha)}</small>${lectura(p)}</div>${fig("Síntesis del expositor · referencias en Fuentes","Historia")}`;
+    const [origen, verbo, efecto] = [
+      ["Memoria medieval","se invoca para justificar","Unidad política"],
+      ["Elección de alianzas","entra en tensión con","Esferas de influencia"],
+      ["Invasión rusa","vulnera la","Soberanía ucraniana"],
+    ][i];
+    return `<div class="causal-head">${tag(s.titulo)}</div><div class="nodos"><span>${origen}</span><b>${verbo} →</b><span class="nodo-activo">${efecto}</span></div><div class="causal-lectura"><small>${esc(p.fecha)}</small>${lectura(p)}</div>${fig("Síntesis del expositor · referencias en Fuentes","Historia")}`;
   },
   cierre(s,p) {
     return `<img class="cierre-foto" data-shared="atlas" src="${archivo(p.recurso)}" alt="Mapa del mar Negro publicado en 1911"><div class="cierre-velo"></div><div class="cierre-lectura">${tag(p.fecha)}${lectura(p)}</div>${fig("Mar Negro · cartografía publicada en 1911","W. E. Curtis")}`;

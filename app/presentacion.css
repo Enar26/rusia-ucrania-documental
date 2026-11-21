@@ -1101,3 +1101,6 @@ dialog::backdrop {
 .doblefoco:has(.pagina-onu){background:linear-gradient(115deg,#222c32,#252c31 46%,#626565)}
 .sat-foto,.sat-velo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.sat-velo{background:linear-gradient(0deg,#151a1a 0%,#191b1add 20%,transparent 66%)}
 .sat-lectura{position:absolute;bottom:12%;left:6%;max-width:68%}.sat-lectura h2{margin:.8cqw 0}
+.plaza-titulo{position:absolute;top:24%;left:7%;right:9%}.plaza-titulo h2{font-size:5.5cqw;max-width:77%}.plaza-titulo p{max-width:68%;margin-top:1.3cqw}
+.recorte-informe{position:absolute;left:16%;right:6%;bottom:13%;height:30%;display:grid;align-items:center}.recorte-informe img{width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(1cqw 1cqw 1.4cqw #0005)}
+.nodos b{color:#d6be94;flex:1;text-align:center;font-size:1.25cqw;font-weight:500;border-bottom:1px solid #786e59;padding-bottom:.6cqw}.nodos span{max-width:30cqw;font-size:3.2cqw}
