@@ -44,7 +44,7 @@ function vistaPerspectivas(pasoPanel, regreso) {
   const tarjetas = paneles.map(([name, title, img, credit], n) => {
     const on = regreso ? n === 1 : n < pasoPanel;
     const status = regreso ? ["Capítulo I · Completado", "Capítulo II · A continuación", "Capítulo III"][n] : "Expositor " + (n + 1);
-    const shared = n === (regreso ? 1 : 0) ? `data-shared="${img}"` : "";
+    const shared = (n === 0 || (regreso && n === 1)) ? `data-shared="${img}"` : "";
     return `<article class="card ${on ? "lit" : ""}"><img ${shared} src="${archivo(img)}" alt="${esc(credit)}"><div class="card-shade"></div><div class="card-text"><span>${status}</span><h3>${name}</h3><p>${title}</p></div><small>${credit}</small></article>`;
   });
   return `<div class="panels-head">${tag(regreso ? "Cambio de capítulo" : "Apertura")}<h2>Tres perspectivas, un conflicto</h2></div><div class="cards">${tarjetas.join("")}</div>
@@ -118,13 +118,9 @@ const vistas = {
   },
   independencia(s, p, i) {
     if (i === 0) {
-      return `<div class="acta-mesa"><article class="acta-hoja">
-        <div class="acta-cabecera"><span>Ucrania</span><time>1991</time></div>
-        <h2>${esc(p.titulo)}<em>.</em></h2>
-        <div class="acta-fechas"><div><time>24 agosto</time><span>El Parlamento declara la independencia.</span></div><div><time>1 diciembre</time><span>La ciudadanía la ratifica en referéndum.</span></div></div>
-        <blockquote><span lang="uk">«схваленим 1 грудня 1991 року всенародним голосуванням»</span><p>«aprobada el 1 de diciembre de 1991 por votación popular»</p></blockquote>
-        <div class="acta-pie">Constitución de Ucrania, preámbulo · 1996</div>
-      </article></div>${fig("Lectura del documento · fragmento y traducción propia", "Verjovna Rada")}`;
+      return `<img class="acta-original" src="${archivo("acta1991")}" alt="Texto ucraniano del Acta de Independencia del 24 de agosto de 1991, edición de consulta">
+        <div class="acta-relato">${tag("24 agosto · 1 diciembre 1991")}<h2>Ucrania decide</h2><p>El Parlamento declara la independencia. El 1 de diciembre, la ciudadanía ratifica la decisión en referéndum.</p></div>
+        ${fig("Verjovna Rada · Acta de Independencia","Edición de consulta · p. 2")}`;
     }
     if (i === 1) {
       return `<img class="mapa-soberano" src="${mapa(p.recurso)}" alt="Ucrania y Crimea en ocre. Kiev se sitúa al norte y la península de Crimea al sur, en el mar Negro.">

@@ -1,5 +1,9 @@
 // Fechas de situación y lectura oral. Cada paso queda quieto hasta el siguiente clic.
 Object.assign(fuentes, {
+  acta91: ["Acta de Independencia · Verjovna Rada, 24 de agosto de 1991","https://zakon.rada.gov.ua/laws/show/1427-12","Resolución 1427-XII. Se reproduce la segunda página de la edición de consulta en el archivo Decolonial, transcripción del documento oficial."],
+  archivo91: ["Copia consultada · Acta de Independencia","https://github.com/decolonial-ist/archive/tree/5ea3b662888d722ab18046a5bb115d5c0b7dcc1e/175","Texto oficial ucraniano. Página renderizada localmente, sin simular el manuscrito."],
+  archivo68: ["Copia de la resolución 68/262 · Asamblea General","https://github.com/decolonial-ist/archive/tree/5ea3b662888d722ab18046a5bb115d5c0b7dcc1e/202","Primera página de la edición inglesa del documento adoptado el 27 de marzo de 2014."],
+  satelite: ["Copernicus Sentinel-2 · Bajo Dniéper, 18 de junio de 2023","https://github.com/Vante52/kakhovka-postevent-satellite-ml-classification/tree/e2ce1270e0ee86c8e533638250638271643484ce","Imagen Sentinel-2 modificada, 2023. Falso color y polígonos del estudio de S. Chitiva, V. Caycedo, S. Campos, E. Salazar y J. E. Díaz. Figura training_polygons_falsecolor, Apache 2.0. Conversión a WebP."],
   osce04: ["OSCE/ODIHR · Elección presidencial de Ucrania, 2004", "https://www.osce.org/odihr/elections/ukraine/14674", "Informe final de observación electoral, 2005."],
   bucarest: ["OTAN · Declaración de Bucarest, 3 de abril de 2008", "https://www.nato.int/cps/en/natolive/official_texts_8443.htm", "Párrafo 23. Declaración de los aliados sobre Ucrania y Georgia."],
   maidan: ["Consejo de Europa · International Advisory Panel, 2015", "https://www.coe.int/en/web/portal/international-advisory-panel", "Informe sobre las investigaciones de la violencia durante las protestas del Maidán."],
@@ -28,8 +32,9 @@ const historiaReciente = [
     ["Noviembre de 2013","La plaza de la Independencia","En Kiev, la protesta por el acuerdo europeo creció tras la violencia policial.","Maidán significa plaza. Estudiantes y otros manifestantes se reunieron tras la suspensión del acuerdo. La represión de finales de noviembre amplió la protesta hacia el abuso de poder y la responsabilidad de las autoridades."],
     ["Febrero de 2014","Una ruptura política","Tras jornadas de violencia mortal, Yanukóvich abandonó Kiev. El Parlamento convocó elecciones anticipadas.","Participaron grupos con proyectos distintos y la movilización tuvo apoyos desiguales. Rusia calificó el cambio de poder de golpe de Estado. Esa caracterización política no resuelve la cuestión jurídica de las fronteras ucranianas."],
   ]),
-  escenaHistorica("crimea-donbas","doblefoco","Dos territorios, dos procesos",["ne","onu","minsk"],[
+  escenaHistorica("crimea-donbas","doblefoco","Dos territorios, dos procesos",["ne","onu","archivo68","minsk"],[
     ["Marzo de 2014","Crimea","Fuerzas rusas tomaron el control de la península. Rusia anunció su anexión tras una consulta bajo ese control.","La Asamblea General afirmó la integridad territorial de Ucrania y señaló que la consulta carecía de validez para cambiar el estatus de Crimea. Distingue quién ejercía el control de qué Estado tenía soberanía reconocida.","peninsula"],
+    ["27 marzo 2014","La frontera reconocida","La Asamblea General reafirmó la integridad territorial de Ucrania dentro de sus fronteras internacionalmente reconocidas.","Lee el título y la fecha de la resolución 68/262. La Asamblea subrayó que el referéndum en Crimea carecía de validez para alterar el estatus de la península. El siguiente mapa desplaza la atención al este continental.","resolucion68"],
     ["Primavera de 2014","El Donbás","Grupos armados separatistas respaldados por Rusia se enfrentaron a las fuerzas ucranianas en partes de Donetsk y Lugansk.","Aquí comenzó una guerra prolongada. Las provincias coloreadas ubican la región entera. El área ocupada cambió y nunca fue idéntica al contorno administrativo de ambas provincias.","donbas"],
     ["2014–2015","Los acuerdos de Minsk","Al alto el fuego de septiembre de 2014 le siguió un paquete de medidas en febrero de 2015.","El paquete vinculaba cese del fuego, retirada de armamento pesado, supervisión y disposiciones políticas. Las partes discrepaban sobre el orden de los pasos y los combates continuaron. Minsk trataba el conflicto en el este de Ucrania.","donbas"],
   ]),
@@ -42,9 +47,10 @@ const historiaReciente = [
     ["24 febrero 2022","La guerra cambia de escala","Rusia lanzó una invasión a gran escala de Ucrania desde varias direcciones.","La guerra ya llevaba ocho años en el Donbás. En febrero de 2022 ciudades alejadas del frente anterior quedaron expuestas y millones de personas tuvieron que buscar seguridad. Evita confundir el comienzo de esta invasión con el origen de todo el conflicto."],
     ["2 marzo 2022","La respuesta de la Asamblea","La Asamblea General de la ONU deploró la agresión y exigió la retirada de las fuerzas rusas.","La resolución ES-11/1 identifica al Estado agresor y reafirma la soberanía de Ucrania. Permite contrastar la versión del Kremlin con la respuesta de la comunidad internacional. Su aprobación no puso fin a las hostilidades."],
   ]),
-  escenaHistorica("mar-negro","carril","Territorio y negociación",["anexion","cereal"],[
+  escenaHistorica("mar-negro","carril","Territorio y negociación",["anexion","cereal","satelite"],[
     ["Julio de 2022","Un acuerdo en plena guerra","La Iniciativa del Mar Negro permitió reanudar exportaciones agrícolas desde puertos ucranianos.","La ONU y Turquía facilitaron el acuerdo. La negociación sobre un problema concreto pudo avanzar sin que hubiera un acuerdo de paz. Sitúa esos puertos en el mar Negro."],
     ["Octubre de 2022","Cuatro anexiones rechazadas","La Asamblea General condenó el intento ruso de anexionar Donetsk, Lugansk, Jersón y Zaporiyia.","Las proclamaciones rusas abarcaban territorios que sus fuerzas ni siquiera controlaban por completo. La resolución ES-11/4 pidió a los Estados que no reconocieran la alteración de las fronteras. Vuelve a separar control y soberanía."],
+    ["Junio de 2023","El bajo Dniéper","La destrucción de la presa de Kajovka el 6 de junio inundó poblaciones río abajo y vació gran parte del embalse.","La toma del 18 de junio permite localizar agua y vegetación en falso color. El agua aparece oscura y la vegetación, rojiza. Los polígonos blancos delimitan muestras del estudio. Una sola imagen posterior permite situar el paisaje, pero no medir por sí sola cuánto cambió ni establecer responsabilidad.","kajovka"],
     ["Julio de 2023","Se interrumpe la iniciativa","Rusia puso fin a su participación en el acuerdo del mar Negro.","La interrupción mostró la fragilidad de un acuerdo parcial cuando continuaba la guerra. Distingue el fin de este mecanismo concreto del conjunto de la navegación y de las conversaciones diplomáticas."],
   ]),
   escenaHistorica("hasta-2026","carril","¿Qué llegó a negociarse?",["suiza","onu25","alertas","berlin","dw"],[
@@ -63,8 +69,8 @@ const historiaReciente = [
     {pregunta:"¿Qué decidió la OTAN en Bucarest en 2008?",opciones:["Admitir inmediatamente a Ucrania","Declarar una futura adhesión","Fijar una fecha de ingreso"],correcta:1,explicacion:"La declaración expresó una perspectiva de adhesión sin calendario ni defensa colectiva para Ucrania.",fuente:"Declaración de Bucarest, § 23"},
     {pregunta:"¿Qué distingue una explicación histórica de una autorización jurídica?",opciones:["El control militar otorga soberanía","Un pasado común autoriza la anexión","Las motivaciones explican decisiones sin legalizarlas"],correcta:2,explicacion:"La Asamblea General deploró la agresión de 2022 y reafirmó la soberanía ucraniana.",fuente:"AGNU ES-11/1"},
   ]},
-  escenaHistorica("conclusion","cierre","Conclusión del primer expositor",["archivo","constitucion","onu22"],[
-    ["Conclusión · Historia","El pasado compartido deja abierta la elección del futuro.","La soberanía de Ucrania también se entiende escuchando las decisiones de su propia sociedad.","Para cerrar mi intervención, vuelvo al voto de 1991. Conocer los imperios, las alianzas y los discursos ayuda a entender las presiones sobre Ucrania. Reconocer a quienes tomaron decisiones permite explicar la guerra sin presentarla como un destino inevitable.","dnieper"],
+  escenaHistorica("conclusion","cierre","Conclusión del primer expositor",["mar","constitucion","onu22"],[
+    ["Conclusión · Historia","El pasado compartido deja abierta la elección del futuro.","La soberanía de Ucrania también se entiende escuchando las decisiones de su propia sociedad.","Para cerrar mi intervención, vuelvo al voto de 1991. Conocer los imperios, las alianzas y los discursos ayuda a entender las presiones sobre Ucrania. Reconocer a quienes tomaron decisiones permite explicar la guerra sin presentarla como un destino inevitable.","atlas"],
   ]),
 ];
 capitulos[1].escenas.push(...historiaReciente, puenteEconomia[0]);
@@ -74,6 +80,7 @@ const lectura = p => `<h2>${esc(p.titulo)}</h2><p>${esc(p.texto)}</p>`;
 const pieHistorico = s => fig(fuentes[s.fuentes[0]][0], "Capítulo I · Historia");
 Object.assign(vistas,{
   carril(s,p,i) {
+    if (p.recurso === "kajovka") return `<img class="sat-foto" src="${archivo(p.recurso)}" alt="Imagen Sentinel-2 en falso color. El río aparece oscuro entre tierras de cultivo rojizas."><div class="sat-velo"></div><div class="sat-lectura">${tag("18 junio 2023 · Sentinel-2")}${lectura(p)}</div>${fig("Copernicus · falso color · polígonos de muestreo en blanco","Chitiva et al.")}`;
     return `<div class="carril-cab">${tag(s.titulo)}</div><div class="rail" style="transform:translateX(-${i*21}cqw)">${s.pasos.map((e,n)=>`<time class="${n===i?"activo":""}">${esc(e.fecha)}</time>`).join("")}</div>
       <div class="carril-lectura">${lectura(p)}</div>${pieHistorico(s)}`;
   },
@@ -82,6 +89,7 @@ Object.assign(vistas,{
       <div class="plaza-lectura">${lectura(p)}</div>${pieHistorico(s)}`;
   },
   doblefoco(s,p) {
+    if (p.recurso === "resolucion68") return `<img class="pagina-onu" src="${archivo(p.recurso)}" alt="Primera página de la resolución 68/262 de la Asamblea General"><div class="foco-lectura">${tag(p.fecha)}${lectura(p)}</div>${fig("Naciones Unidas · Asamblea General","A/RES/68/262")}`;
     return `<img class="foco-img" src="${mapa(p.recurso)}" alt="Localizador geográfico de ${esc(p.titulo)}"><div class="foco-sombra"></div><div class="foco-lectura">${tag(p.fecha)}${lectura(p)}</div>
       ${fig("Natural Earth · localizador actual, sin líneas de control", "Crimea y Donbás")}`;
   },
@@ -96,6 +104,6 @@ Object.assign(vistas,{
     return `<div class="causal-head">${tag(s.titulo)}</div><div class="nodos">${["Memoria","Seguridad","Decisión"].map((n,k)=>`<span class="${i===k?"nodo-activo":""}">${n}</span>`).join("<i></i>")}</div><div class="causal-lectura"><small>${esc(p.fecha)}</small>${lectura(p)}</div>${fig("Síntesis del expositor · referencias en Fuentes","Historia")}`;
   },
   cierre(s,p) {
-    return `<img class="cierre-foto" src="${archivo(p.recurso)}" alt="El Dniéper en Kiev, edición de 1909"><div class="cierre-velo"></div><div class="cierre-lectura">${tag(p.fecha)}${lectura(p)}</div>${fig("El Dniéper en Kiev · fotografía publicada en 1909","Ed. Esther Singleton")}`;
+    return `<img class="cierre-foto" data-shared="atlas" src="${archivo(p.recurso)}" alt="Mapa del mar Negro publicado en 1911"><div class="cierre-velo"></div><div class="cierre-lectura">${tag(p.fecha)}${lectura(p)}</div>${fig("Mar Negro · cartografía publicada en 1911","W. E. Curtis")}`;
   }
 });

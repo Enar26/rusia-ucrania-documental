@@ -317,10 +317,10 @@ const capitulos = [
         id: "independencia",
         tipo: "independencia",
         titulo: "La independencia de Ucrania",
-        fuentes: ["constitucion", "diplomacia", "budapest", "transcripcion", "ne", "sombreado", "onu"],
+        fuentes: ["acta91", "archivo91", "constitucion", "diplomacia", "budapest", "transcripcion", "ne", "sombreado", "onu"],
         pasos: [
           paso("1991", "Ucrania decide", "La ciudadanía ratificó en referéndum el Acta de Independencia aprobada por el Parlamento.", "",
-            "24 de agosto: el Parlamento ucraniano proclama la independencia. 1 de diciembre: la ciudadanía vota sobre esa decisión y la aprueba. Separa los dos actos y sus protagonistas. El fragmento que vemos procede del preámbulo constitucional de 1996, que recuerda la decisión popular de 1991. Lee la traducción y pregunta quién da legitimidad a la declaración."),
+            "24 de agosto: el Parlamento ucraniano proclama la independencia. 1 de diciembre: la ciudadanía vota sobre esa decisión y la aprueba. Separa los dos actos y sus protagonistas. La página muestra el Acta fechada en agosto. El preámbulo constitucional de 1996 recuerda su ratificación en diciembre. Pregunta quién da legitimidad a la declaración."),
           paso("Diciembre de 1991", "Fronteras de un Estado", "Al disolverse la URSS, Crimea quedó dentro de las fronteras de la Ucrania independiente.", "soberania",
             "Localiza Kiev y recorre con la mirada el territorio hasta Crimea. En 1954 cambió una división interna de la URSS. En 1991 ese territorio formaba parte del Estado ucraniano que obtuvo reconocimiento internacional. El Estado heredó una importante base industrial, infraestructura energética y regiones agrícolas de suelos negros. Estados Unidos, por ejemplo, reconoció su independencia el 25 de diciembre. El color representa soberanía reconocida, sin representar posiciones militares ni resultados electorales regionales."),
           paso("5 de diciembre de 1994", "El compromiso de Budapest", "Rusia, Estados Unidos y el Reino Unido reafirmaron el respeto a la soberanía y a las fronteras existentes de Ucrania.", "",

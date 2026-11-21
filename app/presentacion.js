@@ -82,7 +82,8 @@
     const s = actual(),
       p = s.pasos?.[pasoActual] ?? {};
     const antes = visible,
-      compartido = antes?.querySelector("[data-shared]");
+      selector = [s.id, antes?.dataset.escena].includes("portada-economia") ? '[data-shared="comercio"]' : '[data-shared="atlas"]',
+      compartido = antes?.querySelector(selector);
     const cambia = antes?.dataset.escena !== s.id;
     const durante =
       cambia &&
@@ -104,7 +105,7 @@
         antes.remove();
       } else if (cambia) {
         antes.dataset.salida = "";
-        const dest = nuevo.querySelector("[data-shared]");
+        const dest = nuevo.querySelector(selector);
         const vuelo = durante && dest && dest.dataset.shared === compartido.dataset.shared;
         const comercio = vuelo && dest.dataset.shared === "comercio";
         const fade = mover(
@@ -179,7 +180,7 @@
             680,
           );
         } else if (s.tipo === "independencia") {
-          const lamina = nuevo.querySelector(".acta-hoja, .mapa-soberano, .budapest-texto");
+          const lamina = nuevo.querySelector(".acta-original, .mapa-soberano, .budapest-texto");
           const final = getComputedStyle(lamina).transform;
           const entrada = pasoActual === 1 ? "scale(1.18)" :
             pasoActual === 0 ? "translateY(6%) rotate(-3deg)" : "translateX(4%)";

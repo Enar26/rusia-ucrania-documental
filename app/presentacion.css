@@ -1096,3 +1096,8 @@ dialog::backdrop {
 .scene.quiz{padding:0;background:linear-gradient(105deg,#171f24,#292f32)}
 .scene.quiz>.quiz{padding:5% 7%}.quiz .options{display:grid;grid-template-columns:repeat(3,1fr);gap:1cqw}
 .quiz .options button{padding:1.3cqw;font-size:1.55cqw;line-height:1.2;text-align:left}
+.acta-original,.pagina-onu {position:absolute;top:8%;right:6%;width:45%;max-height:79%;object-fit:contain;filter:drop-shadow(0 .8cqw .8cqw #0008)}
+.acta-relato {position:absolute;left:7%;width:40%;top:23%}.acta-relato h2{font-size:7cqw;line-height:.94;margin:2cqw 0}
+.doblefoco:has(.pagina-onu){background:linear-gradient(115deg,#222c32,#252c31 46%,#626565)}
+.sat-foto,.sat-velo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.sat-velo{background:linear-gradient(0deg,#151a1a 0%,#191b1add 20%,transparent 66%)}
+.sat-lectura{position:absolute;bottom:12%;left:6%;max-width:68%}.sat-lectura h2{margin:.8cqw 0}
