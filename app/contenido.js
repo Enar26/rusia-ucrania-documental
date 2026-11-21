@@ -1,6 +1,31 @@
 /* Guion del expositor. Cada paso es un estado estable y su nota se edita aquí.
    Los capítulos futuros pueden añadir escenas y quizzes al mismo recorrido. */
 const fuentes = {
+  constitucion: [
+    "Verjovna Rada · Constitución de Ucrania, preámbulo (1996)",
+    "https://zakon.rada.gov.ua/laws/show/254%D0%BA/96-%D0%B2%D1%80",
+    "El preámbulo identifica el Acta del 24 de agosto y la votación del 1 de diciembre de 1991. Fragmento cotejado con la transcripción ucraniana de la colección Ukrainian Laws in Time. Traducción propia. La composición es una lectura tipográfica.",
+  ],
+  diplomacia: [
+    "Christopher Morrison · Office of the Historian, 2008",
+    "https://github.com/HistoryAtState/rdcr/blob/e9b08f8950f184f1b5c38ecb1da208161d180eb7/articles/ukraine.xml",
+    "Ficha oficial sobre Ucrania. Documenta el reconocimiento estadounidense del 25 de diciembre de 1991.",
+  ],
+  budapest: [
+    "Memorándum de Budapest · 5 de diciembre de 1994",
+    "https://zakon.rada.gov.ua/laws/show/998_158",
+    "Preámbulo y párrafos 1, 2 y 6. Cotejados con la transcripción de la ficha ucraniana 998_158. Traducción del fragmento al español propia.",
+  ],
+  transcripcion: [
+    "Transcripciones consultadas · Ukrainian Laws in Time",
+    "https://github.com/skivol/ukrainian-laws-in-time/tree/1b82e6d6ad42b454605330d5e89dfe45782df546",
+    "Copia de consulta de los textos de la Rada. Constitución 254к/96-ВР y memorándum 998_158. Las referencias oficiales se incluyen por separado.",
+  ],
+  sombreado: [
+    "Natural Earth · Shaded Relief, 1:50m, versión 2.0.0",
+    "https://github.com/nvkelso/natural-earth-raster/tree/master/50m_rasters/SR_50M",
+    "Dominio público. Recorte del sombreado físico en la misma ventana geográfica que los vectores. El color delimita la soberanía reconocida. El relieve es una referencia física contemporánea.",
+  ],
   frus: [
     "Foreign Relations of the United States · telegrama 2094, Petrogrado, 12 de diciembre de 1917",
     "https://history.state.gov/historicaldocuments/frus1918Russiav02/d771",
@@ -284,10 +309,38 @@ const capitulos = [
             "Crimea cambia de república",
             "La región de Crimea pasó de la república soviética rusa a la ucraniana dentro de la URSS.",
             "crimea-1954",
-            "La transferencia cambió la adscripción administrativa de la región dentro del mismo Estado. La silueta permite mantener fijo el lugar mientras cambia la relación institucional. La ciudad de Sebastopol tuvo un régimen administrativo particular. La transición posterior a la independencia modificará el significado jurídico de esas fronteras. Aquí termina la primera entrega.",
+            "La transferencia cambió la adscripción administrativa de la región dentro del mismo Estado. La silueta permite mantener fijo el lugar mientras cambia la relación institucional. La ciudad de Sebastopol tuvo un régimen administrativo particular. La transición posterior a la independencia modificará el significado jurídico de esas fronteras. Al avanzar, pregunta qué significado adquirió ese límite al independizarse Ucrania.",
           ),
         ],
       },
+      {
+        id: "independencia",
+        tipo: "independencia",
+        titulo: "La independencia de Ucrania",
+        fuentes: ["constitucion", "diplomacia", "budapest", "transcripcion", "ne", "sombreado", "onu"],
+        pasos: [
+          paso("1991", "Ucrania decide", "La ciudadanía ratificó en referéndum el Acta de Independencia aprobada por el Parlamento.", "",
+            "24 de agosto: el Parlamento ucraniano proclama la independencia. 1 de diciembre: la ciudadanía vota sobre esa decisión y la aprueba. Separa los dos actos y sus protagonistas. El fragmento que vemos procede del preámbulo constitucional de 1996, que recuerda la decisión popular de 1991. Lee la traducción y pregunta quién da legitimidad a la declaración."),
+          paso("Diciembre de 1991", "Fronteras de un Estado", "Al disolverse la URSS, Crimea quedó dentro de las fronteras de la Ucrania independiente.", "soberania",
+            "Localiza Kiev y recorre con la mirada el territorio hasta Crimea. En 1954 cambió una división interna de la URSS. En 1991 ese territorio formaba parte del Estado ucraniano que obtuvo reconocimiento internacional. Estados Unidos, por ejemplo, reconoció su independencia el 25 de diciembre. El color representa soberanía reconocida, sin representar posiciones militares ni resultados electorales regionales."),
+          paso("5 de diciembre de 1994", "El compromiso de Budapest", "Rusia, Estados Unidos y el Reino Unido reafirmaron el respeto a la soberanía y a las fronteras existentes de Ucrania.", "",
+            "Tras la disolución soviética quedaron armas nucleares en territorio ucraniano. El memorándum acompañó la adhesión de Ucrania al Tratado sobre la No Proliferación como Estado sin armas nucleares. El primer párrafo se refiere a independencia, soberanía y fronteras existentes. El segundo aborda la amenaza o el uso de la fuerza. El sexto prevé consultas. Explica la diferencia entre estos compromisos y una obligación automática de defensa militar colectiva, que el texto no establece. Esta distinción importará al estudiar 2014."),
+        ],
+      },
     ],
+  },
+];
+
+// Se ensaya desde el índice hasta que estén listas la historia, el quiz y la conclusión.
+const puenteEconomia = [
+  {
+    id: "regreso", tipo: "regreso", capitulo: "Transición de capítulo",
+    titulo: "Tres perspectivas, un conflicto", fuentes: ["archivo", "mar"],
+    pasos: [paso("", "Cambio de expositor", "", "", "Vista de revisión del futuro regreso tras el quiz y la conclusión de Historia. Avanza para entregar la palabra al segundo expositor.")],
+  },
+  {
+    id: "portada-economia", tipo: "portadaEconomia", capitulo: "Capítulo II",
+    titulo: "Consecuencias económicas", fuentes: ["mar"],
+    pasos: [paso("", "Capítulo II", "", "", "La imagen conserva el encuadre de la Cámara de Comercio de Odesa. Aquí termina la vista de revisión.")],
   },
 ];

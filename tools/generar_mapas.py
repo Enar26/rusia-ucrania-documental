@@ -15,7 +15,7 @@ W, H = 860, 560
 DARK = dict(sea="#162b2d", land="#35433d", accent="#917b50", second="#727e62", line="#657061", ink="#f0e6cb", river="#87a9a1")
 PAPER = dict(sea="#b7c5ba", land="#e3d9b9", accent="#ba975d", second="#b5ae86", line="#9e9379", ink="#393827", river="#648b86")
 
-def plate(name, center, span, layer, colors, labels, focus=None):
+def plate(name, center, span, layer, colors, labels, focus=None, relieve=None):
     lon, lat = center
     k = W / span
     ky = k / math.cos(math.radians(lat))
@@ -56,7 +56,9 @@ def plate(name, center, span, layer, colors, labels, focus=None):
         for f in features("states10.json"):
             n=f.GetField("name"); admin=f.GetField("admin")
             if n in ("Crimea","Sevastopol"): admin="Ukraine"
-            key=admin if layer=="actual" else "Tierra"
+            # En 1991 solo se tematiza la frontera de Ucrania. Se omiten
+            # divisiones contemporáneas entre terceros países.
+            key=admin if layer=="actual" or (layer=="soberania" and admin=="Ukraine") else "Tierra"
             groups.setdefault(key,[]).append(f.GetGeometryRef().Clone())
         for key,geoms in groups.items():
             coll=ogr.Geometry(ogr.wkbMultiPolygon)
@@ -75,6 +77,18 @@ def plate(name, center, span, layer, colors, labels, focus=None):
             for f in features("states10.json"):
                 if f.GetField("name") in ("Crimea","Sevastopol"):
                     shape(f.GetGeometryRef(),colors["accent"],colors["accent"],0.7)
+    if relieve:
+        # El sombreado y los vectores comparten exactamente ventana y proyección.
+        import base64
+        from osgeo import gdal
+        grid = gdal.Warp("", str(relieve), format="MEM", dstSRS="EPSG:4326",
+                         outputBounds=(west, south, east, north), width=W, height=H,
+                         resampleAlg="bilinear")
+        name_png = "/vsimem/relieve.png"
+        gdal.Translate(name_png, grid, format="PNG")
+        data = base64.b64encode(gdal.VSIGetMemFileBuffer_unsafe(name_png)).decode()
+        gdal.Unlink(name_png)
+        out.append(f'<image width="{W}" height="{H}" href="data:image/png;base64,{data}" style="mix-blend-mode:multiply" opacity=".85"/>')
     for f in features("rivers.json"):
         if f.GetField("name") in ("Dnipro","Danube","Dniester","Don"):
             shape(f.GetGeometryRef(),"none",colors["river"],1.2)
@@ -113,3 +127,13 @@ plate('union-1922',(38,49),40,'fisico',PAPER,[
     (27.56,53.9,"Minsk","city"), (37.62,55.75,"Moscú","city"),
     (36.23,49.99,"Járkiv","city"), (44.8,41.7,"Tiflis","city"),
     (33,43,"Mar Negro","sea")])
+
+# Pase opcional con el sombreado SR_50M v2.0.0 de Natural Earth.
+if len(sys.argv) > 2:
+    W, H = 1200, 675
+    tinta = dict(sea="#284044", land="#676858", accent="#d5b47b", second="#938975",
+                 line="#92917c", ink="#fff5dc", river="#516e72")
+    plate("soberania", (26.5, 48.9), 37, "soberania", tinta,
+          [kyiv, (32.4, 48.35, "Ucrania", "state"), crimea, (37.2, 43.7, "Mar Negro", "sea"),
+           (39.5, 51.7, "Rusia", "state"), (28.4, 53.5, "Bielorrusia", "small"),
+           (23.7, 46.2, "Rumanía", "small")], ["Ukraine"], sys.argv[2])

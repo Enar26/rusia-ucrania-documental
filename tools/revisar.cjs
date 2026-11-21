@@ -168,7 +168,7 @@ const shots = [
       });
     });
     await pg.reload();
-    await go(7);
+    await go(new Set(trace.map(([id]) => id)).size);
     await pg.locator('[data-option="1"]').click();
     assert.deepEqual(await state(), ["prueba", 0]);
     assert.equal(

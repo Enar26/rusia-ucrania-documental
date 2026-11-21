@@ -40,6 +40,16 @@ const mapaFechas = {
   1650: "hacia 1650",
   1783: "1783",
 };
+function vistaPerspectivas(pasoPanel, regreso) {
+  const tarjetas = paneles.map(([name, title, img, credit], n) => {
+    const on = regreso ? n === 1 : n < pasoPanel;
+    const status = regreso ? ["Capítulo I · Completado", "Capítulo II · A continuación", "Capítulo III"][n] : "Expositor " + (n + 1);
+    const shared = n === (regreso ? 1 : 0) ? `data-shared="${img}"` : "";
+    return `<article class="card ${on ? "lit" : ""}"><img ${shared} src="${archivo(img)}" alt="${esc(credit)}"><div class="card-shade"></div><div class="card-text"><span>${status}</span><h3>${name}</h3><p>${title}</p></div><small>${credit}</small></article>`;
+  });
+  return `<div class="panels-head">${tag(regreso ? "Cambio de capítulo" : "Apertura")}<h2>Tres perspectivas, un conflicto</h2></div><div class="cards">${tarjetas.join("")}</div>
+    ${fig("Curtis, 1911 · Singleton, 1909", "Archivo fotográfico y cartográfico")}`;
+}
 const vistas = {
   portada() {
     return `<img class="cover-photo" src="${archivo("kiev")}" alt="Cúpulas y fachadas de la Lavra de Kiev en una fotografía de archivo">
@@ -49,8 +59,15 @@ const vistas = {
     ${fig("La Lavra de Kiev · edición de 1909", "Archivo E. Singleton")}`;
   },
   paneles(s, p, i) {
-    return `<div class="panels-head">${tag("Apertura")}<h2>Tres perspectivas, un conflicto</h2></div><div class="cards">${paneles.map(([name, title, img, credit], n) => `<article class="card ${n < i ? "lit" : ""}"><img ${n === 0 ? 'data-shared="atlas"' : ""} src="${archivo(img)}" alt="${esc(credit)}"><div class="card-shade"></div><div class="card-text"><span>Expositor ${n + 1}</span><h3>${name}</h3><p>${title}</p></div><small>${credit}</small></article>`).join("")}</div>
-    ${fig("Curtis, 1911 · Singleton, 1909", "Archivo fotográfico y cartográfico")}`;
+    return vistaPerspectivas(i, false);
+  },
+  regreso() {
+    return vistaPerspectivas(0, true);
+  },
+  portadaEconomia() {
+    return `<img class="economia-photo" data-shared="comercio" src="${archivo("comercio")}" alt="Fachada de la Cámara de Comercio de Odesa, publicada en 1911"><div class="economia-velo"></div>
+      <div class="economia-titulo">${tag("Capítulo II")}<h2>Consecuencias<br><em>económicas</em></h2></div>
+      ${fig("Cámara de Comercio de Odesa · edición de 1911", "W. E. Curtis")}`;
   },
   capitulo() {
     return `<img class="chapter-map" data-shared="atlas" src="${archivo("atlas")}" alt="Detalle del mapa del mar Negro publicado en 1911"><div class="chapter-shade"></div>
@@ -98,6 +115,28 @@ const vistas = {
     <div class="archive-grid"><div class="archive-copy"><strong>${esc(p.fecha)}</strong><h2>${esc(p.titulo)}</h2><p>${esc(p.texto)}</p></div>
     <figure class="archive-map">${lamina}${i === 3 ? '<div class="transfer"><abbr title="República Socialista Federativa Soviética de Rusia">RSFS de Rusia</abbr> <b aria-label="pasa a">→</b> <abbr title="República Socialista Soviética de Ucrania">RSS de Ucrania</abbr></div>' : ""}</figure></div>
     ${fig(i === 0 ? "Archivo diplomático · Foreign Relations of the United States" : i === 2 ? "Fotografía de archivo · Around the Black Sea" : "Localizador físico · Natural Earth, dominio público", i === 0 ? "Documento 771 · transcripción parcial" : i === 2 ? "W. E. Curtis, 1911" : "Sin fronteras políticas de época")}`;
+  },
+  independencia(s, p, i) {
+    if (i === 0) {
+      return `<div class="acta-mesa"><article class="acta-hoja">
+        <div class="acta-cabecera"><span>Ucrania</span><time>1991</time></div>
+        <h2>${esc(p.titulo)}<em>.</em></h2>
+        <div class="acta-fechas"><div><time>24 agosto</time><span>El Parlamento declara la independencia.</span></div><div><time>1 diciembre</time><span>La ciudadanía la ratifica en referéndum.</span></div></div>
+        <blockquote><span lang="uk">«схваленим 1 грудня 1991 року всенародним голосуванням»</span><p>«aprobada el 1 de diciembre de 1991 por votación popular»</p></blockquote>
+        <div class="acta-pie">Constitución de Ucrania, preámbulo · 1996</div>
+      </article></div>${fig("Lectura del documento · fragmento y traducción propia", "Verjovna Rada")}`;
+    }
+    if (i === 1) {
+      return `<img class="mapa-soberano" src="${mapa(p.recurso)}" alt="Ucrania y Crimea en ocre. Kiev se sitúa al norte y la península de Crimea al sur, en el mar Negro.">
+        <div class="soberania-velo"></div><div class="soberania-titulo">${tag(p.fecha)}<h2>Fronteras de<br><em>un Estado</em></h2><p>${esc(p.texto)}</p></div>
+        <div class="soberania-clave"><i></i>Fronteras reconocidas de Ucrania</div>
+        ${fig("Base y relieve físico · Natural Earth", "Soberanía territorial · 1991")}`;
+    }
+    return `<div class="budapest-cab">${tag("Memorándum de Budapest")}<time>5 diciembre 1994</time></div>
+      <div class="budapest-texto"><span class="marca-cita" aria-hidden="true">“</span><h2>Respetar la independencia,<br>la soberanía y las <em>fronteras<br>existentes</em> de Ucrania.</h2>
+        <p lang="uk">«поважати незалежність і суверенітет та існуючі кордони України»</p></div>
+      <div class="budapest-firma"><b>§ 1</b><p>Compromiso reafirmado por Rusia, Estados Unidos y el Reino Unido.</p></div>
+      ${fig("Texto ucraniano · traducción propia del fragmento", "Documento 998_158 · 1994")}`;
   },
   quiz(s, p, i, selecciones) {
     const n = Math.floor(i / 2),

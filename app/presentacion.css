@@ -982,3 +982,84 @@ dialog::backdrop {
 .paper-map.memory .plate-tag {
   display: none;
 }
+
+/* La primera lectura adopta la escala de una página impresa. */
+.independencia {
+  background: radial-gradient(ellipse at 35% 16%, #545148, #211f1c 53%, #10100f);
+}
+.acta-mesa {
+  position: absolute;
+  inset: 4% 7% 11%;
+  display: grid;
+  place-items: center;
+}
+.acta-hoja {
+  width: 91%;
+  padding: 1.7cqw 4.1cqw 1.9cqw;
+  color: #292920;
+  background: linear-gradient(112deg, #e6dbc3, #f5efdf 51%, #e0d4b9);
+  border-left: .62cqw solid #bcaa85;
+  box-shadow: .4cqw .45cqw 0 -.16cqw #c2b69e, 0 1.3cqw 3cqw #080705a8;
+  transform: rotate(-1.1deg);
+}
+.acta-cabecera, .acta-pie, .budapest-cab, .budapest-firma {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.acta-cabecera {
+  border-block: 1px solid #6b6352;
+  padding: .45cqw 0;
+  font: 600 1.25cqw var(--sans);
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+.acta-cabecera time { letter-spacing: .03em; }
+.acta-hoja h2 { margin: .65cqw 0 1.25cqw; font-size: 8.7cqw; line-height: .95; }
+.acta-hoja h2 em { color: #987433; }
+.acta-fechas { display: grid; grid-template-columns: 1fr 1fr; border-block: 1px solid #998e76; }
+.acta-fechas > div { padding: .9cqw 1.4cqw 1.2cqw 0; }
+.acta-fechas > div + div { border-left: 1px solid #a69a80; padding-left: 2cqw; }
+.acta-fechas time { display: block; font: 600 2.7cqw/1.1 var(--serif); }
+.acta-fechas span { font-size: 1.65cqw; }
+.acta-hoja blockquote { margin: 1.65cqw 0 1.2cqw; }
+.acta-hoja blockquote span { color: #706956; font: italic 1.4cqw Georgia, serif; }
+.acta-hoja blockquote p { margin-top: .45cqw; color: #37372f; font: 500 2.48cqw/1.1 var(--serif); }
+.acta-pie { font: 600 1.08cqw var(--sans); letter-spacing: .065em; color: #615b4e; }
+.mapa-soberano, .soberania-velo, .economia-velo, .economia-photo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+}
+.soberania-velo {
+  background: linear-gradient(90deg, #141c1c 0%, #141c1cf2 19%, #151e1cb8 30%, transparent 52%),
+              linear-gradient(0deg, #151d1df5, transparent 16%);
+}
+.soberania-titulo { position: absolute; left: 5.5%; top: 21%; width: 31%; }
+.soberania-titulo h2 { margin: 1.8cqw 0; font-size: 5.9cqw; line-height: .93; }
+.soberania-titulo h2 em, .economia-titulo em { font-weight: 450; color: #e3cca3; }
+.soberania-titulo p { font-size: 1.7cqw; color: #eae5d8; }
+.soberania-clave { position: absolute; left: 5.5%; bottom: 20%; display: flex; gap: .8cqw; align-items: center; font-size: 1.2cqw; }
+.soberania-clave i { width: 1.15cqw; height: 1.15cqw; background: #d5b47b; border: 1px solid #e2c89a; }
+.independencia[data-paso="2"] { background: radial-gradient(ellipse at 80% 8%, #393c36, #171d1b 60%, #101613); }
+.budapest-cab { position: absolute; inset: 8% 6% auto; padding-bottom: 1.15cqw; border-bottom: 1px solid #afa08a7a; }
+.budapest-cab time { font: 500 1.65cqw var(--serif); }
+.budapest-texto { position: absolute; left: 12%; right: 5%; top: 25%; }
+.marca-cita { position: absolute; left: -6.6cqw; top: -2cqw; font: 10cqw/1 var(--serif); color: #b49a6a; }
+.budapest-texto h2 { font-size: 5.15cqw; line-height: .99; }
+.budapest-texto h2 em { color: #e0be86; }
+.budapest-texto p { margin-top: 1.5cqw; font: italic 1.55cqw Georgia, serif; color: #c4bfae; }
+.budapest-firma { position: absolute; left: 12%; bottom: 15.5%; justify-content: start; gap: 1.3cqw; }
+.budapest-firma b { color: var(--brass); font: 500 2.55cqw var(--serif); }
+.budapest-firma p { max-width: 45cqw; font-size: 1.47cqw; border-left: 1px solid #a4885a; padding-left: 1.3cqw; }
+.regreso { background: linear-gradient(118deg, #111716, #242724 65%, #131916); }
+.regreso .cards { grid-template-columns: .88fr 1.24fr .88fr; }
+.regreso .card.lit img, .economia-photo { filter: sepia(.23) contrast(1.05); object-fit: cover; object-position: 50% 45%; }
+.regreso .card-text span { font-size: 1.1cqw; }
+.regreso .card.lit .card-shade { background: linear-gradient(0deg, #0e1414fa, #14191399 42%, transparent 68%); }
+.regreso .card.lit h3 { font-size: 4.7cqw; }
+.economia-velo { background: linear-gradient(0deg, #101511f0, #11161188 48%, #171c1812 75%); }
+.economia-titulo { position: absolute; left: 7%; bottom: 18%; }
+.economia-titulo h2 { font-size: 8.2cqw; line-height: .86; margin-top: 1.5cqw; }
+.preview-link { display: inline-block; margin: 1.2rem 0 .5rem; text-underline-offset: .25em; }

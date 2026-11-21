@@ -3,11 +3,12 @@
   const stage = get("stage"),
     dialog = get("dialog"),
     player = get("player");
-  const escenas = capitulos.flatMap((cap) =>
+  const documental = capitulos.flatMap((cap) =>
     cap.escenas
       .filter((s) => s.tipo !== "quiz" || s.preguntas.length)
       .map((s) => ({ ...s, capitulo: cap.titulo })),
   );
+  let escenas = documental;
   const pasos = (s) =>
     s.tipo === "quiz" ? s.preguntas.length * 2 : s.pasos.length;
   const opciones = new Map();
@@ -104,11 +105,12 @@
       } else if (cambia) {
         antes.dataset.salida = "";
         const dest = nuevo.querySelector("[data-shared]");
-        const vuelo = durante && dest;
+        const vuelo = durante && dest && dest.dataset.shared === compartido.dataset.shared;
+        const comercio = vuelo && dest.dataset.shared === "comercio";
         const fade = mover(
           nuevo,
           [{ opacity: 0 }, { opacity: 1 }],
-          vuelo ? 1400 : 550,
+          comercio ? 1900 : vuelo ? 1400 : 550,
         );
         fade.finished.then(() => antes.remove()).catch(() => {});
         if (vuelo) {
@@ -132,9 +134,26 @@
           imagen.alt = "";
           stage.append(imagen);
           const transform = `translate(${durante.left - fin.left}px,${durante.top - fin.top}px) scale(${durante.width / fin.width},${durante.height / fin.height})`;
+          const franja = (box) => ({
+            left: box.left - rect.left + "px", top: box.top - rect.top + "px",
+            width: box.width + "px", height: box.height + "px",
+          });
+          if (comercio) {
+            compartido.style.visibility = "hidden";
+            mover(dest, [
+              { opacity: 0 }, { opacity: 0, offset: .76 },
+              { opacity: 1, offset: .8 }, { opacity: 1 },
+            ], 2050);
+            imagen.style.objectPosition = "50% 45%";
+            imagen.style.filter = "sepia(.23) contrast(1.05)";
+          }
           mover(
             imagen,
-            [
+            comercio ? [
+              { ...franja(durante), opacity: 1 },
+              { ...franja(fin), opacity: 1, offset: .78 },
+              { ...franja(fin), opacity: 0 },
+            ] : [
               { transform, opacity: 0.9 },
               { transform: "none", opacity: 0.75, offset: 0.8 },
               { transform: "none", opacity: 0 },
@@ -159,6 +178,19 @@
             ],
             680,
           );
+        } else if (s.tipo === "independencia") {
+          const lamina = nuevo.querySelector(".acta-hoja, .mapa-soberano, .budapest-texto");
+          const final = getComputedStyle(lamina).transform;
+          const entrada = pasoActual === 1 ? "scale(1.18)" :
+            pasoActual === 0 ? "translateY(6%) rotate(-3deg)" : "translateX(4%)";
+          mover(lamina, [{ transform: entrada, opacity: .45 }, { transform: final, opacity: 1 }], 1300);
+          // La hoja sale por el mismo borde cuando se vuelve del mapa.
+          antes.dataset.salida = "";
+          mover(antes, [
+            { clipPath: "inset(0 0 0 0)" },
+            { clipPath: direccion > 0 ? "inset(0 100% 0 0)" : "inset(0 0 0 100%)" },
+          ], 820).finished.then(() => antes.remove()).catch(() => {});
+          antes.style.zIndex = "1";
         } else if (s.tipo !== "quiz") {
           const chart = nuevo.querySelector(".chart");
           const oldChart = antes.querySelector(".chart");
@@ -196,7 +228,7 @@
               360,
             );
         }
-        antes.remove();
+        if (!antes.hasAttribute("data-salida")) antes.remove();
       }
     }
     get("number").textContent =
@@ -205,7 +237,9 @@
       String(escenas.length).padStart(2, "0");
     get("step-count").textContent =
       pasos(s) > 1 ? pasoActual + 1 + " / " + pasos(s) + " pasos" : "";
-    get("section").textContent = escena === 0 ? "Portada" : s.titulo;
+    get("section").textContent = escenas === puenteEconomia
+      ? "Ensayo · " + s.titulo
+      : s.tipo === "portada" ? "Portada" : s.titulo;
     get("meter").innerHTML = escenas
       .map((_, i) => '<i class="' + (i <= escena ? "done" : "") + '"></i>')
       .join("");
@@ -214,7 +248,9 @@
     get("next").disabled = ultimo;
     get("next").querySelector("span").textContent = ultimo
       ? "Fin de la etapa"
-      : escena === 0
+      : s.tipo === "regreso"
+        ? "Abrir Economía"
+        : escena === 0
         ? "Comenzar"
         : s.tipo === "quiz" && pasoActual % 2 === 0
           ? "Revelar"
@@ -272,6 +308,9 @@
               `<button data-ir="${i}" class="index-row" ${i === escena ? 'aria-current="step"' : ""}><span>${String(i + 1).padStart(2, "0")}</span>${esc(e.titulo)}</button>`,
           )
           .join("") +
+        (escenas === documental
+          ? '<a class="preview-link" href="#revision-economia">Ensayar el regreso a Economía</a>'
+          : '<a class="preview-link" href="#independencia">Volver a la independencia de Ucrania</a>') +
         '<p class="help">Clic, →, espacio o Av Pág para avanzar. ← o Re Pág para volver. F alterna la pantalla completa, H los controles y P la pausa del movimiento.</p>';
     }
     if (!dialog.open) dialog.showModal();
@@ -384,5 +423,14 @@
     }
   });
   reduce.addEventListener("change", () => dibujar());
-  dibujar();
+  function abrirRecorrido() {
+    const ensayo = location.hash === "#revision-economia";
+    escenas = ensayo ? puenteEconomia : documental;
+    escena = Math.max(0, escenas.findIndex(s => "#" + s.id === location.hash));
+    pasoActual = 0;
+    if (dialog.open) dialog.close();
+    dibujar();
+  }
+  window.addEventListener("hashchange", abrirRecorrido);
+  abrirRecorrido();
 })();
