@@ -92,8 +92,12 @@ Object.assign(vistas,{
   },
   doblefoco(s,p) {
     if (p.recurso === "resolucion68") return `<img class="pagina-onu" src="${archivo(p.recurso)}" alt="Primera página de la resolución 68/262 de la Asamblea General"><div class="foco-lectura">${tag(p.fecha)}${lectura(p)}</div>${fig("Naciones Unidas · Asamblea General","A/RES/68/262")}`;
-    return `<img class="foco-img" src="${mapa(p.recurso)}" alt="Localizador geográfico de ${esc(p.titulo)}"><div class="foco-sombra"></div><div class="foco-lectura">${tag(p.fecha)}${lectura(p)}</div>
-      ${fig("Natural Earth · localizador actual, sin líneas de control", "Crimea y Donbás")}`;
+    const peninsula=p.recurso==="peninsula";
+    return `<div class="carto2014"><img class="foco-img" src="${mapa(p.recurso)}" alt="Localizador de ${peninsula?"Crimea":"las regiones de Donetsk y Lugansk"}"><div class="carto-margen">
+      ${tag(p.fecha)}<h2>${esc(p.titulo)}</h2><p>${esc(p.texto)}</p></div>
+      <div class="carto-clave"><img src="${mapa("ucrania")}" alt="Mapa de situación de Ucrania con Crimea"><div><b>${peninsula?"Península de Crimea":"Donetsk y Lugansk"}</b><span>${peninsula?"Ocre · soberanía ucraniana reconocida.":"Relleno claro · provincias. Puntos · ciudades."}</span></div></div>
+      ${fig("Natural Earth · localizador geográfico","Sin líneas de control de 2014")}</div>`;
+
   },
   testimonio(s,p,i) {
     return `<div class="eco-palabra" aria-hidden="true">${["Historia","Seguridad","Política"][i]}</div><div class="testimonio-cab">${tag("Argumentos del Gobierno ruso")}</div><div class="testimonio-lectura"><time>${esc(p.fecha)}</time>${lectura(p)}</div>

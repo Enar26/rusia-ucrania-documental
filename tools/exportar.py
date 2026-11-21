@@ -12,9 +12,12 @@ def uri(path):
     return f"data:{mime};base64," + base64.b64encode(path.read_bytes()).decode()
 
 html = (ROOT / "index.html").read_text()
-css = (ROOT / "app/presentacion.css").read_text()
-css = re.sub(r"url\(\.\./([^)]*)\)", lambda m: f"url({uri(ROOT / m[1])})", css)
-html = re.sub(r'<link rel="stylesheet"[^>]*>', lambda _: "<style>"+css+"</style>", html)
+def inline_style(match):
+    css = (ROOT / match[1]).read_text()
+    css = re.sub(r"url\(\.\./([^)]*)\)", lambda m: f"url({uri(ROOT / m[1])})", css)
+    return "<style>" + css + "</style>"
+
+html = re.sub(r'<link rel="stylesheet" href="\./([^"]+)"[^>]*>', inline_style, html)
 scripts = [ROOT / name for name in re.findall(r'<script defer src="\./([^"]+)"></script>', html)]
 html = re.sub(r'<script defer src="[^"]+"></script>', '', html)
 assets = {str(p.relative_to(ROOT)):uri(p) for p in (ROOT/"assets").rglob("*") if p.suffix in (".webp",".svg")}

@@ -55,7 +55,7 @@ const vistas = {
     return `<img class="cover-photo" src="${archivo("kiev")}" alt="Cúpulas y fachadas de la Lavra de Kiev en una fotografía de archivo">
     <div class="cover-wash"></div><div class="frame"></div>
     <div class="cover-content">${tag("Historia · Economía · Humanidad")}
-    <h1>RUSIA <em>Y</em><br>UCRANIA</h1><p>Conflicto, impacto económico<br>y humanitario</p></div>
+    <h1>RUSIA <em>Y</em> UCRANIA</h1><p>Conflicto, impacto económico y humanitario</p></div>
     ${fig("La Lavra de Kiev · edición de 1909", "Archivo E. Singleton")}`;
   },
   paneles(s, p, i) {
@@ -71,7 +71,7 @@ const vistas = {
   },
   capitulo() {
     return `<img class="chapter-map" data-shared="atlas" src="${archivo("atlas")}" alt="Detalle del mapa del mar Negro publicado en 1911"><div class="chapter-shade"></div>
-    <div class="chapter-title">${tag("Capítulo I · Historia y evolución")}<h2>El origen de<br>un conflicto</h2><p>Una historia que precede a 2014.</p></div>${fig("El mar Negro · mapa de archivo, ed. 1911", "W. E. Curtis")}`;
+    <div class="chapter-title">${tag("Capítulo I · Historia y evolución")}<h2>El origen de un conflicto</h2><p>Una historia que precede a 2014.</p></div>${fig("El mar Negro · mapa de archivo, ed. 1911", "W. E. Curtis")}`;
   },
   geografia(s, p, i) {
     const leyenda =
@@ -95,6 +95,7 @@ const vistas = {
     ${fig("Cartografía de A. Ourednik y colaboradores · GPL-3.0", "Atlas histórico")}`;
   },
   archivo(s, p, i) {
+    if (i===2) return `<img class="photo-44" src="${archivo("balaklava")}" alt="Balaklava, en Crimea, en la edición de Curtis de 1911"><div class="velo-44"></div><div class="caption-44">${tag("Crimea · 1944")}<h2>${esc(p.titulo)}</h2><p>${esc(p.texto)}</p></div>${fig("Balaklava · vista anterior a la deportación","W. E. Curtis · edición de 1911")}`;
     const dates = ["1917–1921", "1922", "1944", "1954"];
     const detail = [
       "Kiev · sede de la Rada Central",

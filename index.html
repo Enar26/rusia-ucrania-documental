@@ -4,11 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="theme-color" content="#171b19" />
-    <title>Rusia y Ucrania · Archivo documental</title>
+    <title>Rusia y Ucrania · Atlas documental</title>
     <link rel="stylesheet" href="./app/presentacion.css" />
+    <link rel="stylesheet" href="./app/edicion.css" />
     <script defer src="./app/contenido.js"></script>
     <script defer src="./app/vistas.js"></script>
     <script defer src="./app/historia-reciente.js"></script>
+    <script defer src="./app/atlas-temporal.js"></script>
+    <script defer src="./app/estudio.js"></script>
+    <script defer src="./app/portal.js"></script>
     <script defer src="./app/presentacion.js"></script>
   </head>
   <body>
@@ -33,11 +37,15 @@
         </symbol>
       </defs>
     </svg>
-    <div id="player">
+    <div id="portal">
+      <div class="portal-bar"><a href="#inicio" class="masthead"><span class="compass" aria-hidden="true">✳</span> Atlas documental</a>
+        <nav aria-label="Navegación del sitio"><a href="#inicio">Inicio</a><a href="#estudio">Zona del expositor</a><a href="#fuentes">Fuentes</a></nav></div>
+      <div id="portal-content"></div>
+    </div>
+    <div id="player" hidden>
       <header>
-        <div class="brand">
-          <span class="brandmark" aria-hidden="true">A</span
-          ><span>Archivo documental</span>
+        <div class="brand"><button id="home" aria-label="Volver al menú">⌂ <span>Inicio</span></button>
+          <span>Archivo documental</span>
         </div>
         <span class="subject">Ciencias Sociales</span>
         <nav aria-label="Herramientas de exposición">

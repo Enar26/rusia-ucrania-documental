@@ -16,6 +16,7 @@
   let escena = 0,
     pasoActual = 0,
     visible = null,
+    ultimaLectura = null,
     animaciones = [],
     pausa = false;
   const actual = () => escenas[escena];
@@ -95,7 +96,9 @@
     nuevo.dataset.paso = pasoActual;
     nuevo.className = "scene " + s.tipo;
     nuevo.setAttribute("aria-label", s.titulo);
-    nuevo.innerHTML = vistas[s.tipo](s, p, pasoActual, opciones);
+    nuevo.innerHTML = p.corte !== undefined ? vistaCorte(p) : vistas[s.tipo](s, p, pasoActual, opciones);
+    if (p.corte !== undefined) nuevo.classList.add("corte-territorial");
+    nuevo.id = "escena-" + s.id + "-" + (pasoActual + 1);
     stage.append(nuevo);
     visible = nuevo;
     if (antes) {
@@ -108,10 +111,14 @@
         const dest = nuevo.querySelector(selector);
         const vuelo = durante && dest && dest.dataset.shared === compartido.dataset.shared;
         const comercio = vuelo && dest.dataset.shared === "comercio";
+        const sentido = direccion > 0 ? 1 : -1;
+        const pasoAtlas = ["atlas","imperios","doblefoco"].includes(s.tipo) || p.corte !== undefined;
+        const entrada = vuelo ? [{opacity:0},{opacity:1}] : pasoAtlas
+          ? [{clipPath: sentido>0 ? "inset(0 0 0 100%)":"inset(0 100% 0 0)"},{clipPath:"inset(0)"}]
+          : [{opacity:0,translate:"0 " + sentido*1.6 + "cqw"},{opacity:1,translate:"0 0"}];
         const fade = mover(
-          nuevo,
-          [{ opacity: 0 }, { opacity: 1 }],
-          comercio ? 1900 : vuelo ? 1400 : 550,
+          nuevo, entrada,
+          comercio ? 1850 : vuelo ? 1450 : pasoAtlas ? 1050 : 760,
         );
         fade.finished.then(() => antes.remove()).catch(() => {});
         if (vuelo) {
@@ -139,25 +146,21 @@
             left: box.left - rect.left + "px", top: box.top - rect.top + "px",
             width: box.width + "px", height: box.height + "px",
           });
-          if (comercio) {
+          {
             compartido.style.visibility = "hidden";
             mover(dest, [
               { opacity: 0 }, { opacity: 0, offset: .76 },
               { opacity: 1, offset: .8 }, { opacity: 1 },
             ], 2050);
-            imagen.style.objectPosition = "50% 45%";
-            imagen.style.filter = "sepia(.23) contrast(1.05)";
+            imagen.style.objectPosition = getComputedStyle(dest).objectPosition;
+            imagen.style.filter = getComputedStyle(dest).filter;
           }
           mover(
             imagen,
-            comercio ? [
+            [
               { ...franja(durante), opacity: 1 },
               { ...franja(fin), opacity: 1, offset: .78 },
               { ...franja(fin), opacity: 0 },
-            ] : [
-              { transform, opacity: 0.9 },
-              { transform: "none", opacity: 0.75, offset: 0.8 },
-              { transform: "none", opacity: 0 },
             ],
             2050,
           )
@@ -171,6 +174,8 @@
             direccion > 0 ? pasoActual - 1 : pasoActual
           ];
         if (changedCard) {
+          const columnas = el => getComputedStyle(el.querySelector(".cards")).gridTemplateColumns;
+          mover(nuevo.querySelector(".cards"),[{gridTemplateColumns:columnas(antes)},{gridTemplateColumns:columnas(nuevo)}],1050);
           mover(
             changedCard,
             [
@@ -239,6 +244,21 @@
         if (!antes.hasAttribute("data-salida")) antes.remove();
       }
     }
+    if (!reduce.matches && direccion && cambia) {
+      const retrato = nuevo.querySelector(".portrait-set img");
+      if (retrato) {
+        mover(retrato,[{transform:"perspective(1000px) translateX(8%) rotateY(-7deg) scale(.94)"},{transform:"none"}],1700);
+        mover(nuevo.querySelector(".portrait-field"),[{translate:"-3% 0"},{translate:"0 0"}],1800);
+      }
+      if(s.tipo==="paneles" && antes?.dataset.escena==="portada")
+        nuevo.querySelectorAll(".card").forEach((card,k)=>mover(card,[{clipPath:"inset(0 0 100% 0)"},{clipPath:"inset(0)"}],750+k*200));
+    }
+    if (!reduce.matches && direccion && !cambia && (s.tipo==="atlas" || s.tipo==="imperios")) {
+      const hoja=nuevo.querySelector(".chart");
+      mover(hoja,[{clipPath:direccion>0?"inset(0 100% 0 0)":"inset(0 0 0 100%)"},{clipPath:"inset(0)"}],800);
+    }
+    if (!reduce.matches && direccion && p.corte !== undefined)
+      mover(nuevo.querySelector(".atlas-control figure"),[{opacity:.35},{opacity:1}],650);
     get("number").textContent =
       String(escena + 1).padStart(2, "0") +
       " / " +
@@ -272,6 +292,7 @@
       pasoActual = dir > 0 ? 0 : pasos(actual()) - 1;
     } else return;
     dibujar(dir);
+    guardarPaso();
   }
   function mostrar(tipo) {
     const titulos = {
@@ -281,31 +302,9 @@
     };
     get("dialog-title").textContent = titulos[tipo];
     const s = actual();
-    if (tipo === "notas") {
-      get("dialog-body").innerHTML =
-        `<small>${esc(s.capitulo)} · Paso ${pasoActual + 1} de ${pasos(s)}</small><h3>${esc(s.pasos?.[pasoActual]?.titulo || s.titulo)}</h3><p>${esc(nota())}</p>`;
-    } else if (tipo === "fuentes") {
-      get("dialog-body").innerHTML =
-        "<small>Recursos de esta escena</small>" +
-        s.fuentes
-          .map((id) => {
-            const [nombre, url, desc] = fuentes[id];
-            return (
-              "<article><h3>" +
-              (url
-                ? '<a target="_blank" rel="noreferrer" href="' +
-                  esc(url) +
-                  '">' +
-                  esc(nombre) +
-                  "</a>"
-                : esc(nombre)) +
-              "</h3><p>" +
-              esc(desc) +
-              "</p></article>"
-            );
-          })
-          .join("") +
-        `<a href="${recursoLocal("fuentes.csv")}" download="fuentes.csv">Descargar el catálogo completo (CSV)</a>`;
+    if (tipo !== "indice") {
+      get("dialog-body").innerHTML = lecturaEstudio(s,pasoActual,tipo) +
+        `<a href="#${tipo==="notas"?"estudio":"fuentes"}/${s.id}/${pasoActual+1}">Abrir ${tipo==="notas"?"zona del expositor":"biblioteca de fuentes"} →</a>`;
     } else {
       get("dialog-body").innerHTML =
         escenas
@@ -358,9 +357,22 @@
       pasoActual = 0;
       dialog.close();
       dibujar();
+      guardarPaso();
     }
   };
   stage.onclick = (e) => {
+    const corte = e.target.closest("[data-corte]");
+    if (corte) {
+      const n=Number(corte.dataset.corte), dest=cortes[n];
+      const anterior=escena;
+      escena=escenas.findIndex(s=>s.id===dest.escena);
+      const paso=actual().pasos.findIndex(p=>p.corte===n);
+      const forward=escena>anterior || (escena===anterior && paso>pasoActual);
+      pasoActual=paso;
+      dibujar(forward?1:-1); guardarPaso();
+      visible.querySelector('[data-corte="'+n+'"]').focus();
+      return;
+    }
     const opcion = e.target.closest("[data-option]");
     if (opcion) {
       opciones.set(
@@ -384,7 +396,7 @@
   };
   document.addEventListener("keydown", (e) => {
     if (
-      dialog.open ||
+      player.hidden || dialog.open ||
       e.altKey ||
       e.ctrlKey ||
       e.metaKey ||
@@ -426,13 +438,61 @@
     }
   });
   reduce.addEventListener("change", () => dibujar());
-  function abrirRecorrido() {
-    const destino = location.hash === "#revision-economia" ? "#regreso" : location.hash;
-    escena = Math.max(0, escenas.findIndex(s => "#" + s.id === destino));
-    pasoActual = 0;
-    if (dialog.open) dialog.close();
-    dibujar();
+  function guardarPaso() {
+    const ruta="#ver/"+actual().id+"/"+(pasoActual+1);
+    // about:blank también se usa para comprobar la distribución autónoma.
+    if (location.protocol !== "about:") history.replaceState(null,"",ruta);
+    ultimaLectura=ruta;
   }
-  window.addEventListener("hashchange", abrirRecorrido);
+  function abrirRecorrido() {
+    const [modo,id,numero] = location.hash.slice(1).split("/");
+    const consulta=["fuentes","estudio"].includes(modo);
+    const inicio=!modo || modo==="inicio";
+    const destino=modo==="revision-economia"?"regreso":id||modo;
+    const indice=escenas.findIndex(s=>s.id===destino);
+    const i=indice<0?(consulta?2:0):indice;
+    const k=Math.max(0,Math.min(pasos(escenas[i])-1,parseInt(numero,10)-1||0));
+    if(dialog.open) dialog.close();
+    const portal=get("portal"), content=get("portal-content");
+    portal.hidden=!(inicio||consulta);
+    player.hidden=!portal.hidden;
+    if(player.hidden) {
+      if(document.fullscreenElement===player) document.exitFullscreen().catch(()=>{});
+      limpiarMovimiento();
+      content.innerHTML=inicio?portadaSitio():biblioteca(escenas,modo,escenas[i],k);
+      if(ultimaLectura) {
+        const volver=document.createElement("a");
+        volver.className="resume-show";
+        volver.href=ultimaLectura;
+        volver.textContent="Volver a la presentación →";
+        content.querySelector(".landing-copy, .reader-actions").append(volver);
+      }
+      portal.querySelectorAll(".portal-bar nav a").forEach(a=>a.toggleAttribute("aria-current",a.hash==="#"+(inicio?"inicio":modo)));
+      window.scrollTo(0,0);
+      if(consulta) {
+        get("scene-pick").onchange=e=>{location.hash=modo+"/"+e.target.value+"/1";};
+        get("scene-pick").focus({preventScroll:true});
+      }
+      return;
+    }
+    escena=i; pasoActual=k;
+    dibujar(); guardarPaso();
+    get("next").focus({preventScroll:true});
+    if(!reduce.matches && actual().tipo==="portada") {
+      mover(visible.querySelector(".cover-photo"),[{transform:"scale(1.09) translateX(1%)"},{transform:"none"}],1700);
+      mover(visible.querySelector(".cover-content"),[{opacity:0,translate:"0 2cqw"},{opacity:1,translate:"0 0"}],1100);
+    }
+  }
+  get("portal").onclick=e=>{
+    const b=e.target.closest("[data-presentar]");
+    if(!b)return;
+    const ruta=b.dataset.presentar||"portada/1";
+    player.hidden=false;
+    get("portal").hidden=true;
+    location.hash="ver/"+ruta;
+    if(player.requestFullscreen) player.requestFullscreen().catch(()=>{});
+  };
+  get("home").onclick=()=>{location.hash="inicio";};
+  window.addEventListener("hashchange",abrirRecorrido);
   abrirRecorrido();
 })();
