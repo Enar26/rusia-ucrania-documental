@@ -1,44 +1,24 @@
-# AGENTS.md — Reglas permanentes del proyecto (V5)
+# AGENTS.md — REGLAS V8 / PRIORIDAD ALTA
 
-## Proyecto y alcance
-Presentación documental web e interactiva, en español, sobre **Rusia y Ucrania: conflicto, impacto económico y humanitario**. Se expondrá en una laptop del docente con navegador y avance manual. Hay tres integrantes: historia; economía; humanidad y paz. Cada cual tendrá una conclusión al final. Duración flexible.
+**ESTE ARCHIVO Y `ENCARGO_MAESTRO_V8.md` SON LA VERSIÓN ACTIVA.** Las instrucciones antiguas de V3, V4, V5.1, V6 y V7 solo conservan valor como referencias históricas/estéticas. Cuando indiquen «solo auditar», «detenerse en 4–7», «trabajar una o dos escenas», «pedir aprobación antes de continuar» o «agrupar tres conclusiones al final», **NO SE APLICAN**.
 
-## Decisiones aprobadas (obligatorias)
-- Escena 1: portada oscura, fotografía auténtica, título «RUSIA Y UCRANIA» y subtítulo «Conflicto, impacto económico y humanitario»; **NO añadir «2014–2026»**. La referencia preferida es `referencias/v2_1_APERTURA_APROBADA.html`.
-- Escena 2: «TRES PERSPECTIVAS, UN CONFLICTO», tres paneles HISTORIA / ECONOMÍA / HUMANIDAD iluminados progresivamente con clic. Nombres de expositores pendientes: **no inventarlos**.
-- Escena 3: entrada «CAPÍTULO I — EL ORIGEN DE UN CONFLICTO»; mantener transición suave y pausada desde el primer panel de la escena 2; el V2.1 es la referencia preferida.
-- V3 es **referencia funcional y contraejemplo**, NO diseño aprobado de escenas 4 en adelante: se rechazaron fondo azul repetido, listas de tres viñetas, escasa contextualización y transiciones iguales.
+## Objetivo editorial y límite
+Terminar el documental interactivo para la exposición de Ciencias Sociales (español) en el alcance **Apertura → Historia desde antecedentes relevantes hasta 20/11/2026 → síntesis → quiz histórico 3–5 preguntas (usar 3) → conclusión del expositor 1 → regreso a «TRES PERSPECTIVAS, UN CONFLICTO» → zoom a Economía → SOLO portada del capítulo II**. No construir contenido económico ni humanitario hasta autorización futura. En los capítulos II y III, cuando se hagan, cada expositor terminará con su quiz y conclusión.
 
-## Contenido e integridad editorial
-- Leer `PROYECTO_MAESTRO_V5.md`, `PLAN_HISTORICO_V4.md` y `FUENTES_PENDIENTES.md` antes de modificar código.
-- La **auditoría inicial** debe abarcar **todas las escenas 4–15** y la transición entre ellas, identificando problemas de fondo, no solo detalles estéticos. La **primera implementación, cuando el usuario la autorice**, puede limitarse a las escenas 4–7 para evaluar la calidad antes de programar el resto. No empezar a programar por cuenta propia.
-- Mantener **una única cronología narrativa** desde antecedentes medievales hasta noviembre de 2026, con mayor atención a 1991–2026 y sin duplicaciones.
-- Cada escena debe ayudar a entender **qué ocurrió, por qué importa y cómo se relaciona con el conflicto contemporáneo**. Breve texto visible; explicación completa en notas editables. No reducir la investigación a eslóganes.
-- Diferenciar hechos acreditados, argumentos de actores políticos, disputas historiográficas y valoración jurídica. No equiparar pasado compartido, reivindicaciones históricas o control territorial a soberanía reconocida.
-- Respetar contexto de exposición escolar: evitar imágenes gráficas o sensacionalistas de víctimas y escenas bélicas.
-- No inventar fechas, estadísticas, citas ni transcripciones de videos; marcar cualquier punto no verificado como pendiente.
+Duración objetivo de la parte histórica completa, incluyendo quiz y conclusión: aproximadamente 20 minutos. Priorizar contexto y relaciones causales, no una acumulación de fechas o teoría sin conexión.
 
-## Diseño y animación
-- Fotografía documental real, mapas geográficos precisos e históricos fechados. No imágenes que simulen fotografías históricas creadas por IA.
-- Estética documental oscura, tipografía editorial con excelente legibilidad y movimiento elegante inspirado en Slides by Sander **sin copiarlo literalmente**.
-- Composiciones y transiciones variadas al servicio del significado: zoom cartográfico, cambio de fronteras por época, fotografía y documentos, línea de tiempo discreta, etc. Evitar una diapositiva idéntica por fecha.
-- Avance manual por clic, teclado o mando compatible; nunca pasar al siguiente tema automáticamente. Poder retroceder limpiamente; evitar repetición accidental por tecla sostenida; animaciones coherentes y pausables; admitir `prefers-reduced-motion`.
+## Dirección artística
+El usuario ha rechazado tanto V3 (tarjetas y viñetas repetidas sobre fondo azul) como gran parte de V7 (estética homogénea de fichas sepia/papel; se terminó solamente hasta 1994). NO reutilizar el diseño V7 como plantilla en masa. Se autoriza **rediseño visual sustancial**, incluyendo la apertura si se consigue un resultado mejor. La V2.1 inspira atmósfera documental oscura con fotografía contundente, colores carbón/marfil/oro viejo, tipografía editorial y transición espacial desde tarjetas. Mezclar de forma intencional foto real, atlas fechado, mapas progresivos, documentos originales, gráfica causal y líneas de tiempo dinámicas; no forzar 53/47, tres bullets, mismas transiciones o papel en todas las escenas. Leer `ENCARGO_MAESTRO_V8.md` y usar `DIRECCION_ARTISTICA_V7.md` solo como complemento (no como bloqueo de entrega).
 
-## Ingeniería
-- Proyecto web estático reproducible: HTML/CSS/JS o herramientas equivalentes justificadas, rutas relativas compatibles con repositorio de GitHub Pages, recursos y fuentes guardados localmente cuando sus permisos lo permitan, diseño 16:9 adaptable, accesible, carga y rendimiento razonables.
-- Documentar fuentes y licencias de fotografías/mapas con enlace, autor, fecha y uso, y pie discreto en escena. Si una imagen no puede licenciarse/verificarse, no incorporarla como recurso definitivo.
-- Probar navegación, retroceso, pantalla completa y visualización en navegador; obtener capturas 16:9 para revisión cuando sea posible.
-- No publicar GitHub Pages, no hacer merge a `main`, ni compartir información personal de estudiantes sin aprobación del usuario. Trabajar en rama de tarea o propuesta de cambios revisable.
-- Si el entorno no permite internet, navegador o capturas, **informar con precisión lo que se probó y lo que quedó pendiente**.
+## Historia y rigor
+Una cronología, sin repeticiones; explicar por qué cada pasado importa hoy. Distinguir hechos, interpretaciones y argumentos rusos (históricos, estratégicos, políticos), con contraste y contexto jurídico. Mantener atención fuerte a 1991, 2014, 2022 y 2024–2026. No confundir control territorial con fronteras internacionalmente reconocidas. No inventar fechas, mapas, fotos, citas, discursos, noticias 2026 ni transcripciones de documentales. Fuentes primarias/investigación académica y medios serios fechados. Fotos históricas auténticas con autor/licencia/fecha; evitar material gráfico de víctimas y fotos generadas por IA.
 
-## Proceso por fases
-1. En primera tarea: **SOLO AUDITAR Y PLANIFICAR LAS ESCENAS 4–15 COMPLETAS**. No modificar código ni publicar. Leer `CORRECCIONES_04_15_V5_1.md` y usar `PROMPT_01_AUDITORIA_CLOUD.md`.
-2. Tras aprobación del usuario: implementar escenas 4–7 y probar. Usar `PROMPT_02_IMPLEMENTACION.md`.
-3. Revisar capturas y ajustar; continuar con el resto del bloque histórico después de esa revisión.
+## Requisitos técnicos
+Presentación web 16:9, un clic/teclado por revelación, retroceso exacto, prevención de pulsaciones repetidas, pantalla completa, notas separadas, fuentes por escena, offline real con recursos licenciados locales y animación reducida. Quiz: selección no debe avanzar escena, respuesta solo al revelado del expositor. Tarjetas Historia/Economía/Humanidad: un hub reutilizable con zoom de economía a la portada final.
 
-## Actualización editorial y visual V7 (prioritaria)
-- Leer obligatoriamente `DIRECCION_ARTISTICA_V7.md` y `PROMPT_CODEX_VISUAL_V7.md` y probar `referencias/ESTUDIO_VISUAL_INTERACTIVO_V7.html` al diseñar escenas. Las disposiciones V7 sustituyen las reglas anteriores de solo auditoría y precisan el desarrollo visual ahora autorizado.
-- La prioridad es calidad artística y narrativa probada, no producir muchas escenas genéricas. Mostrar capturas comparables y transiciones funcionando en navegador antes de multiplicar el diseño.
-- En la estructura final, **cada capítulo** termina con su quiz (3–5 preguntas) y conclusión del expositor; luego se vuelve al hub de tres perspectivas y se hace zoom a la tarjeta del capítulo siguiente. No agrupar tres conclusiones al final.
-- Alcance actual: desarrollar todo el Capítulo I con revisiones por etapas y, después, **solo** la transición hub → portada del Capítulo II. No crear contenidos económicos ni humanitarios todavía. Mantener el capítulo histórico en aproximadamente 20 minutos incluyendo quiz y conclusión.
-- Si la tarea anterior de Codex contiene código no fusionado, recuperarlo sin perder trabajo. Los archivos de referencia del repositorio NO equivalen necesariamente a la versión nueva de Codex.
+## Trabajo en Codex
+**No repetir auditorías, no detenerse por etapas, no pedir confirmación por cada escena.** En una misma tarea, crear todo el capítulo histórico y el puente hasta la portada económica. Optimizar la cuota evitando informes largos, pruebas repetidas y capturas exhaustivas; la entrega debe ser completa, funcional y mejorada visualmente, no otro prototipo hasta 1954/1994.
+
+Recuperar trabajo previo de la rama local `revision-artistica-v7` commit `3165f9e` si está disponible. No ejecutar git reset destructivo; recordar que puede no estar en el remoto. Guardar resultado en rama remota/PR o adjunto descargable, no solo copia local efímera. No publicar GitHub Pages ni hacer merge a main sin aprobación.
+
+**Documento decisivo:** `ENCARGO_MAESTRO_V8.md`.
