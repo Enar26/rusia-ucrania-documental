@@ -35,3 +35,10 @@ Presentación documental web e interactiva, en español, sobre **Rusia y Ucrania
 1. En primera tarea: **SOLO AUDITAR Y PLANIFICAR LAS ESCENAS 4–15 COMPLETAS**. No modificar código ni publicar. Leer `CORRECCIONES_04_15_V5_1.md` y usar `PROMPT_01_AUDITORIA_CLOUD.md`.
 2. Tras aprobación del usuario: implementar escenas 4–7 y probar. Usar `PROMPT_02_IMPLEMENTACION.md`.
 3. Revisar capturas y ajustar; continuar con el resto del bloque histórico después de esa revisión.
+
+## Actualización editorial y visual V7 (prioritaria)
+- Leer obligatoriamente `DIRECCION_ARTISTICA_V7.md` y `PROMPT_CODEX_VISUAL_V7.md` y probar `referencias/ESTUDIO_VISUAL_INTERACTIVO_V7.html` al diseñar escenas. Las disposiciones V7 sustituyen las reglas anteriores de solo auditoría y precisan el desarrollo visual ahora autorizado.
+- La prioridad es calidad artística y narrativa probada, no producir muchas escenas genéricas. Mostrar capturas comparables y transiciones funcionando en navegador antes de multiplicar el diseño.
+- En la estructura final, **cada capítulo** termina con su quiz (3–5 preguntas) y conclusión del expositor; luego se vuelve al hub de tres perspectivas y se hace zoom a la tarjeta del capítulo siguiente. No agrupar tres conclusiones al final.
+- Alcance actual: desarrollar todo el Capítulo I con revisiones por etapas y, después, **solo** la transición hub → portada del Capítulo II. No crear contenidos económicos ni humanitarios todavía. Mantener el capítulo histórico en aproximadamente 20 minutos incluyendo quiz y conclusión.
+- Si la tarea anterior de Codex contiene código no fusionado, recuperarlo sin perder trabajo. Los archivos de referencia del repositorio NO equivalen necesariamente a la versión nueva de Codex.
