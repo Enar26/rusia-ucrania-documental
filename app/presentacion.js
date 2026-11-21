@@ -141,20 +141,17 @@
           imagen.dataset.salida = "";
           imagen.alt = "";
           stage.append(imagen);
-          const transform = `translate(${durante.left - fin.left}px,${durante.top - fin.top}px) scale(${durante.width / fin.width},${durante.height / fin.height})`;
           const franja = (box) => ({
             left: box.left - rect.left + "px", top: box.top - rect.top + "px",
             width: box.width + "px", height: box.height + "px",
           });
-          {
-            compartido.style.visibility = "hidden";
-            mover(dest, [
-              { opacity: 0 }, { opacity: 0, offset: .76 },
-              { opacity: 1, offset: .8 }, { opacity: 1 },
-            ], 2050);
-            imagen.style.objectPosition = getComputedStyle(dest).objectPosition;
-            imagen.style.filter = getComputedStyle(dest).filter;
-          }
+          compartido.style.visibility = "hidden";
+          mover(dest, [
+            { opacity: 0 }, { opacity: 0, offset: .76 },
+            { opacity: 1, offset: .8 }, { opacity: 1 },
+          ], 2050);
+          imagen.style.objectPosition = getComputedStyle(dest).objectPosition;
+          imagen.style.filter = getComputedStyle(dest).filter;
           mover(
             imagen,
             [
@@ -440,8 +437,13 @@
   reduce.addEventListener("change", () => dibujar());
   function guardarPaso() {
     const ruta="#ver/"+actual().id+"/"+(pasoActual+1);
-    // about:blank también se usa para comprobar la distribución autónoma.
-    if (location.protocol !== "about:") history.replaceState(null,"",ruta);
+    if (location.protocol !== "about:") {
+      try { history.replaceState(null, "", ruta); }
+      catch (error) {
+        // Algunos navegadores restringen replaceState para archivos locales.
+        if (location.protocol !== "file:" || error.name !== "SecurityError") throw error;
+      }
+    }
     ultimaLectura=ruta;
   }
   function abrirRecorrido() {
@@ -467,7 +469,10 @@
         volver.textContent="Volver a la presentación →";
         content.querySelector(".landing-copy, .reader-actions").append(volver);
       }
-      portal.querySelectorAll(".portal-bar nav a").forEach(a=>a.toggleAttribute("aria-current",a.hash==="#"+(inicio?"inicio":modo)));
+      for (const link of portal.querySelectorAll(".portal-bar nav a")) {
+        if (link.hash === "#" + (inicio ? "inicio" : modo)) link.setAttribute("aria-current", "page");
+        else link.removeAttribute("aria-current");
+      }
       window.scrollTo(0,0);
       if(consulta) {
         get("scene-pick").onchange=e=>{location.hash=modo+"/"+e.target.value+"/1";};

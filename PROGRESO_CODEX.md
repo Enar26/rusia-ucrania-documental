@@ -23,3 +23,7 @@ Rama `capitulo-historico-v8`, construida a partir de V7 `3165f9e` y las instrucc
 El corte del 20/11/2026 se sustenta en despachos de BBC y Deutsche Welle sobre la reunión de Berlín y la posición europea ante futuras conversaciones. Se cotejaron las entradillas en la captura RSS fechada. El registro de septiembre procede del CSV de avisos oficiales. El Acta de 1991 se muestra en edición de consulta y el informe del ACNUDH documenta la represión del Maidán. No se consiguió confirmar la licencia de la foto de la protesta localizada.
 
 Una ronda de Chromium comprobó todos los estados hacia delante y atrás tanto en la web como en el HTML sin red, las tres preguntas, recursos, notas y créditos. Se probaron pantalla completa, movimiento reducido, pausa y las dos transiciones del relevo. Reproducir con `node tools/revisar-v8.cjs URL descargas/Documental-V8.html revision/v8`. Quedan para el aula la duración oral efectiva y la prueba con mando y proyector físicos.
+
+## Rediseño posterior a V8
+
+Rama `redisenio-documental-post-v8`, desde `e66a010`. Menú, reproductor, guion y fuentes por paso. La nueva escena del fin imperial y cuatro cortes territoriales amplían la V8 a 21 escenas y 63 pasos. La proyección termina en la portada de Economía. [Instrucciones de uso](README.md) · [Pruebas y comparación](revision/post-v8/REVISION.md)

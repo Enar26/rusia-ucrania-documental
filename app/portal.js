@@ -10,7 +10,13 @@ function portadaSitio() {
 function biblioteca(escenas,modo,s,i) {
   const estudio=modo==="estudio", n=s.tipo==="quiz"?6:s.pasos.length;
   const enlace=(id,p=1)=>"#"+modo+"/"+id+"/"+p;
-  return `<main class="library"><div class="library-intro"><div class="site-kicker"><i></i> Ciencias Sociales · Capítulo I</div><h1>${estudio?"Zona del expositor":"Fuentes"}</h1></div><div class="library-grid"><aside><label for="scene-pick">Escena del documental</label><select id="scene-pick">${escenas.map((e,j)=>`<option value="${e.id}" ${e.id===s.id?"selected":""}>${j+1}. ${esc(e.titulo)}</option>`).join("")}</select>
+  const grupos = new Map();
+  escenas.forEach((e,j) => {
+    if (!grupos.has(e.capitulo)) grupos.set(e.capitulo, []);
+    grupos.get(e.capitulo).push(`<option value="${e.id}" ${e.id===s.id?"selected":""}>${j+1}. ${esc(e.titulo)}</option>`);
+  });
+  const opciones = Array.from(grupos, ([titulo, filas]) => `<optgroup label="${esc(titulo)}">${filas.join("")}</optgroup>`).join("");
+  return `<main class="library"><div class="library-intro"><div class="site-kicker"><i></i> Ciencias Sociales · Capítulo I</div><h1>${estudio?"Zona del expositor":"Fuentes"}</h1></div><div class="library-grid"><aside><label for="scene-pick">Escena del documental</label><select id="scene-pick">${opciones}</select>
     <ol class="study-steps">${Array.from({length:n},(_,k)=>`<li><a href="${enlace(s.id,k+1)}" ${i===k?'aria-current="step"':""}>${esc(ficha(s,k).titulo)}${s.tipo==="quiz"?(k%2?" · explicación":" · pregunta"):""}</a></li>`).join("")}</ol><a class="switch-read" href="#${estudio?"fuentes":"estudio"}/${s.id}/${i+1}">${estudio?"Consultar fuentes":"Abrir guion oral"} →</a></aside>
     <section class="reading-pane">${lecturaEstudio(s,i,modo)}<div class="reader-actions"><button class="start-show" data-presentar="${s.id}/${i+1}">Presentar este paso →</button>${!estudio?`<a href="${recursoLocal("fuentes.csv")}" download="fuentes.csv">Catálogo completo (CSV)</a>`:""}</div></section></div></main>`;
 }
