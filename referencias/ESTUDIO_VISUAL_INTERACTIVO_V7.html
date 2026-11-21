@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Estudio visual V7 — Rusia y Ucrania (NO FINAL)</title>
+<style>
+:root{--b:#090d13;--navy:#121b27;--bone:#f4efe6;--gold:#c4a47b;--soft:#bec8cc;--serif:Georgia,'Times New Roman',serif;--sans:Arial,Helvetica,sans-serif}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#070b10;color:var(--bone);font-family:var(--sans)}
+body{display:grid;place-items:center;padding:24px 2vw;gap:16px;background:radial-gradient(ellipse at 75% 20%,#192634 0%,#080b10 70%)}
+.meta{width:min(96vw,1480px);display:flex;justify-content:space-between;align-items:center;color:#bdb6a9;font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.badge{border:1px solid #c4a47b70;padding:8px 10px;color:#d5bd9b}
+.stage{width:min(96vw,1480px);aspect-ratio:16/9;position:relative;overflow:hidden;background:#101720;isolation:isolate;box-shadow:0 25px 90px #000c;border:1px solid #bb997353;container-type:inline-size}
+.scene{position:absolute;inset:0;opacity:0;visibility:hidden;pointer-events:none;transform:scale(1.015);transition:opacity .65s ease,transform 1.1s ease,visibility 0s .65s;overflow:hidden}
+.scene.active{opacity:1;visibility:visible;pointer-events:auto;transform:none;transition:opacity .75s ease,transform 1.2s ease,visibility 0s}
+.texture{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 3px,#ffffff02 4px 5px),radial-gradient(ellipse at 40% 30%,transparent 28%,#040609a5 100%)}
+.frame{position:absolute;inset:4.2%;border:1px solid #e5c99c2a;pointer-events:none}
+.eyebrow{font-size:1.02cqw;letter-spacing:.27em;color:#dfbf8b;font-weight:700}
+.serif{font-family:var(--serif);font-weight:400}
+.credits{position:absolute;bottom:4.8%;left:5.6%;font-size:.82cqw;color:#c8cbd2a0;max-width:62%}
+.no{position:absolute;bottom:5%;right:6%;font-size:1.1cqw;letter-spacing:.2em;color:#e3d0ba8a}
+.mini-rule{height:1px;width:8.5cqw;background:var(--gold)}
+.geo{background:#0c131c}
+.geo .map{position:absolute;width:71%;height:111%;right:-4%;top:-4%;object-fit:contain;filter:saturate(.7) brightness(.82);transform:scale(1.02);transition:transform 2.1s cubic-bezier(.18,.75,.2,1),filter 1.8s}
+.geo.focus .map{transform:scale(1.1) translate(-2%,1%);filter:saturate(.9) brightness(.95)}
+.geo .shade{position:absolute;inset:0;background:linear-gradient(90deg,#090d13 0,#090d13f2 17%,#090d13dc 33%,#0d172300 69%),linear-gradient(0deg,#070b12c9,transparent 28%)}
+.geo .intro{position:absolute;left:8%;top:21%;width:45%;z-index:2}
+.geo h1{font:400 6.1cqw/.99 var(--serif);letter-spacing:-.025em;margin:2.2cqw 0 2cqw;max-width:48cqw}
+.geo p{max-width:31cqw;font:1.72cqw/1.52 var(--sans);color:#cbd1d6;letter-spacing:.01em}
+.map-key{position:absolute;right:7%;top:10%;display:grid;gap:.8cqw;text-align:right;font-size:1.18cqw;letter-spacing:.12em;color:#f1e6d8;text-shadow:0 3px 12px #000}
+.pulse{position:absolute;right:5%;bottom:10%;font:1.15cqw var(--sans);border:1px solid #d4b38870;padding:1cqw 1.35cqw;color:#efd9b8;background:#0a101bd4;opacity:0;transition:opacity .7s ease}
+.geo.focus .pulse{opacity:1}
+.document{background:radial-gradient(ellipse at 78% 42%,#29313a,#080d14 70%)}
+.document .left{position:absolute;left:8%;top:21%;width:43%;z-index:2}
+.document h2{font:400 8.0cqw/.92 var(--serif);margin:1.9cqw 0 2.4cqw;letter-spacing:-.045em}
+.document p{font-size:1.8cqw;line-height:1.5;color:#c4c9ce;width:32cqw}
+.doc-paper{position:absolute;right:7.4%;top:11%;width:36%;height:76%;background:#c7b69c;transform:rotate(-2deg);box-shadow:0 2vw 4vw #0009,0 0 0 1px #ffefc342;overflow:hidden;color:#302b25}
+.doc-paper:before{content:'';position:absolute;inset:3%;border:1px solid #6a554760}
+.doc-inner{position:absolute;inset:14% 10%;display:flex;flex-direction:column;gap:4%;text-align:center;align-items:center;justify-content:center}
+.doc-inner .tiny{font-size:1.22cqw;letter-spacing:.23em}.doc-inner .y{font:400 10.5cqw/.9 var(--serif);letter-spacing:-.04em}.doc-inner .words{font:400 3.1cqw/1.1 var(--serif)}.doc-inner .d{margin-top:3%;height:1px;width:55%;background:#55483b}
+.doc-label{position:absolute;right:6%;bottom:8%;font-size:1.08cqw;letter-spacing:.08em;color:#d0c8bb}
+.quiz{background:radial-gradient(ellipse at 60% 20%,#1d2b35,#0a1018 70%)}
+.quiz .qtop{position:absolute;top:11%;left:8%;right:8%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #d1b68b55;padding-bottom:2%}
+.quiz .q{position:absolute;left:8%;top:27%;width:55%;font:400 4.6cqw/1.13 var(--serif)}
+.quiz .options{position:absolute;right:8%;top:31%;width:27%;display:grid;gap:1.3cqw}
+.quiz .option{border:1px solid #b7a28078;background:#111e2a;padding:1.8cqw 2cqw;display:flex;justify-content:space-between;color:#e9e4dc;font-size:1.65cqw}
+.quiz .option .letter{color:#c4a47b}
+.quiz .answer{position:absolute;left:8%;bottom:18%;font-size:1.75cqw;color:#ddc398;opacity:0;transform:translateY(10px);transition:opacity .5s,transform .5s}.quiz.revealed .answer{opacity:1;transform:none}.quiz.revealed .option.correct{border-color:#d5b785;background:#3b342a}
+.quiz .hint{position:absolute;left:8%;bottom:10%;color:#adb5bd;font-size:1.1cqw}
+.hub{background:linear-gradient(120deg,#111720,#06090e)}
+.hub h2{font:400 3.7cqw var(--serif);letter-spacing:.01em;position:absolute;top:9%;left:7.2%;margin:0}
+.hub .eyebrow{position:absolute;right:7%;top:10%}
+.cards{position:absolute;inset:22% 7.2% 13%;display:grid;grid-template-columns:repeat(3,1fr);gap:2%}
+.hcard{position:relative;border:1px solid #c4a47b66;background:#212d38;overflow:hidden}
+.hcard:before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 13%,#0b121955 42%,#081018ef 94%)}
+.hcard:nth-child(1){background:linear-gradient(147deg,#70634e,#263039 80%)}
+.hcard:nth-child(2){background:linear-gradient(145deg,#6b675e,#223849 75%)}
+.hcard:nth-child(3){background:linear-gradient(160deg,#4b5663,#24313c 76%)}
+.hcard.dim{filter:grayscale(.9) brightness(.63)}
+.hcard.focus{border-color:#ddbe85;box-shadow:inset 0 0 70px #b38a2420,0 0 40px #c7a2711c}
+.hcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.24;filter:grayscale(.4);transition:transform 2s,opacity .6s}
+.hcard.focus img{opacity:.50;transform:scale(1.05)}
+.hcard .label{position:absolute;bottom:8%;left:8%;right:7%}
+.hcard small{font-size:1.1cqw;letter-spacing:.24em;color:#d2b68e}
+.hcard strong{font:400 4.1cqw/1.05 var(--serif);display:block;margin:1cqw 0 .75cqw}
+.hcard p{font-size:1.2cqw;color:#e0deda;margin:0}
+.economy{background:radial-gradient(ellipse at 72% 40%,#304353,#0a111a 64%)}
+.economy .hero{position:absolute;inset:0 0 0 29%;background:linear-gradient(90deg,#111821,#192a3b26),url('https://upload.wikimedia.org/wikipedia/commons/7/70/EUGAL-Baustelle.jpg') center/cover,#26333b;filter:saturate(.65) brightness(.68);opacity:.75}
+.economy .shadow{position:absolute;inset:0;background:linear-gradient(90deg,#090d13 0%,#090d13fa 29%,#090d13b4 53%,transparent 100%)}
+.economy .copy{position:absolute;left:8%;top:21%;width:60%}
+.economy h2{font:400 7.0cqw/.98 var(--serif);margin:2.1cqw 0 2.3cqw;max-width:58cqw}
+.economy p{font:1.85cqw/1.4 var(--serif);color:#d9d4cc;max-width:47cqw}
+.morph{position:absolute;z-index:50;pointer-events:none;border:1px solid #f0ce9c;box-shadow:0 0 50px #000a;background:linear-gradient(145deg,#5f6058,#233748);transition:top 2.2s cubic-bezier(.17,.82,.2,1),left 2.2s cubic-bezier(.17,.82,.2,1),width 2.2s cubic-bezier(.17,.82,.2,1),height 2.2s cubic-bezier(.17,.82,.2,1),border-radius 2.2s;overflow:hidden}
+.morph:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#0a1118b0,transparent),url('https://upload.wikimedia.org/wikipedia/commons/7/70/EUGAL-Baustelle.jpg') center/cover;opacity:.56}
+.controlbar{width:min(96vw,1480px);display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:13px;color:#aeb7bd}
+.controlbar .actions{display:flex;gap:8px}
+button{font:600 13px var(--sans);background:#1f2b37;color:#f3ede3;border:1px solid #b59a7060;padding:12px 18px;border-radius:4px;cursor:pointer}
+button:hover{background:#344252}button:disabled{opacity:.3;cursor:not-allowed}.primary{background:#c5a57b;color:#161d25}
+small,em{font-style:normal}
+@media (prefers-reduced-motion: reduce){*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="meta"><span>RUSIA Y UCRANIA · LABORATORIO ARTÍSTICO</span><span class="badge">ESTUDIO V7 · NO ES CONTENIDO FINAL</span></div>
+<main class="stage" id="stage">
+  <section class="scene geo active" aria-label="Ejemplo cartografía">
+    <img class="map" alt="Mapa base contemporáneo de Ucrania, ilustración de referencia" src="mapa_contexto_prototipo.png">
+    <div class="shade"></div><div class="texture"></div><div class="frame"></div>
+    <div class="intro"><div class="eyebrow">CAPÍTULO I / CARTOGRAFÍA</div><h1>DONDE<br>COMIENZA<br>TODO</h1><div class="mini-rule"></div><p>Un mismo territorio. Distintos momentos de la historia.</p></div>
+    <div class="map-key">UCRANIA <span style="color:#c4a47b">·</span> EUROPA ORIENTAL</div>
+    <div class="pulse">CLIC: acercamiento geográfico, no nueva viñeta</div>
+    <div class="credits">Mapa prototipo para estudio visual — no representa fechas históricas anteriores a 1991.</div><div class="no">I / IV</div>
+  </section>
+  <section class="scene document" aria-label="Ejemplo archivo y documento">
+    <div class="texture"></div><div class="frame"></div>
+    <div class="left"><div class="eyebrow">TRANSFORMACIONES / 1991</div><h2>UN ESTADO<br>INDEPENDIENTE</h2><div class="mini-rule"></div><p>La historia cambia de marco: de república soviética a Estado soberano.</p></div>
+    <div class="doc-paper"><div class="doc-inner"><div class="tiny">ESTUDIO TIPOGRÁFICO</div><div class="y">1991</div><div class="d"></div><div class="words">Referéndum de<br>independencia</div><div class="tiny">1 DE DICIEMBRE</div></div></div>
+    <div class="doc-label">La tarjeta es una maqueta editorial; NO simula un documento de archivo auténtico.</div>
+    <div class="credits">Escena concepto: sustituir por fotografía o documento original acreditado en la versión final.</div><div class="no">II / IV</div>
+  </section>
+  <section class="scene quiz" aria-label="Ejemplo quiz">
+    <div class="texture"></div><div class="frame"></div>
+    <div class="qtop"><span class="eyebrow">PAUSA CON EL PÚBLICO · HISTORIA</span><span class="eyebrow">01 / 03</span></div>
+    <div class="q">¿En qué año se celebró el referéndum que confirmó la independencia de Ucrania?</div>
+    <div class="options"><div class="option"><span>1989</span><span class="letter">A</span></div><div class="option correct"><span>1991</span><span class="letter">B</span></div><div class="option"><span>1994</span><span class="letter">C</span></div></div>
+    <div class="answer">Respuesta: 1991 · 1 de diciembre</div><div class="hint">Un clic para revelar; otro para continuar.</div>
+    <div class="credits">Pregunta de demostración. El expositor controla el resultado.</div><div class="no">III / IV</div>
+  </section>
+  <section class="scene hub" aria-label="Hub de capítulos">
+    <div class="texture"></div><div class="frame"></div>
+    <h2>TRES PERSPECTIVAS, UN CONFLICTO</h2><div class="eyebrow">NUESTRO RECORRIDO</div>
+    <div class="cards"><article class="hcard dim"><img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Old_map_of_Ukraine.jpg" alt=""><div class="label"><small>01 / COMPLETADO</small><strong>HISTORIA</strong><p>Origen y evolución</p></div></article><article class="hcard focus" id="economy-card"><img src="https://upload.wikimedia.org/wikipedia/commons/7/70/EUGAL-Baustelle.jpg" alt=""><div class="label"><small>02 / SIGUIENTE</small><strong>ECONOMÍA</strong><p>Un nuevo capítulo</p></div></article><article class="hcard dim"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Free_meals_for_Ukrainian_refugees_at_Krak%C3%B3w_G%C5%82%C3%B3wny_train_station%2C_2022.jpg" alt=""><div class="label"><small>03 / PENDIENTE</small><strong>HUMANIDAD</strong><p>Impacto humanitario</p></div></article></div>
+    <div class="credits">Referencia de retorno al hub. Las tarjetas pertenecen a una única arquitectura compartida.</div><div class="no">IV / IV</div>
+  </section>
+  <section class="scene economy" aria-label="Portada del siguiente capítulo">
+    <div class="hero"></div><div class="shadow"></div><div class="texture"></div><div class="frame"></div>
+    <div class="copy"><div class="eyebrow">CAPÍTULO II</div><h2>CONSECUENCIAS<br>ECONÓMICAS</h2><div class="mini-rule"></div><p>Energía, alimentos y repercusiones en el Perú.</p></div>
+    <div class="credits">PORTADA PROVISIONAL. No desarrollamos el contenido del capítulo II.</div><div class="no">FIN</div>
+  </section>
+</main>
+<div class="controlbar"><span id="status">01 · Cartografía · clic para revelar foco</span><span>Demo de dirección artística; no representa una exposición terminada.</span><div class="actions"><button id="prev" type="button">← Anterior</button><button id="next" class="primary" type="button">Siguiente →</button></div></div>
+<script>
+(function(){
+  const slides=[...document.querySelectorAll('.scene')],geo=slides[0],quiz=slides[2];
+  let index=0,geoStep=0,quizStep=0,busy=false;
+  const status=document.getElementById('status'),next=document.getElementById('next'),prev=document.getElementById('prev'),stage=document.getElementById('stage');
+  function draw(){slides.forEach((s,i)=>s.classList.toggle('active',i===index));geo.classList.toggle('focus',geoStep>0);quiz.classList.toggle('revealed',quizStep>0);prev.disabled=(index===0&&geoStep===0);next.disabled=index===4;status.textContent=['01 · Cartografía','02 · Documento editorial','03 · Quiz interactivo','04 · Hub de capítulos','05 · Portada de Economía'][index];}
+  function forward(){if(busy)return;if(index===0&&!geoStep){geoStep=1;draw();return}if(index===2&&!quizStep){quizStep=1;draw();return}if(index===3){morph();return}if(index<4){index++;draw()}}
+  function backward(){if(busy)return;if(index===0){geoStep=0}else if(index===2&&quizStep){quizStep=0}else if(index>0){index--;if(index===0)geoStep=1;if(index===2)quizStep=1}draw()}
+  function morph(){const card=document.getElementById('economy-card');const a=card.getBoundingClientRect(),b=stage.getBoundingClientRect();const div=document.createElement('div');div.className='morph';div.style.left=(a.left-b.left)+'px';div.style.top=(a.top-b.top)+'px';div.style.width=a.width+'px';div.style.height=a.height+'px';stage.append(div);busy=true;requestAnimationFrame(()=>requestAnimationFrame(()=>{div.style.left='28%';div.style.top='0';div.style.width='72%';div.style.height='100%'}));setTimeout(()=>{index=4;draw();div.remove();busy=false},window.matchMedia('(prefers-reduced-motion: reduce)').matches?25:2250)}
+  document.getElementById('next').addEventListener('click',forward);document.getElementById('prev').addEventListener('click',backward);
+  stage.addEventListener('click',e=>{if(e.target.closest('button,a,input'))return;forward()});
+  document.addEventListener('keydown',e=>{if(e.repeat||e.target.closest('button,input,textarea,select,a'))return;if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();forward()}if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();backward()}});
+  draw();
+})();
+</script>
+</body></html>
