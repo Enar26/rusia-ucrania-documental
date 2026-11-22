@@ -15,7 +15,7 @@ const camaraEconomica=(()=>{
  const etiquetas={
   umbral:['Mar Negro','Ucrania','Turquía'],mundo:['Ucrania','Rusia','África','América del Sur','Océano Atlántico'],
   productores:['Ucrania','Rusia','Mar Negro'],mercancias:['Ucrania','Mar Negro','Rusia'],gasAntes:['Europa','Rusia','Mar Báltico'],
-  industria:['Europa','Mar Báltico'],gasDespues:['Europa','Rusia','Mar Báltico'],puerto:['Odesa','Mar Negro'],
+  industria:['Europa','Mar Báltico'],gasDespues:['Europa','Rusia','Mar Báltico'],puerto:['Mar Negro'],
   corredores:['Polonia','Ucrania','Rumanía','Mar Negro'],pib:['Ucrania','Mar Negro'],reconstruir:['Kiev'],
   rusia:['Rusia','Mar Negro'],peru:['Perú','Océano Pacífico'],campo:['Cusco'],lima:['Lima','Océano Pacífico'],
   balance:['Europa','África','América del Sur','Océano Atlántico']
@@ -64,6 +64,17 @@ const camaraEconomica=(()=>{
    usadas.push([tx,tx+largo,cy]);ctx.lineWidth=3.5;ctx.strokeStyle='#203439bb';
    ctx.strokeText(rotulo,tx,cy);ctx.fillStyle=clase==='mar'?'#bed5d4':'#fff1d4';ctx.fillText(rotulo,tx,cy);
    if(clase==='ciudad'){ctx.beginPath();ctx.arc(cx,cy-5,4.2,0,2*Math.PI);ctx.fillStyle=colores[tono];ctx.fill()}
+  }
+  if(parada.tipo==='puerto'){
+   // La ampliación separa los nombres de tres puertos cercanos sin inventar rutas.
+   const puertos=[['Pivdennyi',31.02,46.62,-50],['Odesa',30.73,46.48,-7],['Chornomorsk',30.65,46.30,34]];
+   ctx.font='600 16px Lectura, Arial';ctx.lineWidth=1.2;
+   for(const [nombre,lo,la,offset] of puertos){
+    const px=x+lo*k,py=y-la*ky,finY=py+offset;
+    ctx.beginPath();ctx.moveTo(px,py);ctx.lineTo(px+30,finY);ctx.lineTo(px+43,finY);ctx.strokeStyle='#f5dfac';ctx.stroke();
+    ctx.beginPath();ctx.arc(px,py,3.2,0,Math.PI*2);ctx.fillStyle='#fae5b7';ctx.fill();
+    ctx.lineWidth=3;ctx.strokeStyle='#203439';ctx.strokeText(nombre,px+47,finY+5);ctx.fillText(nombre,px+47,finY+5);ctx.lineWidth=1.2;
+   }
   }
   ctx.globalAlpha=1;
  }

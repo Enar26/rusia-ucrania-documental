@@ -9,7 +9,7 @@ const capitulosEco = [
   ['Comercio internacional','Mercados clave, no toda la economía mundial','El peso de ambos países era especialmente importante en el comercio de trigo y aceite de girasol.','ecoComercio',[34,47,46],'mercancias']]],
  ['La energía que unía a Rusia con Europa','energia',[
   ['Unión Europea · 2021','Un proveedor dominante','Del gas importado por la UE, esta era la proporción que procedía de Rusia.','ecoGas ecoGasCopia',[14,52,79],'gasAntes'],
-  ['Europa · desde 2021','La presión llegó a la industria','El gas ya se encarecía antes de la invasión. La crisis aceleró el ahorro y la búsqueda de otros suministros.','ecoEnergia ecoGas',[14,52,48],'industria'],
+  ['Europa · desde 2021','La presión llegó a la industria','El gas ya se encarecía antes de la invasión. La crisis aceleró el ahorro y la búsqueda de otros suministros.','ecoEnergia ecoGas',[9,48.5,39],'industria'],
   ['Unión Europea · 2025','Cambió la mezcla de proveedores','La cuota rusa cayó. La barra conserva la misma base de comparación.','ecoGas ecoGasCopia',[17,50,76],'gasDespues']]],
  ['El mar Negro y las rutas comerciales','comercio',[
   ['Julio de 2022 – julio de 2023','Una salida por el mar Negro','La iniciativa permitió que cargamentos de alimentos volvieran a salir de tres puertos ucranianos.','ecoGrano ecoJcc',[31,46,19],'puerto'],
@@ -23,7 +23,7 @@ const capitulosEco = [
   ['Decisiones de siembra','Cuando se encarece el insumo','El agricultor puede reducir la dosis. El rendimiento y el precio de los alimentos quedan expuestos a más factores.','ecoInsumos ecoUrea',[27,49,35],'abonar']]],
  ['Sanciones y sistema financiero','comercio',[
   ['Unión Europea · marzo de 2022','Una red con restricciones selectivas','La UE restringió el acceso a SWIFT de determinados bancos rusos. SWIFT transmite mensajes entre entidades.','ecoSwift ecoSancion',[23,52,109],'swift'],
-  ['Desde 2022','¿Qué ocurre con las reservas?','Inmovilizar limita el uso de los activos. La titularidad y la capacidad de comerciar son cuestiones distintas.','ecoSancion ecoRusia',[32,51,85],'reservas']]],
+  ['Desde 2022','¿Qué ocurre con las reservas?','Inmovilizar limita el uso de los activos. La titularidad y la capacidad de comerciar son cuestiones distintas.','ecoActivos ecoSancion ecoRusia',[32,51,85],'reservas']]],
  ['Dos economías, consecuencias diferentes','presion',[
   ['Ucrania · 2022','La producción se contrajo','Variación anual del producto interno bruto real, ajustado por precios.','ecoPib ecoWEO',[32,49,30],'pib'],
   ['Evaluación RDNA5 · febrero de 2026','El costo de reconstruir','Necesidades de recuperación y reconstrucción en diez años. Evaluación con datos al 31 de diciembre de 2025.','ecoRdna ecoRdnaCopia',[31,50,24],'reconstruir'],
@@ -44,4 +44,4 @@ capitulosEco.forEach(([nombre,tono,filas], j)=>{
  escenaEco.pasos.forEach((p,i)=>Object.assign(p,{camara:filas[i][4],tipo:filas[i][5],
   codigo:'E'+String(j+1).padStart(2,'0')+String.fromCharCode(65+i)}));
 });
-escena(35,'humanidad','Consecuencias humanitarias',[['Capítulo III','Consecuencias humanitarias','','civil-ucrania','ecoCivil']]);
+escena(35,'humanidad','Consecuencias humanitarias',[['Capítulo III','Consecuencias humanitarias','','plaza-lviv','urbana']]);

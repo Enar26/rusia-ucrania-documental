@@ -90,3 +90,36 @@ function cortesFuente(id){
  if(id==='region-2015-21')return 'ne onu minsk';
  if(id.startsWith('region-'))return 'ne control-'+id.slice(7);
 }
+
+registrar('economia','webp','planisferio mar-negro poster red abono silo mercado andenes lima');
+const geoficha=['ne sombreado','Relieve contemporáneo y fronteras de referencia','Natural Earth, dominio público','Atlas propio. Crimea se integra en Ucrania. Las conexiones económicas son esquemas temáticos.'];
+fichaMedio.planisferio=fichaMedio['mar-negro']=geoficha;
+fichaMedio.poster=['bosforo puertoFicha','Fecha de toma sin documentar','Pexels License','Primer fotograma del nuevo montaje.'];
+fichaMedio.umbral=['bosforo puertoFicha trigo trigoFicha','Fechas de rodaje sin documentar','Pexels License','Montaje cíclico de 8 s, 24 fotogramas por segundo, dos fundidos y sin pista de sonido.'];
+const ecoLibros='https://github.com/saylordotorg/text_world-regional-geography-people-places-and-globalization/blob/6aaa87dcf49ba0e664423b1cc9f29f35618f7124/';
+const ecoAntro='https://github.com/openstax/osbooks-introduction-anthropology/blob/e466666414f1900a783141339dc5ef3106dba5dd/modules/';
+const recursosEco={
+ red:['Zonk43 · línea eléctrica que alimenta la subestación ferroviaria de Eutingen, Alemania','https://github.com/openstax/osbooks-college-physics-bundle/blob/66fcef29596e3a32818162b837dd0c85b754cbad/modules/m42444/index.cnxml','OpenStax, College Physics, fotografía de Zonk43 / Wikimedia Commons. Infraestructura eléctrica como contexto industrial.','Edición OpenStax, toma sin fechar','Edición CC BY-NC-SA 4.0'],
+ abono:['USDA / Natural Resources Conservation Service · aplicación agrícola de amoníaco','https://github.com/openstax/osbooks-chemistry-bundle/blob/78b742a7fed1379705c5d882cee1ebfab7f58dc9/modules/m68710/index.cnxml','Detalle izquierdo de la figura de OpenStax. La ficha identifica al NRCS. Lugar y fecha de captura sin documentar.','Toma sin fechar','Foto federal estadounidense. Edición OpenStax CC BY-NC-SA 4.0'],
+ silo:['R. Berglee · silos y elevadores de grano en Montana, Estados Unidos',ecoLibros+'s04-04-globalization-and-development.html','Detalle de la foto derecha de la figura 1.29. El grano se almacena antes de cargar el tren. Referencia logística tomada en EE. UU.','Edición del manual, toma sin fechar','CC BY-NC-SA 3.0'],
+ mercado:['Radosław Botev · mercado de Kaolack, Senegal',ecoLibros+'s10-02-human-geography-of-subsaharan-.html','Detalle izquierdo de la figura 7.10. Fotografía de comercio minorista utilizada como ejemplo de escala local.','Toma sin fechar','Edición del manual CC BY-NC-SA 3.0'],
+ andenes:['J. Thompson · agricultura en terrazas en el Perú',ecoAntro+'m00118/index.cnxml','Foto izquierda, identificada como Peru Terrace Farming por OpenStax. Muestra la forma de las parcelas. No documenta las dosis de urea utilizadas.','Toma sin fechar','Dominio público según la ficha de la fotografía en OpenStax'],
+ lima:['YoTuT · mercado en el centro de Lima, Perú',ecoAntro+'m00069/index.cnxml','La fotografía sitúa el comercio local. El IPC procede de una serie estadística independiente.','Toma sin fechar','CC BY 2.0']
+};
+for(const [id,[autor,url,nota,fecha,licencia]] of Object.entries(recursosEco)){
+ const ref='foto-'+id;referencias[ref]=[autor,url,nota];creditos[id]=autor;
+ fichaMedio[id]=[ref,fecha,licencia,'Recorte o conversión a WebP para la exposición.'];
+}
+
+referencias.ocupacion=['United States Holocaust Memorial Museum · Ucrania','https://encyclopedia.ushmm.org/content/en/article/ukraine','Ocupación alemana y persecución y asesinato de judíos en Ucrania durante la Segunda Guerra Mundial.'];
+registrar('economia','webp','plaza-lviv trigo-lviv hangar');
+const archivoUcrania='https://github.com/RowanFlynnPilot/together-with-ukraine/blob/8ba4c36cb777383743f0b4aab36e632f19440d37/';
+referencias.fotosUA=['Registro de procedencia de las fotografías ucranianas',archivoUcrania+'history.py','Conserva el enlace a la obra de Commons, la descripción, la autoría y la licencia de cada foto.'];
+referencias.urbanaUA=['Registro de la fotografía de Leópolis',archivoUcrania+'culture.py','La ficha lviv.jpg identifica la plaza del Mercado y su autor.'];
+referencias.trigal=['Raimond Spekking · campos de trigo en la región de Leópolis','https://commons.wikimedia.org/wiki/File:Wheat_fields_in_Ukraine-5966-98.jpg','Trigal fotografiado en Ucrania. La imagen localiza la producción y carece de información sobre cantidades exportadas.'];
+referencias.hangar=['Oleksandr Ratushniak · hangar y avión civil de carga en Hostómel, abril de 2022','https://commons.wikimedia.org/wiki/File:Antonov_Airport_after_Russian_invasion_of_Ukraine_and_Mriya_(cropped).jpg','Fotografía documental de daños en transporte. La evaluación nacional utiliza una metodología independiente.'];
+referencias.urbana=['Petar Milošević · plaza del Mercado, Leópolis','https://commons.wikimedia.org/wiki/File:Лвов_Галиција.jpg','Vida urbana en el oeste de Ucrania. La imagen carece de una fecha de captura verificada.'];
+fichaMedio['trigo-lviv']=['trigal fotosUA','Región de Leópolis, toma sin fechar','CC BY-SA 4.0','Conversión WebP y reencuadre.'];
+fichaMedio.hangar=['hangar fotosUA','Hostómel, abril de 2022','CC BY-SA 4.0','Conversión a WebP de la versión recortada.'];
+fichaMedio['plaza-lviv']=['urbana urbanaUA','Leópolis, toma sin fechar','CC BY-SA 3.0','Conversión WebP y reencuadre.'];
+creditos['plaza-lviv']='Plaza del Mercado, Leópolis · Petar Milošević / CC BY-SA 3.0';

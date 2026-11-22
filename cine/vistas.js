@@ -26,6 +26,8 @@ function vista(s,p,i){
  case 'atlas':return atlas(s,p,i);
  case 'preguntas':return quiz(s,p,i);
  case 'cierre':return img('dnieper','rio','El Dniéper en Kiev, lámina publicada en 1909')+'<div class="cierre-luz"></div>'+copy(p,'Conclusión del primer expositor · '+p.fecha)+credito('dnieper');
+ case 'economica':return escenaEconomica(s,p,i);
+ case 'humanidad':return img('plaza-lviv','sangre','Plaza del Mercado de Leópolis, Ucrania')+'<div class="ocaso"></div>'+copy(p)+credito('plaza-lviv');
  case 'economia':return img('trigo','sangre','Espigas de trigo en un campo','data-vuelo="trigo"')+'<div class="ocaso"></div>'+copy(p)+credito('trigo');
  case 'portada':return img('plaza','fotoportada','Estudiantes en una manifestación europeísta en Kiev')+'<div class="portada-tinta"></div><div class="titular">'+etiqueta('Historia · Economía · Humanidad')+'<h1>RUSIA<br>Y UCRANIA</h1><p>Conflicto, impacto económico y humanitario</p></div>'+credito('plaza');
  case 'capitulo':return img('atlas','sangre','El mar Negro, mapa de 1911','data-vuelo="atlas"')+'<div class="ocaso"></div>'+copy(p)+credito('atlas');
@@ -36,7 +38,7 @@ function vistaHistorica(s,p,i){
  const id=p.imagen, doc=['acta1991','decreto','resolucion68','maidan-informe','requisas'].includes(id), geo=medios[id]?.endsWith('.svg');
  const lectura=geo?'cartografica':doc?'documental':'fotografica';
  const fechaMapa={1100:'hacia 1100',1200:'hacia 1200',1500:'hacia 1500',1650:'hacia 1650',1783:'1783'};
- return '<div class="composicion '+lectura+'">'+img(id,geo?'mapa-grande':'pieza',p.titulo)+'<div class="filtro"></div>'+copy(p)+credito(id,fechaMapa[id]?'Historical Basemaps · lámina '+fechaMapa[id]:'')+'</div>';
+ return '<div class="composicion '+lectura+'">'+img(id,geo?'mapa-grande':'pieza',creditos[id]||p.titulo)+'<div class="filtro"></div>'+copy(p)+credito(id,s.numero===5&&id==='dnieper'?'El Dniéper en Kiev · lámina publicada en 1909, referencia geográfica posterior a la Rus':fechaMapa[id]?'Historical Basemaps · lámina '+fechaMapa[id]:'')+'</div>';
 }
 const laminas={1100:'hacia 1100',1200:'hacia 1200',1500:'hacia 1500',1650:'hacia 1650',1783:'1783'};
 const tramos={
@@ -60,6 +62,8 @@ function cartografia(s,p,i) {
 }
 function cronista(s,p,i) {
  const a=s.numero;
+ if(a===9&&i===1)return lectura(p,'Ucrania · 1939–1945','La ocupación nazi','Persecución y asesinato de la población civil')+eje(s,i);
+ if(a===15&&i===2)return lectura(p,'Ucrania · relevo institucional','Elecciones presidenciales','Febrero–mayo de 2014')+eje(s,i);
  if(a===13)return lectura(p,'Memorándum de Budapest · lectura tipográfica',i?'Respetar la independencia, la soberanía y las fronteras existentes de Ucrania.':'Budapest, 5 de diciembre de 1994',i?'Síntesis en español del párrafo 1':'Memorándum de garantías de seguridad')+credito('','Rada · documento 998_158 · transcripción consultable');
  if(a===17&&i<2){
    const medidas=i?['Alto el fuego y verificación','Diálogo sobre elecciones locales']:['Alto el fuego bilateral','Seguimiento por la OSCE'];

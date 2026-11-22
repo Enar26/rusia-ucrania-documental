@@ -1,26 +1,35 @@
 (() => {
  const el=id=>document.getElementById(id), sala=el('sala'), portal=el('umbral'), escenario=el('pantallas'), lienzo=el('lienzo'), dialogo=el('archivo');
  const reducido=matchMedia('(prefers-reduced-motion: reduce)'), video=el('pelicula');
- const estados=escenas.sort((a,b)=>a.numero-b.numero).flatMap(s=>s.pasos.map((p,i)=>({s,p,i,id:String(s.numero).padStart(2,'0')+String.fromCharCode(97+i)})));
+ const estados=escenas.sort((a,b)=>a.numero-b.numero).flatMap(s=>s.pasos.map((p,i)=>({s,p,i,id:p.codigo||(s.numero===35?'III':String(s.numero).padStart(2,'0')+String.fromCharCode(97+i))})));
  const clave='cine-ucrania-2026-v1', ease='cubic-bezier(.22,.78,.18,1)';
  let cursor=0, animaciones=[], bloqueo=0,ultimoClic=-Infinity, ocultar, timerVideo, avisoTimer;
  const guardar=(k,v)=>{try{localStorage.setItem(k,v)}catch{}};
  const leer=k=>{try{return localStorage.getItem(k)}catch{return null}};
  const indice=id=>estados.findIndex(x=>x.id===id);
  function url(hash){try{history.replaceState(null,'',hash)}catch{}}
- function finIntro() {clearTimeout(timerVideo);portal.classList.add('lista');el('omitir').hidden=true;video.pause();el('plano').textContent='Territorio, trabajo y vida civil · metraje ilustrativo';}
- function presentarPortal(inicial=false){
-   sala.hidden=true;portal.hidden=false;cancelar();
-   const guardado=leer(clave);el('reanudar').hidden=indice(guardado)<0;
-   if(!inicial||sessionLeida()||reducido.matches){portal.classList.remove('filmando');finIntro();return;}
-   video.src=ruta('umbral');video.muted=true;video.play().catch(finIntro);
-   timerVideo=setTimeout(()=>{if(video.readyState<2)finIntro()},2700);
+ let pasoPortal=null;
+ function pausarPortal(){
+   video.pause();portal.classList.add('lista');el('omitir').textContent='Reproducir vídeo';
+   if(!portal.classList.contains('filmando'))el('plano').textContent='Estambul · estrecho del Bósforo';
  }
- function sessionLeida(){try{const k=clave+'-portal';const vista=sessionStorage.getItem(k);sessionStorage.setItem(k,'1');return vista;}catch{return false}}
- el('poster').src=ruta('vida');video.addEventListener('error',finIntro);video.addEventListener('ended',finIntro);
- video.addEventListener('playing',()=>portal.classList.add('filmando'));
- video.addEventListener('timeupdate',()=>{const t=video.currentTime;el('plano').textContent=t<2.4?'Estambul · estrecho del Bósforo':t<4.6?'Trigo · plano ilustrativo':'Vida civil · plano ilustrativo';if(t>=4.6)portal.classList.add('lista')});
- el('omitir').onclick=()=>{portal.classList.remove('filmando');finIntro();el('presentar').focus()};
+ function reproducirPortal(){
+   if(!video.getAttribute('src'))video.src=ruta('umbral');
+   video.muted=true;video.loop=true;video.play().catch(pausarPortal);
+ }
+ function presentarPortal(){
+   pasoPortal?.cancel();pasoPortal=null;portal.classList.remove('saliendo');portal.inert=false;
+   sala.hidden=true;portal.hidden=false;cancelar();camaraEconomica.parar();
+   el('reanudar').hidden=indice(leer(clave))<0;portal.classList.add('lista');
+   if(reducido.matches)pausarPortal();else reproducirPortal();
+ }
+ el('poster').src=ruta('poster');
+ video.addEventListener('error',()=>{portal.classList.remove('filmando');pausarPortal()});
+ video.addEventListener('playing',()=>{portal.classList.add('filmando');el('omitir').textContent='Pausar vídeo'});
+ video.addEventListener('timeupdate',()=>{
+   const t=video.currentTime;el('plano').textContent=t<2||t>=6?'Estambul · estrecho del Bósforo':t>=3&&t<5?'Campo de trigo · plano ilustrativo':'Bósforo y trigo · montaje documental';
+ });
+ el('omitir').onclick=()=>video.paused?reproducirPortal():pausarPortal();
  function cancelar(){animaciones.forEach(a=>a.cancel());animaciones=[];escenario.querySelectorAll('.sale,.vuelo').forEach(n=>n.remove());bloqueo=0;}
  function anim(n,k,d){if(!n)return;const a=n.animate(k,{duration:d,easing:ease,fill:'backwards'});animaciones.push(a);return a;}
  function mueve(n,a,b,d){return anim(n,[{transform:a},{transform:b}],d)}
@@ -31,7 +40,49 @@
    const mediosViaje=(s.numero===3&&prev.s.numero===2)||(s.numero===2&&prev.s.numero===3)?'atlas':(s.numero===24&&prev.s.numero===23)||(s.numero===23&&prev.s.numero===24)?'trigo':null;
    const sal=mediosViaje&&anterior.querySelector('[data-vuelo="'+mediosViaje+'"]'), llegada=mediosViaje&&nuevo.querySelector('[data-vuelo="'+mediosViaje+'"]');
    let total=dur;
-   if(sal&&llegada){
+   if(s.estilo==='economica'){
+     total=prev.s.estilo==='economica'?830:1000;
+     const relacion=[prev.p.tipo,x.p.tipo].sort().join('/');
+     const viajePeru=relacion==='peru/rusia';
+     if(viajePeru)total=2250;
+     if(prev.s.estilo==='economia'){
+       anim(nuevo,[{clipPath:'ellipse(0% 0% at 68% 47%)'},{clipPath:'ellipse(145% 150% at 68% 47%)'}],total);
+     }else{
+       const texto=nuevo.querySelector('.eco-texto');
+       if(viajePeru)anim(texto,[{opacity:0},{opacity:0,offset:.53},{opacity:1}],total);
+       else anim(texto,[{opacity:0,transform:'translateY(12px)'},{opacity:1,transform:'none'}],640);
+       const instrumental=nuevo.querySelector('.eco-instrumentos');
+       anim(instrumental,viajePeru?[{opacity:0},{opacity:0,offset:.66},{opacity:1}]:[{opacity:0},{opacity:1}],total);
+       if(!viajePeru&&instrumental.querySelector('.ventana')){
+         anim(instrumental.querySelector('.ventana'),[{clipPath:'inset(0 0 100% 0)'},{clipPath:'inset(0)'}],total);
+       }
+       if(relacion==='gasDespues/puerto'){
+         const puente=document.createElement('span');puente.className='eco-enlace';puente.textContent=dir>0?'Del suministro al transporte':'Del transporte al suministro';nuevo.append(puente);
+         anim(puente,[{opacity:0},{opacity:1,offset:.22},{opacity:1,offset:.75},{opacity:0}],1000).finished.then(()=>puente.remove()).catch(()=>puente.remove());
+       }
+       const enlaces={
+         'corredores/faoPico':['.eco-cadena>div:last-child svg','.fao-marca circle'],
+         'abonar/swift':['.eco-pie-frase','.eco-red .conectado circle'],
+         'pib/reservas':['.eco-libro div:last-child','.eco-pib i']
+       };
+       if(enlaces[relacion]){
+         const [a,b]=enlaces[relacion];
+         const origen=anterior.querySelector(a)||anterior.querySelector(b),destino=nuevo.querySelector(b)||nuevo.querySelector(a);
+         if(origen&&destino){
+           const marca=document.createElement('i'),limite=nuevo.getBoundingClientRect();
+           const posicion=n=>{const r=n.getBoundingClientRect();return 'translate('+((r.left+r.width/2)-limite.left)+'px,'+((r.top+r.height/2)-limite.top)+'px)'};
+           marca.className='eco-testigo';nuevo.append(marca);
+           anim(marca,[{transform:posicion(origen),opacity:0},{opacity:1,offset:.18},{opacity:1,offset:.75},{transform:posicion(destino),opacity:0}],total).finished.then(()=>marca.remove()).catch(()=>marca.remove());
+         }
+       }
+     }
+     if(x.p.tipo==='gasDespues'||x.p.tipo==='gasAntes'){
+       const barra=nuevo.querySelector('.eco-regla i'),fin=x.p.tipo==='gasDespues'?13:45;
+       anim(barra,[{width:(x.p.tipo==='gasDespues'?45:13)+'%'},{width:fin+'%'}],850);
+     }
+   }else if(s.estilo==='humanidad'){
+     anim(nuevo,[{opacity:0},{opacity:1}],920);total=920;
+   }else if(sal&&llegada){
      const origen=sal.getBoundingClientRect(),dest=llegada.getBoundingClientRect(),frame=escenario.getBoundingClientRect(),volador=sal.cloneNode();
      const rect=b=>({left:(b.x-frame.x)+'px',top:(b.y-frame.y)+'px',width:b.width+'px',height:b.height+'px'});
      volador.className='vuelo';volador.alt='';Object.assign(volador.style,rect(dest));escenario.append(volador);sal.style.visibility='hidden';
@@ -70,8 +121,10 @@
    const anterior=escenario.querySelector('.cuadro'),nuevo=document.createElement('section');
    nuevo.className='cuadro '+x.s.estilo;nuevo.dataset.id=x.id;nuevo.dataset.paso=x.i;nuevo.setAttribute('aria-label',x.s.nombre);
    nuevo.innerHTML=vista(x.s,x.p,x.i);escenario.append(nuevo);cursor=n;
+   const durCam=x.p.camara?camaraEconomica.mostrar(nuevo.querySelector('.eco-vista'),x.p,x.s.tono,prev,dir&&!reducido.matches):0;
+   if(!x.p.camara)camaraEconomica.parar();
    const dur=dir?transicion(anterior,nuevo,prev,x,dir):(anterior?.remove(),0);
-   bloqueo=performance.now()+dur;el('pos').textContent=x.id.slice(0,2)+' / 24  ·  '+(x.i+1)+' / '+x.s.pasos.length;
+   bloqueo=performance.now()+Math.max(dur,durCam);el('pos').textContent=x.p.codigo?x.p.codigo+' · Economía':x.s.numero===35?'Capítulo III':x.id.slice(0,2)+' / 24  ·  '+(x.i+1)+' / '+x.s.pasos.length;
    el('anterior').disabled=n===0;el('siguiente').disabled=n===estados.length-1;
    guardar(clave,x.id);url('#ver/'+x.id);
  }
@@ -80,7 +133,13 @@
    const n=Math.max(0,Math.min(estados.length-1,cursor+dir));if(n!==cursor)dibujar(n,dir);
  }
  function iniciar(n,gesto){
-   finIntro();portal.hidden=true;sala.hidden=false;
+   const empalme=gesto&&!portal.hidden&&!reducido.matches;
+   sala.hidden=false;portal.inert=true;
+   if(empalme){
+     portal.classList.add('saliendo');
+     pasoPortal=portal.animate([{opacity:1,clipPath:'inset(0)'},{opacity:.82,offset:.32},{opacity:0,clipPath:'inset(0 0 0 68%)'}],{duration:850,easing:ease,fill:'forwards'});
+     pasoPortal.finished.then(()=>{portal.hidden=true;video.pause();portal.classList.remove('saliendo');pasoPortal?.cancel();pasoPortal=null}).catch(()=>{});
+   }else{portal.hidden=true;video.pause()}
    if(gesto&&!document.fullscreenElement){
     const prom=document.documentElement.requestFullscreen?.();
     if(prom)prom.catch(alternativa);else alternativa();
@@ -105,19 +164,23 @@
  });
  function fichar(id){
    const x=estados[indice(id)];
-   const refs=new Set(x?x.p.refs:['bosforo','puertoFicha','trigo','trigoFicha','vida','vidaFicha','coleccion']);
+   const refs=new Set(x?x.p.refs:[]),med=new Set(x?[]:['umbral']);
    if(x){
-     const actual=escenario.querySelector('.cuadro:not(.sale)');
-     let contenido=actual;
-     if(actual?.dataset.id!==x.id){
-       const plantilla=document.createElement('template');
-       plantilla.innerHTML=vista(x.s,x.p,x.i);contenido=plantilla.content;
+     let contenido=escenario.querySelector('.cuadro:not(.sale)');
+     if(contenido?.dataset.id!==x.id){
+       const plantilla=document.createElement('template');plantilla.innerHTML=vista(x.s,x.p,x.i);contenido=plantilla.content;
      }
-     for(const n of contenido.querySelectorAll('[data-medio]')){
-       for(const r of fichaMedio[n.dataset.medio][0].split(' ')) refs.add(r);
-     }
+     for(const n of contenido.querySelectorAll('[data-medio]'))med.add(n.dataset.medio);
+     if(x.p.camara)med.add('planisferio');
    }
-   const f=el('lista-fuentes'); f.innerHTML=Array.from(refs).map(k=>{const v=referencias[k];return '<article><a rel="noreferrer" target="_blank" href="'+seguro(v[1])+'">'+seguro(v[0])+' ↗</a><p>'+seguro(v[2])+'</p></article>'}).join('');
+   const enlace=k=>{const v=referencias[k];return '<a rel="noreferrer" target="_blank" href="'+seguro(v[1])+'">'+seguro(v[0])+' ↗</a><p>'+seguro(v[2])+'</p>'};
+   const documentos=[...refs].map(k=>'<article>'+enlace(k)+'</article>').join('');
+   const medios=[...med].map(m=>{
+     const [ids,fecha,licencia,edicion]=fichaMedio[m];
+     return '<article>'+ids.split(' ').map(enlace).join('')+'<small>'+seguro([fecha,licencia,edicion].join(' · '))+'</small></article>';
+   }).join('');
+   el('lista-fuentes').innerHTML=(documentos?'<h3>Documentación del paso</h3>'+documentos:'')+(medios?'<h3>Imágenes y cartografía</h3>'+medios:'');
+
  }
  function abrirFuentes(){
    const id=sala.hidden?'portal':estados[cursor].id;
@@ -127,7 +190,7 @@
  }
  el('fuentes').onclick=el('biblioteca').onclick=abrirFuentes;el('cerrar').onclick=()=>dialogo.close();
  dialogo.addEventListener('close',()=>{if(!sala.hidden)lienzo.focus()});
- reducido.addEventListener('change',()=>{cancelar();if(reducido.matches)finIntro()});
+ reducido.addEventListener('change',()=>{cancelar();camaraEconomica.parar();if(reducido.matches)pausarPortal()});
  window.addEventListener('hashchange',()=>{
    const n=indice(location.hash.replace('#ver/',''));
    if(n>=0)iniciar(n,false);else if(location.hash==='#inicio')presentarPortal();

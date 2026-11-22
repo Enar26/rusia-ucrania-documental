@@ -1,0 +1,82 @@
+#umbral.saliendo{position:fixed;inset:0;z-index:12;pointer-events:none}
+.saliendo .entrada,.saliendo .banda,.saliendo .sitebar{opacity:0;transform:translateY(.6em);transition:opacity .27s,transform .4s}
+#lista-fuentes h3{margin:1.45rem 0 .4rem;font:600 1.3rem var(--sans)}
+#lista-fuentes small{display:block;margin:.55em 0;line-height:1.5;color:#475653}
+.humanidad .sangre{filter:saturate(.7);object-position:center 47%}.humanidad .ocaso{background:linear-gradient(90deg,#0e242bea,#15272eaa 45%,#111c2220)}
+.humanidad .copy{width:64%;top:34%}.humanidad .copy h2{font-size:7.1cqw}
+.eco-vista{position:absolute;inset:0;background:#19353d;color:#f3f0df;--acento:#eed096;isolation:isolate;overflow:hidden}
+.tono-energia{--acento:#a3e3db}.tono-agricultura{--acento:#c9dfae}.tono-presion{--acento:#f2b299}
+.eco-mapa,.eco-veladura{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.eco-veladura{background:linear-gradient(90deg,#10252a 0%,#10262af3 23%,#11262ac9 38%,#13272b35 63%,transparent 82%),linear-gradient(0deg,#10262af0 0%,transparent 27%,transparent 83%,#0e222aae 100%)}
+.eco-cab,.eco-cartela{position:absolute;z-index:2;left:4.7%;right:4.7%;display:flex;align-items:center;justify-content:space-between;gap:1em}
+.eco-cab{top:5.6%;border-bottom:1px solid #d9d8af60;padding-bottom:1cqw;font-size:1.14cqw;letter-spacing:.04em;font-weight:600}
+.eco-cab i{font-style:normal;padding:0 .42em;color:var(--acento)}.eco-cab>span:last-child{font-weight:400;color:#e8e6d8}
+.eco-cartela{bottom:7.2%;font-size:1.12cqw;color:#e5e9dd}.eco-cartela>span:last-child{display:flex;align-items:center;gap:.4cqw;font-variant-numeric:tabular-nums}
+.eco-cartela i{width:.45cqw}.eco-cartela b{height:.29cqw;width:1.4cqw;background:#8a9996}.eco-cartela .llena{background:var(--acento)}
+.eco-texto{position:absolute;left:4.7%;top:24%;width:42%}
+.eco-fecha,.eco-graf-titulo{font:600 1.25cqw/1.35 var(--sans);color:var(--acento);letter-spacing:.055em}
+.eco-texto h2{font:500 5.18cqw/.99 var(--serif);letter-spacing:-.035em;text-wrap:balance;margin:.22em 0}
+.eco-explica{font:400 1.69cqw/1.42 var(--sans);max-width:34ch;text-wrap:pretty;color:#f0f1e8}
+.eco-instrumentos{position:absolute;inset:0;pointer-events:none}
+.eco-cifra{position:absolute;left:52%;top:35%;max-width:42%;display:grid;gap:.45cqw;text-shadow:0 2px 1.1cqw #122323}
+.eco-cifra strong{font:500 7.5cqw/.92 var(--serif);letter-spacing:-.04em;white-space:nowrap;color:var(--acento)}
+.eco-cifra em{font:400 .56em var(--serif)}.eco-cifra span{font:600 1.66cqw/1.24 var(--sans)}
+.eco-cifra small,.eco-pie-frase{font:400 1.25cqw/1.4 var(--sans)}
+.eco-foto{position:absolute;margin:0;overflow:hidden}.eco-foto img{display:block;width:100%;height:100%;object-fit:cover}
+.eco-foto figcaption{position:absolute;bottom:0;left:0;right:0;padding:2.6cqw 1.1cqw .8cqw;background:linear-gradient(transparent,#112024e8);color:#f9f6ec;font:500 1.12cqw/1.28 var(--sans)}
+.eco-foto.ventana{left:52%;right:4.7%;top:23%;bottom:23%;box-shadow:0 1.8cqw 4cqw #091c2580;border-top:2px solid var(--acento)}
+.eco-foto.detalle{top:58%;left:58%;width:36%;height:25%;border-top:2px solid var(--acento)}
+.eco-pie-frase{position:absolute;left:52%;right:4.7%;top:79%;padding-top:.55cqw;border-top:1px solid #e0daba88}
+.modo-umbral .eco-texto,.modo-mundo .eco-texto{width:46%;top:28%}.modo-umbral .eco-texto h2{font-size:6.3cqw}
+.eco-pregunta,.eco-rubros,.eco-comercio-ruso,.eco-origen{position:absolute;left:5%;bottom:18%;display:flex;align-items:center;gap:1cqw;color:var(--acento);font:500 1.5cqw var(--sans)}
+.eco-pregunta i,.eco-rubros i,.eco-comercio-ruso i{font-style:normal}
+.eco-pareja{position:absolute;bottom:18%;left:5%;width:57%;height:25%;display:grid;grid-template-columns:1fr 1fr 1fr;background:#172b2eee}
+.eco-pareja figure{position:relative}.eco-pareja figure figcaption{font-size:1cqw}.eco-pareja>div{padding:1.1cqw;border-left:1px solid #72847c;display:flex;flex-direction:column;gap:.4cqw}
+.eco-pareja svg,.eco-rubros svg,.eco-origen svg,.eco-sintesis svg{width:3.2cqw;height:3.2cqw;color:var(--acento)}
+.eco-pareja strong{font:500 2.3cqw var(--serif)}.eco-pareja span{font-size:1.3cqw}
+.eco-gas,.eco-fao,.eco-libro,.eco-red,.eco-sintesis,.eco-cadena{position:absolute;right:4.7%;width:43%;top:34%;padding:2cqw;background:#142a2eeb;border-top:2px solid var(--acento)}
+.eco-gas .eco-cifra{position:static;max-width:100%}.eco-regla{height:1.2cqw;background:#637773;margin:1.7cqw 0 .65cqw;position:relative}.eco-regla i{display:block;width:var(--valor);height:100%;background:var(--acento)}
+.eco-regla span{position:absolute;top:-1.5cqw;border-left:1px solid white;height:2.8cqw;padding-left:.35cqw;font-size:1cqw}
+.eco-extremos,.eco-graf-titulo{display:flex;justify-content:space-between;gap:.5em}.eco-extremos{font-size:1.1cqw}
+.eco-cadena,.eco-sintesis{display:flex;align-items:center;justify-content:space-between;gap:1cqw}
+.eco-cadena>div,.eco-sintesis>div{min-width:0;flex:1;display:grid;gap:.8cqw}
+.eco-cadena svg{width:4.3cqw;color:var(--acento)}.eco-cadena b,.eco-sintesis span{font:500 1.5cqw/1.3 var(--sans)}
+.eco-cadena i{font:2cqw var(--serif);color:var(--acento)}.modo-cadena .eco-cadena{top:auto;bottom:17%;width:58%}.modo-cadena .eco-texto{top:18%}
+.eco-fao{top:28%;width:46%;padding:1.8cqw}.eco-graf-titulo span{font-weight:400;letter-spacing:0;color:#d3dcd6}.eco-fao svg{display:block;margin-top:1.8cqw;width:100%;overflow:visible}
+.eco-fao text{font:16px Lectura,Arial;fill:#e8ece0}.eco-fao .fao-n{font-weight:700;fill:var(--acento)}.eco-fao .fao-eje{font-size:14px}
+.fao-guia,.fao-base{stroke:#adbcad88;stroke-width:1}.fao-base{stroke-dasharray:4 4}.fao-valor{stroke:var(--acento);stroke-width:4}.fao-marca circle{fill:var(--acento)}
+.eco-red{top:20%;width:43%;padding:1.1cqw 2cqw}.eco-red svg{display:block;width:100%;height:27cqw}
+.eco-red path{fill:none;stroke:#e3c985;stroke-width:2}.eco-red .limitada{stroke:#c3b7a2;stroke-dasharray:5 7;opacity:.35}.eco-red circle{stroke:#efd18f;stroke-width:2;fill:#385352}
+.eco-red .aislado circle{fill:#5f483b;stroke:#e9ab90}.eco-red span{font:1.15cqw var(--sans)}
+.eco-libro{top:26%}.eco-libro div{display:grid;gap:.25cqw;border-bottom:1px solid #bcc6ae66;padding:.8cqw 0}
+.eco-libro span,.eco-comercio-ruso span,.eco-origen span{font-size:1.18cqw;color:var(--acento)}.eco-libro b,.eco-comercio-ruso strong,.eco-origen strong{font:500 2.15cqw/1.2 var(--serif)}
+.eco-pib{position:absolute;left:52%;right:7%;top:58%;border-top:1px solid #d6dccc}.eco-pib i{width:28.8%;height:1.1cqw;display:block;background:var(--acento);margin-left:auto}
+.eco-comercio-ruso,.eco-origen{left:53%;right:8%;bottom:23%;padding:1.4cqw 1.7cqw;background:#152b30e8;flex-wrap:wrap;border-left:2px solid var(--acento)}
+.eco-sintesis{top:auto;bottom:18%;width:56%;align-items:start}.eco-sintesis>div+div{border-left:1px solid #e0dfba55;padding-left:1cqw}
+.modo-civil .civil{inset:0;z-index:-1}.modo-civil .eco-instrumentos{z-index:-1}.modo-civil .eco-mapa{z-index:-2}.modo-civil .eco-veladura{background:linear-gradient(90deg,#11292df5,#132b30b5 47%,transparent 88%)}
+.modo-civil .eco-texto{width:57%;top:31%}.modo-civil h2{font-size:6.6cqw}.modo-civil .civil figcaption{bottom:11%;text-align:right;padding-right:4.7%;background:linear-gradient(0deg,#11262b9d,transparent)}
+.modo-puerto .eco-cifra,.modo-reconstruir .eco-cifra,.modo-lima .eco-cifra{top:21%}
+@media(prefers-reduced-motion:no-preference){
+ .eco-fao .fao-marca:last-of-type .fao-valor{animation:trazo-indice .78s ease-out both;transform-origin:left;transform-box:fill-box}
+ .modo-swift .aislado{animation:nodo-restringido .9s ease-out both}
+ .eco-sintesis>div,.eco-cadena>div{animation:capa-economica .63s ease-out backwards}.eco-sintesis>div:nth-child(2),.eco-cadena>div:nth-of-type(2){animation-delay:.13s}.eco-sintesis>div:nth-child(3),.eco-cadena>div:nth-of-type(3){animation-delay:.25s}
+}
+@keyframes trazo-indice{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes nodo-restringido{0%,35%{opacity:1;filter:brightness(1.8)}to{opacity:.8;filter:none}}
+@keyframes capa-economica{from{opacity:0;translate:0 1cqw}to{opacity:1;translate:0 0}}
+.modo-puerto .eco-texto,.modo-reconstruir .eco-texto,.modo-lima .eco-texto{top:19%;width:42%}
+.modo-puerto .eco-texto h2,.modo-reconstruir .eco-texto h2,.modo-lima .eco-texto h2{font-size:4.65cqw}
+.modo-puerto .eco-cifra,.modo-reconstruir .eco-cifra,.modo-lima .eco-cifra{left:4.8%;top:61%;max-width:45%}
+.modo-puerto .eco-cifra strong,.modo-reconstruir .eco-cifra strong,.modo-lima .eco-cifra strong{font-size:6.1cqw}
+.modo-puerto .eco-cifra span,.modo-reconstruir .eco-cifra span,.modo-lima .eco-cifra span{font-size:1.4cqw}
+.modo-reconstruir .detalle,.modo-lima .detalle{left:52%;top:58%;width:43%;height:27%}
+.modo-puerto .detalle{top:65%;left:63%;height:20%;width:32%}
+.modo-umbral .eco-fecha{font-style:italic;letter-spacing:.07em}
+.eco-enlace{position:absolute;z-index:4;right:5%;top:15%;background:#172d31ed;color:#f2d09d;border-left:2px solid currentColor;padding:.5cqw 1cqw;font:500 1.25cqw var(--sans);pointer-events:none}
+.eco-testigo{position:absolute;z-index:4;left:0;top:0;width:1cqw;height:1cqw;border-radius:50%;background:#f0c77f;border:2px solid #f8e6c7;pointer-events:none}
+.eco-pareja{left:4.7%;width:48%;bottom:16%;height:31%;grid-template-columns:1fr 1fr;gap:.6cqw;background:transparent}
+.eco-pareja .eco-productor{padding:0 0 .5cqw;border:0;gap:.12cqw}
+.eco-productor figure{width:100%;height:65%;border-top:2px solid var(--acento)}
+.eco-productor figure figcaption{padding:.9cqw .45cqw .35cqw;font-size:1.01cqw}
+.eco-productor strong{margin-top:.15cqw}.eco-productor span{color:#e5e8d8}
+.modo-productores .eco-texto{top:18%;width:43%}

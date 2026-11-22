@@ -21,7 +21,7 @@ escena(6,'imperios','Territorios que cambiaron de poder',[
 ]);
 escena(9,'memoria','Memoria soviética',[
  ['1932–1933 · Ucrania soviética','Holodomor','La colectivización forzosa y las requisas de alimentos bajo Stalin contribuyeron a la hambruna masiva.','requisas','requisas hambre leyHambre'],
- ['1939–1945','Ocupación y destrucción','En Ucrania la ocupación nazi trajo persecución y asesinatos masivos, especialmente de judíos. La guerra dejó memorias enfrentadas.','yalta','yalta bando'],
+ ['1939–1945','Ocupación y destrucción','En Ucrania la ocupación nazi trajo persecución y asesinatos masivos, especialmente de judíos. La guerra dejó memorias enfrentadas.','','ocupacion bando'],
  ['Mayo de 1944 · Crimea','Una comunidad deportada','Las autoridades soviéticas expulsaron a los tártaros de Crimea. El exilio rompió vínculos familiares y territoriales durante décadas.','peninsula','tatar tatLey ne']
 ]);
 escena(10,'crimea','Crimea cambia de república',[
@@ -51,7 +51,7 @@ escena(14,'rumbo','¿Quién decide el rumbo?',[
 escena(15,'maidan','Euromaidán',[
  ['Noviembre de 2013 · Kiev','La decisión llega a la plaza','La suspensión del acuerdo europeo desencadenó protestas en la plaza de la Independencia.','plaza','plaza maidan'],
  ['30 noviembre 2013','Cambia la protesta','La violencia policial amplió la movilización. A la orientación europea se sumó la demanda de responsabilidad política.','maidan-informe','ohchr14 maidan'],
- ['Febrero–mayo de 2014','Cambia el gobierno','Tras la violencia mortal, Yanukóvich abandonó Kiev. El Parlamento convocó elecciones presidenciales, celebradas en mayo. Moscú calificó el relevo de golpe de Estado.','plaza','plaza maidan ohchr14']
+ ['Febrero–mayo de 2014','Cambia el gobierno','Tras la violencia mortal, Yanukóvich abandonó Kiev. El Parlamento convocó elecciones presidenciales, celebradas en mayo. Moscú calificó el relevo de golpe de Estado.','','maidan ohchr14']
 ]);
 escena(16,'territorios','Dos territorios, dos procesos',[
  ['Marzo de 2014','Crimea bajo control ruso','Fuerzas rusas tomaron el control de Crimea. Rusia proclamó su anexión tras una consulta celebrada bajo ese control.','peninsula','ne onu'],

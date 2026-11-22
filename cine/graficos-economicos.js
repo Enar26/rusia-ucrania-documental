@@ -40,8 +40,8 @@ function redEco(){
 function graficoEco(p){
  switch(p.tipo){
  case 'umbral':return '';
- case 'mundo':return '<div class="eco-pregunta">Europa oriental <i>↔</i> economía mundial</div>';
- case 'productores':return '<div class="eco-pareja">'+fotoEco('trigo','','Cereales · trigo ilustrativo')+'<div>'+iconoEco('gas')+'<strong>Rusia</strong><span>Gas y fertilizantes</span></div><div>'+iconoEco('grano')+'<strong>Ucrania</strong><span>Cereales y aceites</span></div></div>';
+ case 'mundo':return '<div class="eco-pregunta">Destino de la pregunta <i>·</i> Perú</div>';
+ case 'productores':return '<div class="eco-pareja">'+'<div class="eco-productor">'+fotoEco('abono','','Uso agrícola · foto ilustrativa')+'<strong>Rusia</strong><span>Gas y fertilizantes</span></div><div class="eco-productor">'+fotoEco('trigo-lviv','','Trigal en Leópolis, Ucrania')+'<strong>Ucrania</strong><span>Cereales y aceites</span></div></div>';
  case 'mercancias':return '<div class="eco-rubros">'+iconoEco('grano')+'<span>Trigo</span><i>·</i><span>Aceite de girasol</span></div>';
  case 'gasAntes':case 'gasDespues':return barrasGas(p.tipo==='gasAntes');
  case 'industria':return fotoEco('red','ventana','Red eléctrica de Eutingen, Alemania · Zonk43')+'<div class="eco-pie-frase">Precios de la energía → costos industriales</div>';
@@ -54,13 +54,13 @@ function graficoEco(p){
  case 'swift':return redEco();
  case 'reservas':return '<div class="eco-libro"><div><span>Activos</span><b>Reservas inmovilizadas</b></div><div><span>Operaciones</span><b>Sanciones selectivas</b></div><div><span>Intercambios</span><b>Reorganización comercial</b></div></div>';
  case 'pib':return cifraEco('−28,8 <em>%</em>','PIB real · variación respecto de 2021')+'<div class="eco-pib" aria-hidden="true"><i></i></div>';
- case 'reconstruir':return cifraEco('≈ 588','mil millones de dólares estadounidenses','Necesidades estimadas a diez años')+fotoEco('kajovka','detalle','Bajo Dniéper · Sentinel-2, junio de 2023 · falso color');
+ case 'reconstruir':return cifraEco('≈ 588','mil millones de dólares estadounidenses','Necesidades estimadas a diez años')+fotoEco('hangar','detalle','Hostómel, abril de 2022 · O. Ratushniak');
  case 'rusia':return '<div class="eco-comercio-ruso"><span>Ventas al exterior</span><i>↗</i><strong>Reorientación comercial</strong></div>';
  case 'peru':return '<div class="eco-origen">'+iconoEco('frasco')+'<span>Importaciones peruanas</span><strong>Urea</strong></div>';
- case 'campo':return fotoEco('andenes','ventana','Andenes de Machu Picchu, Perú · paisaje histórico')+'<div class="eco-pie-frase">Fertilizante → costo del cultivo → posible presión sobre alimentos</div>';
- case 'lima':return cifraEco('+8,46 <em>%</em>','IPC de Lima Metropolitana','Diciembre de 2022 respecto de diciembre de 2021');
+ case 'campo':return fotoEco('andenes','ventana','Cultivo en terrazas, Perú · J. Thompson')+'<div class="eco-pie-frase">Fertilizante → costo del cultivo → posible presión sobre alimentos</div>';
+ case 'lima':return cifraEco('+8,46 <em>%</em>','IPC de Lima Metropolitana','Diciembre de 2022 respecto de diciembre de 2021')+fotoEco('lima','detalle','Mercado del centro de Lima · YoTuT');
  case 'balance':return '<div class="eco-sintesis"><div>'+iconoEco('gas')+'<span>Más proveedores de energía</span></div><div>'+iconoEco('agua')+'<span>Rutas comerciales reorganizadas</span></div><div>'+iconoEco('hoja')+'<span>Reconstrucción pendiente</span></div></div>';
- case 'civil':return fotoEco('civil-ucrania','civil');
+ case 'civil':return fotoEco('plaza','civil','Estudiantes en una manifestación europeísta, Kiev · Ivan Bandura');
  }
 }
 function escenaEconomica(s,p,i){
