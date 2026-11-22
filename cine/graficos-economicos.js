@@ -45,8 +45,8 @@ function graficoEco(p){
  case 'mercancias':return '<div class="eco-rubros">'+iconoEco('grano')+'<span>Trigo</span><i>·</i><span>Aceite de girasol</span></div>';
  case 'gasAntes':case 'gasDespues':return barrasGas(p.tipo==='gasAntes');
  case 'industria':return fotoEco('red','ventana','Red eléctrica de Eutingen, Alemania · Zonk43')+'<div class="eco-pie-frase">Precios de la energía → costos industriales</div>';
- case 'puerto':return cifraEco('30,3 <em>Mt</em>','de alimentos hasta el 17 de mayo de 2023','Balance parcial · registro JCC / UNCTAD')+fotoEco('silo','detalle','Almacenamiento de grano · Montana, EE. UU.');
- case 'corredores':return secuenciaEco([['tren','Ferrocarril'],['via','Carretera'],['agua','Vía fluvial']])+'<div class="eco-pie-frase">Corredores de solidaridad · conexiones esquemáticas</div>';
+ case 'puerto':return cifraEco('≈ 33 <em>Mt</em>','millones de toneladas transportadas','Balance del programa marítimo · 2022–2023')+fotoEco('silo','detalle','Almacenamiento de grano · Montana, EE. UU.');
+ case 'corredores':return '<div class="eco-cadena modal-logistica"><span>Exportaciones de Ucrania</span>'+[['tren','Ferrocarril'],['via','Carretera'],['agua','Vía fluvial']].map(([m,t])=>'<div>'+iconoEco(m)+'<b>'+t+'</b></div>').join('')+'</div>'+'<div class="eco-pie-frase">Corredores de solidaridad · conexiones esquemáticas</div>';
  case 'faoPico':case 'faoDos':return indiceFao(p.tipo==='faoDos');
  case 'mercado':return fotoEco('mercado','ventana','Mercado de Kaolack, Senegal · archivo ilustrativo');
  case 'cadena':return secuenciaEco([['gas','Gas natural'],['frasco','Fertilizante nitrogenado'],['hoja','Cultivo']]);

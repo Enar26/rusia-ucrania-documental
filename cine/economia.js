@@ -12,7 +12,7 @@ const capitulosEco = [
   ['Europa · desde 2021','La presión llegó a la industria','El gas ya se encarecía antes de la invasión. La crisis aceleró el ahorro y la búsqueda de otros suministros.','ecoEnergia ecoGas',[9,48.5,39],'industria'],
   ['Unión Europea · 2025','Cambió la mezcla de proveedores','La cuota rusa cayó. La barra conserva la misma base de comparación.','ecoGas ecoGasCopia',[17,50,76],'gasDespues']]],
  ['El mar Negro y las rutas comerciales','comercio',[
-  ['Julio de 2022 – julio de 2023','Una salida por el mar Negro','La iniciativa permitió que cargamentos de alimentos volvieran a salir de tres puertos ucranianos.','ecoGrano ecoJcc',[31,46,19],'puerto'],
+  ['Julio de 2022 – julio de 2023','Una salida por el mar Negro','La iniciativa permitió que cargamentos de alimentos volvieran a salir de tres puertos ucranianos.','ecoGrano ecoAsamblea ecoDiscurso ecoJcc',[31,46,19],'puerto'],
   ['Mayo de 2022 – octubre de 2026','Otras salidas hacia Europa','Los corredores de solidaridad combinaron ferrocarril, carretera y vías fluviales para exportar productos agrícolas.','ecoCorredores',[23,49,42],'corredores']]],
  ['Del puerto al precio de los alimentos','presion',[
   ['Marzo de 2022','El salto de los alimentos','El índice FAO reúne precios internacionales de cinco grupos de alimentos, ponderados por su comercio.','ecoFao ecoSerie',[21,40,110],'faoPico'],

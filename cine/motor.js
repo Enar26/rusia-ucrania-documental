@@ -3,7 +3,7 @@
  const reducido=matchMedia('(prefers-reduced-motion: reduce)'), video=el('pelicula');
  const estados=escenas.sort((a,b)=>a.numero-b.numero).flatMap(s=>s.pasos.map((p,i)=>({s,p,i,id:p.codigo||(s.numero===35?'III':String(s.numero).padStart(2,'0')+String.fromCharCode(97+i))})));
  const clave='cine-ucrania-2026-v1', ease='cubic-bezier(.22,.78,.18,1)';
- let cursor=0, animaciones=[], bloqueo=0,ultimoClic=-Infinity, ocultar, timerVideo, avisoTimer;
+ let cursor=0, animaciones=[], bloqueo=0,ultimoClic=-Infinity, ocultar, avisoTimer;
  const guardar=(k,v)=>{try{localStorage.setItem(k,v)}catch{}};
  const leer=k=>{try{return localStorage.getItem(k)}catch{return null}};
  const indice=id=>estados.findIndex(x=>x.id===id);
@@ -195,5 +195,5 @@
    const n=indice(location.hash.replace('#ver/',''));
    if(n>=0)iniciar(n,false);else if(location.hash==='#inicio')presentarPortal();
  });
- const inicial=indice(location.hash.replace('#ver/',''));if(inicial>=0)iniciar(inicial,false);else presentarPortal(true);
+ const inicial=indice(location.hash.replace('#ver/',''));if(inicial>=0)iniciar(inicial,false);else presentarPortal();
 })();

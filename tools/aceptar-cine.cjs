@@ -44,10 +44,11 @@ try{
     if(actual==='12b')assert.ok((await p.locator('.voto').innerText()).includes('28.804.071'));
     if(actual.startsWith('21'))assert.equal(await p.locator('.explica').count(),(actual.charCodeAt(2)-97)%2);
    }
+   if(k===esperado.length-1)break;
    if(modo==='click'){await p.waitForTimeout(215);await p.mouse.click(500,370);}
    else await p.keyboard.press(offline?'ArrowRight':modo);
   }
-  for(let k=0;k<5;k++)await p.keyboard.press('ArrowRight');assert.equal(await estado(p),'24a');
+  await p.keyboard.press('ArrowRight');assert.equal(await estado(p),'E01A');await p.keyboard.press('ArrowLeft');assert.equal(await estado(p),'24a');
   for(let k=esperado.length-2;k>=0;k--){await p.keyboard.press(modo==='PageDown'?'PageUp':'ArrowLeft');const id=await estado(p);atras.push(id);assert.equal(id,esperado[k]);}
   pruebas.push({modo,fileOK:offline?fileOK:undefined,ida:ids,vuelta:atras});await ctx.close();
  }
@@ -55,7 +56,7 @@ try{
  const usb=await sinRed.newPage();const salidas=[];
  usb.on('request',r=>{if(/^https?:/.test(r.url()))salidas.push(r.url())});
  await usb.setContent(fs.readFileSync(archivo,'utf8'));
- await usb.waitForFunction(()=>document.querySelector('video').ended,null,{timeout:15000});
+ await usb.waitForFunction(()=>document.querySelector('video').currentTime>6 && document.querySelector('video').loop,null,{timeout:15000});
  videoOffline=await usb.locator('video').evaluate(v=>({segundos:v.duration,ancho:v.videoWidth,alto:v.videoHeight,terminado:v.ended}));
  assert.ok(videoOffline.segundos>=6&&videoOffline.segundos<=8&&videoOffline.ancho>0);assert.deepEqual(salidas,[]);await sinRed.close();
  const ctx=await browser.newContext({viewport:{width:1366,height:768}}),p=await ctx.newPage();await p.goto(url);await p.waitForFunction(()=>document.querySelector('video').currentTime>.15);await p.locator('#omitir').click();await p.locator('#presentar').click();await p.waitForFunction(()=>!!document.fullscreenElement);

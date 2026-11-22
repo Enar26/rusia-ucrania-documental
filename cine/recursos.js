@@ -27,7 +27,7 @@ const medios = {};
 function registrar(grupo,ext,nombres){ for(const n of nombres.split(' ')) medios[n]='assets/'+grupo+'/'+n+'.'+ext; }
 registrar('archivo','webp','atlas nicolas acta1991 resolucion68 dnieper kiev maidan-informe kajovka');
 registrar('mapas','svg','1100 1200 1500 1650 1783 region ucrania soberania donbas peninsula union-1922 crimea-1954');
-registrar('cine','webp','invierno petrogrado yalta decreto trigo vida bosforo plaza');
+registrar('cine','webp','invierno petrogrado yalta decreto trigo bosforo plaza');
 registrar('cine','svg','region-2014 region-2015-21 region-2022-03-30 region-2022-11-15 region-20240710 region-20261120');
 medios.umbral='assets/cine/umbral.mp4';
 const ruta = id=>globalThis.integrados?.[medios[id]] || './'+medios[id];

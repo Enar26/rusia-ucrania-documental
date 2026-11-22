@@ -1,23 +1,24 @@
 # Rusia y Ucrania
 
-**Conflicto, impacto económico y humanitario** · Documental interactivo en español para la exposición de Ciencias Sociales. El Capítulo I llega al 20 de noviembre de 2026. Sus 24 escenas y 71 estados incluyen la síntesis histórica, tres preguntas con respuesta oral, la conclusión y el relevo al segundo expositor. La proyección termina en «Capítulo II · Consecuencias económicas».
+**Conflicto, impacto económico y humanitario** es un documental interactivo para una exposición de Ciencias Sociales. El recorrido contiene 96 estados manuales. Los primeros 71 corresponden a la apertura, Historia y el relevo a Economía. Siguen las diez escenas económicas con 24 estados y, al último clic, la portada de Humanidad.
 
 ## Abrir en clase
 
-Descarga el ZIP, extrae **Rusia-y-Ucrania-Cine.html**, ábrelo en el navegador y pulsa **Presentar**. El archivo lleva dentro el vídeo, las imágenes, los mapas, las tipografías y las fichas de fuentes. Las páginas de las instituciones citadas requieren Internet. [Descarga para el aula](https://github.com/Enar26/rusia-ucrania-documental/raw/refs/heads/reconstruccion-documental-cine-2026/descargas/Rusia-y-Ucrania-Cine.zip)
+Descarga el ZIP, extrae **Rusia-y-Ucrania-Economia.html** y ábrelo en un navegador de escritorio. Pulsa **Presentar** para iniciar la exposición. El archivo incluye vídeo, fotografías, atlas, tipografías y fichas documentales. Los enlaces a publicaciones externas requieren conexión. [Descarga offline](https://github.com/Enar26/rusia-ucrania-documental/raw/refs/heads/revision-capitulo-economia-v3/descargas/Rusia-y-Ucrania-Economia.zip)
 
 | Acción | Control |
 |---|---|
-| Avanzar una revelación o mostrar la respuesta | Clic en el lienzo, →, espacio o Av Pág |
-| Volver al estado anterior | ←, Re Pág o flecha inferior |
-| Consultar procedencia, crédito y fecha | **Fuentes**. Al cerrar se recupera el mismo paso |
-| Salir de pantalla completa | Escape |
-| Reiniciar o recuperar el paso guardado | **Inicio**, luego **Presentar** o **Continuar exposición** |
+| Avanzar una revelación o mostrar la respuesta histórica | Clic en el lienzo, →, espacio o Av Pág |
+| Volver al paso anterior | ←, Re Pág o flecha inferior |
+| Consultar el dato, el autor de la foto y su licencia | **Fuentes**. Cerrar devuelve al mismo paso |
+| Salir de pantalla completa | Esc |
+| Recuperar el paso guardado | **Inicio** y **Continuar exposición** |
+| Pausar o reanudar el bucle de la entrada | Botón inferior del portal |
 
-El portal reproduce una vez 7,6 segundos de metraje ilustrativo. **Omitir introducción** lleva al fotograma de reposo. Con movimiento reducido se entra desde la imagen fija. El equipo dispone de un guion de ensayo privado entregado por separado. El objetivo de 13 minutos incluye la participación del público.
+El portal alterna el estrecho del Bósforo y un campo de trigo. El modo de movimiento reducido ofrece una imagen fija. El presupuesto de exposición de Economía es de **5 min 50 s**, pendiente de ensayo. El expositor controla cada avance.
 
-## Proyecto y comprobación
+## Revisar el proyecto
 
-La rama parte de `redisenio-documental-post-v8` en `3697243`. Para probar el sitio modular desde la raíz, ejecuta `python3 -m http.server 8000` y abre `http://localhost:8000/`. Para exportarlo, ejecuta `python3 tools/exportar.py Rusia-y-Ucrania-Cine.html`. Para repetir la aceptación con Chromium y Playwright instalados, ejecuta `node tools/aceptar-cine.cjs http://localhost:8000/ Rusia-y-Ucrania-Cine.html revision/cine`. La variable `BROWSER_PATH` permite indicar otro ejecutable de Chromium.
+La rama económica parte de `reconstruccion-documental-cine-2026` en `c9ede76`. Para probar el sitio modular, ejecuta `python3 -m http.server 8000` desde la raíz y abre `http://localhost:8000/`. Para generar el HTML autónomo, ejecuta `python3 tools/exportar.py Rusia-y-Ucrania-Economia.html`.
 
-En `cine/`, las fichas históricas proporcionan los pasos y el motor controla la navegación. El atlas representa intervalos de superficie provincial y distingue control estimado y soberanía. El referéndum de 1991 compara los votos por el sí y el no registrados por el Centre for Democracy Studies Aarau. [Fuentes y derechos](fuentes.csv) · [Revisión, capturas y grabaciones](revision/cine/README.md)
+La revisión incluye capturas por estado, grabaciones reales, fuentes y resultados de las pruebas, además de las cifras que quedaron pendientes de cotejo. [Evaluación y evidencias de Economía](revision/economia/README.md) · [Catálogo de fuentes y derechos](fuentes.csv) · [Entrega histórica anterior](revision/cine/README.md)

@@ -80,3 +80,6 @@
 .eco-productor figure figcaption{padding:.9cqw .45cqw .35cqw;font-size:1.01cqw}
 .eco-productor strong{margin-top:.15cqw}.eco-productor span{color:#e5e8d8}
 .modo-productores .eco-texto{top:18%;width:43%}
+.modal-logistica{top:41%;padding-top:5.9cqw;align-items:flex-start}
+.modal-logistica>span{position:absolute;top:1.05cqw;left:2cqw;right:2cqw;border-bottom:1px solid #d6ba7d88;padding-bottom:.65cqw;font-size:1.4cqw;font-weight:600;color:var(--acento)}
+.modal-logistica>div{border-left:1px solid #d6ba7d80;padding-left:.8cqw;position:relative}.modal-logistica>div:before{content:"";position:absolute;top:-1.9cqw;height:1.9cqw;border-left:1px solid #d6ba7d80;left:-1px}

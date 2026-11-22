@@ -9,7 +9,7 @@ const segmentos=[
  for(const [nombre,id,ruta] of segmentos){
   const c=await b.newContext({viewport:{width:1280,height:720},recordVideo:{dir:tmp,size:{width:960,height:540}}}),p=await c.newPage();
   await p.goto(url+(id?'#ver/'+id:''));await p.mouse.move(0,0);await p.evaluate(()=>document.fonts.ready);
-  if(!id){await p.waitForFunction(()=>document.querySelector('video').ended);await p.screenshot({path:dest+'portal.jpg',quality:85});await p.locator('#presentar').click();await p.waitForTimeout(1100);}
+  if(!id){await p.waitForFunction(()=>document.querySelector('video').currentTime>6 && document.querySelector('video').loop);await p.screenshot({path:dest+'portal.jpg',quality:85});await p.locator('#presentar').click();await p.waitForTimeout(1100);}
   else{
    await p.waitForTimeout(500);let anterior=id;
    for(const paso of ruta){await p.keyboard.press(paso>anterior?'ArrowRight':'ArrowLeft');assert.equal(await p.locator('.cuadro:not(.sale)').getAttribute('data-id'),paso);

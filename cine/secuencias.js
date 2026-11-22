@@ -7,10 +7,10 @@ function escena(numero, estilo, nombre, pasos) {
 const perspectivas=[
   ['Historia','Origen y evolución','atlas'],
   ['Economía','Intercambios y recursos','trigo'],
-  ['Humanidad','Vida civil y paz','vida']
+  ['Humanidad','Vida civil y paz','plaza-lviv']
 ];
 const foco=[-1,0,1,2,0];
-escena(2,'indice','Tres perspectivas, un conflicto',foco.map(i=>['Apertura','Tres perspectivas, un conflicto',i<0?'':perspectivas[i][0],'atlas','mar trigo vida']));
+escena(2,'indice','Tres perspectivas, un conflicto',foco.map(i=>['Apertura','Tres perspectivas, un conflicto',i<0?'':perspectivas[i][0],'atlas','mar trigo urbana']));
 escena(7,'retrato','El zar abdica',[
  ['1914–1917','Un imperio bajo presión','La guerra mundial agravó la escasez y la crisis de autoridad del zar.','nicolas','zar palacio revolucion petrogrado'],
  ['Marzo de 1917','El zar abdica','La revolución acabó con la monarquía. En Petrogrado y en Kiev se abrió la disputa por el poder.','nicolas','zar palacio revolucion frus']
@@ -34,5 +34,5 @@ escena(22,'cierre','Conclusión del primer expositor',[
  ['Decisiones','La guerra tuvo autores','Las tensiones de seguridad ayudan a explicar el contexto. Invadir en 2022 fue una decisión del Gobierno ruso.','dnieper','archivo discurso onu22'],
  ['Soberanía','Comprender abre una pregunta','A mi juicio, una salida duradera exige escuchar a quienes viven con las consecuencias y tomar en serio su soberanía.','dnieper','archivo onu22 onu25']
 ]);
-escena(23,'regreso','Tres perspectivas, un conflicto',[['Historia completada','Tres perspectivas, un conflicto','Historia','atlas','mar trigo vida'],['Cambio de expositor','Tres perspectivas, un conflicto','Economía','trigo','mar trigo vida']]);
+escena(23,'regreso','Tres perspectivas, un conflicto',[['Historia completada','Tres perspectivas, un conflicto','Historia','atlas','mar trigo urbana'],['Cambio de expositor','Tres perspectivas, un conflicto','Economía','trigo','mar trigo urbana']]);
 escena(24,'economia','Consecuencias económicas',[['Capítulo II','Consecuencias económicas','','trigo','trigo']]);

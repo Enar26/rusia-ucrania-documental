@@ -24,3 +24,8 @@ Licencia: https://www.pexels.com/license/
 
 Las fichas de Fuentes en el reproductor incluyen los vínculos a las obras,
 sus fechas y ubicaciones documentadas, y las transformaciones realizadas.
+
+El montaje normaliza ambas tomas a 24 fps. En la línea de tiempo de ocho
+segundos se usan los segundos 3–6 del Bósforo, 4–8 del trigo y 0–3 del
+Bósforo, con dos solapamientos de un segundo. El final y el principio son
+fotogramas contiguos de la toma del estrecho.
