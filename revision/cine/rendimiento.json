@@ -1,0 +1,23 @@
+{
+  "tiempoHastaPrimerVideoMs": 1081,
+  "primerPintado": [
+    [
+      "first-paint",
+      400
+    ],
+    [
+      "first-contentful-paint",
+      400
+    ]
+  ],
+  "bytesPrimerPlano": 250496,
+  "intervalosDeCuadro": {
+    "medianaMs": 17,
+    "p95Ms": 17,
+    "muestras": 69
+  },
+  "cpu": "4× más lento",
+  "red": "80 ms; 750 000 bytes/s",
+  "video": 1677727,
+  "memoriaJS": 2294055
+}

@@ -57,7 +57,7 @@ for name in ("2014","2015-21","2022-03-30","2022-11-15","20240710","20261120"):
             print(name,key,round(share*10)*10)
         svg.append(f'<path d="{paths[key]}" fill="{color}" stroke="#b4c3bc" stroke-width="1.6"/>')
     svg.append(f'<path d="{path(country.SimplifyPreserveTopology(1600))}" fill="none" stroke="#f1e8d5" stroke-width="3.5"/>')
-    for lon,lat,label in [(30.52,50.45,"Kiev"),(35.0,44.8,"Crimea"),(37.6,48.2,"Donbás"),(30.8,45.4,"Mar Negro")]:
+    for lon,lat,label in [(30.52,50.45,"Kiev"),(35.0,44.8,"Crimea"),(37.6,48.2,"Donbás"),(30.8,45.4,"Mar Negro"),(38.5,51.7,"Rusia")]:
         x,y=xy(*project.TransformPoint(lon,lat)[:2])
         if label=="Donbás" and name=="2015-21":
             svg.append(f'<circle cx="{x}" cy="{y}" r="17" fill="none" stroke="#f4cd91" stroke-width="5" stroke-dasharray="5 5"/>')

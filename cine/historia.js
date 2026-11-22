@@ -20,7 +20,7 @@ escena(6,'imperios','Territorios que cambiaron de poder',[
  ['1783 · Crimea','El imperio incorpora la península','Catalina II proclamó la anexión de Crimea. Terminó el kanato y cambió el marco político de su población tártara.','1783','atlas imp1783 tatar']
 ]);
 escena(9,'memoria','Memoria soviética',[
- ['1932–1933 · Ucrania soviética','Holodomor','La colectivización forzosa y las requisas de alimentos bajo Stalin contribuyeron a la hambruna masiva.','trigo','hambre leyHambre trigo'],
+ ['1932–1933 · Ucrania soviética','Holodomor','La colectivización forzosa y las requisas de alimentos bajo Stalin contribuyeron a la hambruna masiva.','requisas','requisas hambre leyHambre'],
  ['1939–1945','Ocupación y destrucción','En Ucrania la ocupación nazi trajo persecución y asesinatos masivos, especialmente de judíos. La guerra dejó memorias enfrentadas.','yalta','yalta bando'],
  ['Mayo de 1944 · Crimea','Una comunidad deportada','Las autoridades soviéticas expulsaron a los tártaros de Crimea. El exilio rompió vínculos familiares y territoriales durante décadas.','peninsula','tatar tatLey ne']
 ]);
@@ -35,7 +35,7 @@ escena(11,'alianzas','Dos bloques, una rivalidad',[
 ]);
 escena(12,'independencia','Ucrania decide',[
  ['24 agosto 1991','El Parlamento declara la independencia','La Rada aprobó el Acta de Independencia y sometió la decisión a referéndum.','acta1991','acta91 archivo91 constitucion'],
- ['1 diciembre 1991','La ciudadanía ratifica el Acta','La mayoría de los votantes respaldó la independencia. El voto también fue favorable en Crimea.','soberania','voto constitucion ne sombreado'],
+ ['1 diciembre 1991','La ciudadanía ratifica el Acta','La ciudadanía ratificó el Acta de Independencia. Incluso en Crimea ganó el sí.','soberania','voto escrutinio constitucion'],
  ['Diciembre de 1991','Una frontera internacional','La URSS se disolvió. Ucrania ingresó en el nuevo orden internacional como Estado independiente con Crimea dentro de sus fronteras.','soberania','diplomacia constitucion onu ne sombreado']
 ]);
 escena(13,'budapest','El compromiso de Budapest',[
@@ -61,7 +61,7 @@ escena(16,'territorios','Dos territorios, dos procesos',[
 escena(17,'minsk','Minsk y la guerra que continuó',[
  ['Septiembre de 2014 · Minsk','El primer alto el fuego','Las conversaciones produjeron un protocolo para frenar la guerra del Donbás. Los combates continuaron.','resolucion68','minsk protocolo'],
  ['Febrero de 2015','Seguridad y política','El nuevo paquete combinó alto el fuego, medidas de seguridad y un proceso político. El orden de aplicación se convirtió en una disputa.','resolucion68','minsk'],
- ['2016–2019','El conflicto permanece abierto','Los acuerdos y las negociaciones coexistieron con hostilidades en el este. La invasión a gran escala llegaría en 2022.','donbas','ne minsk informe19']
+ ['2016–2021','El conflicto permanece abierto','Los acuerdos y las negociaciones coexistieron con hostilidades en el este. La invasión a gran escala llegaría en 2022.','donbas','ne minsk informe19']
 ]);
 escena(18,'invasion','La invasión a gran escala',[
  ['2021–21 febrero 2022','De un relato al reconocimiento','Putin presentó a rusos y ucranianos como «un solo pueblo». En febrero Rusia reconoció a las entidades separatistas del este.','ucrania','kremlin estatuto ne'],

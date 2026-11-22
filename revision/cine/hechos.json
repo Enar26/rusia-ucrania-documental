@@ -1,0 +1,1030 @@
+[
+  {
+    "id": "01a",
+    "fecha": "Apertura",
+    "titulo": "RUSIA Y UCRANIA",
+    "hecho": "Conflicto, impacto económico y humanitario",
+    "fuentes": [
+      "plaza"
+    ],
+    "recursos": [
+      "plaza.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "02a",
+    "fecha": "Apertura",
+    "titulo": "Tres perspectivas, un conflicto",
+    "hecho": "",
+    "fuentes": [
+      "mar",
+      "trigo",
+      "vida"
+    ],
+    "recursos": [
+      "atlas.webp",
+      "trigo.webp",
+      "vida.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "02b",
+    "fecha": "Apertura",
+    "titulo": "Tres perspectivas, un conflicto",
+    "hecho": "Historia",
+    "fuentes": [
+      "mar",
+      "trigo",
+      "vida"
+    ],
+    "recursos": [
+      "atlas.webp",
+      "trigo.webp",
+      "vida.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "02c",
+    "fecha": "Apertura",
+    "titulo": "Tres perspectivas, un conflicto",
+    "hecho": "Economía",
+    "fuentes": [
+      "mar",
+      "trigo",
+      "vida"
+    ],
+    "recursos": [
+      "atlas.webp",
+      "trigo.webp",
+      "vida.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "02d",
+    "fecha": "Apertura",
+    "titulo": "Tres perspectivas, un conflicto",
+    "hecho": "Humanidad",
+    "fuentes": [
+      "mar",
+      "trigo",
+      "vida"
+    ],
+    "recursos": [
+      "atlas.webp",
+      "trigo.webp",
+      "vida.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "02e",
+    "fecha": "Apertura",
+    "titulo": "Tres perspectivas, un conflicto",
+    "hecho": "Historia",
+    "fuentes": [
+      "mar",
+      "trigo",
+      "vida"
+    ],
+    "recursos": [
+      "atlas.webp",
+      "trigo.webp",
+      "vida.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "03a",
+    "fecha": "Capítulo I · Historia y evolución",
+    "titulo": "El origen de un conflicto",
+    "hecho": "Una historia que precede a 2014.",
+    "fuentes": [
+      "mar"
+    ],
+    "recursos": [
+      "atlas.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "04a",
+    "fecha": "Europa oriental",
+    "titulo": "Entre el Dniéper y el mar Negro",
+    "hecho": "Ucrania limita con Rusia al este. El Dniéper atraviesa Kiev y desemboca al sur, en el mar Negro.",
+    "fuentes": [
+      "ne",
+      "onu"
+    ],
+    "recursos": [
+      "region.svg"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "04b",
+    "fecha": "Ucrania · sur y este",
+    "titulo": "Una península y una región",
+    "hecho": "Crimea se adentra en el mar Negro. El Donbás se extiende por el este de Ucrania; Donetsk y Lugansk son también nombres de provincias.",
+    "fuentes": [
+      "ne",
+      "onu"
+    ],
+    "recursos": [
+      "orientacion.svg"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "05a",
+    "fecha": "Siglos IX–XI",
+    "titulo": "Un mundo de ciudades y ríos",
+    "hecho": "La Rus vinculó principados y centros de comercio. Kiev, junto al Dniéper, fue uno de sus principales centros políticos.",
+    "fuentes": [
+      "atlas",
+      "ne",
+      "yale"
+    ],
+    "recursos": [
+      "1100.svg"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "05b",
+    "fecha": "Herencia medieval",
+    "titulo": "Más de un heredero",
+    "hecho": "Las historias de Ucrania, Rusia y Bielorrusia remiten a la Rus. Las naciones actuales surgieron en otras condiciones.",
+    "fuentes": [
+      "archivo",
+      "yale",
+      "oxford"
+    ],
+    "recursos": [
+      "dnieper.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "05c",
+    "fecha": "Siglos XII–XIII",
+    "titulo": "El poder se fragmenta",
+    "hecho": "Distintos principados siguieron trayectorias propias. En 1240 los mongoles tomaron Kiev.",
+    "fuentes": [
+      "atlas",
+      "ne",
+      "plokhy"
+    ],
+    "recursos": [
+      "1200.svg"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "06a",
+    "fecha": "Siglos XIV–XVI",
+    "titulo": "Entre Lituania, Polonia y Moscovia",
+    "hecho": "Los territorios de la actual Ucrania quedaron bajo autoridades diferentes. Crimea y la estepa tuvieron sus propias trayectorias.",
+    "fuentes": [
+      "atlas",
+      "plokhy",
+      "ne"
+    ],
+    "recursos": [
+      "1500.svg"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "06b",
+    "fecha": "1648–1654",
+    "titulo": "Los cosacos buscan protección",
+    "hecho": "Tras el levantamiento de 1648, el Hetmanato de Bohdán Jmelnitski pactó con el zar en Pereyáslav. El alcance de la subordinación sigue siendo debatido.",
+    "fuentes": [
+      "atlas",
+      "pere",
+      "ne"
+    ],
+    "recursos": [
+      "1650.svg"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "06c",
+    "fecha": "1783 · Crimea",
+    "titulo": "El imperio incorpora la península",
+    "hecho": "Catalina II proclamó la anexión de Crimea. Terminó el kanato y cambió el marco político de su población tártara.",
+    "fuentes": [
+      "atlas",
+      "imp1783",
+      "tatar"
+    ],
+    "recursos": [
+      "1783.svg",
+      "manifiesto.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "07a",
+    "fecha": "1914–1917",
+    "titulo": "Un imperio bajo presión",
+    "hecho": "La guerra mundial agravó la escasez y la crisis de autoridad del zar.",
+    "fuentes": [
+      "zar",
+      "palacio",
+      "revolucion",
+      "petrogrado"
+    ],
+    "recursos": [
+      "invierno.webp",
+      "atlas.webp",
+      "nicolas.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "07b",
+    "fecha": "Marzo de 1917",
+    "titulo": "El zar abdica",
+    "hecho": "La revolución acabó con la monarquía. En Petrogrado y en Kiev se abrió la disputa por el poder.",
+    "fuentes": [
+      "zar",
+      "palacio",
+      "revolucion",
+      "frus"
+    ],
+    "recursos": [
+      "invierno.webp",
+      "atlas.webp",
+      "nicolas.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "08a",
+    "fecha": "1917 · Petrogrado y Kiev",
+    "titulo": "Dos revoluciones, varios proyectos",
+    "hecho": "Tras la caída del zar gobernó un gabinete provisional. En octubre los bolcheviques tomaron el poder en Petrogrado. En Kiev ya actuaba la Rada Central.",
+    "fuentes": [
+      "petrogrado",
+      "revolucion",
+      "frus"
+    ],
+    "recursos": [
+      "petrogrado.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "08b",
+    "fecha": "Enero de 1918 · Kiev",
+    "titulo": "Una república reclama independencia",
+    "hecho": "La República Popular Ucraniana declaró su independencia. Durante la guerra compitieron gobiernos y proyectos distintos.",
+    "fuentes": [
+      "repop",
+      "frus",
+      "petrogrado"
+    ],
+    "recursos": [],
+    "fuera": []
+  },
+  {
+    "id": "08c",
+    "fecha": "Diciembre de 1922",
+    "titulo": "Una república dentro de la Unión",
+    "hecho": "La república soviética ucraniana fue una de las cuatro entidades fundadoras de la URSS. Su condición jurídica difería de la independencia proclamada en 1918.",
+    "fuentes": [
+      "state",
+      "ne"
+    ],
+    "recursos": [
+      "union-1922.svg"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "09a",
+    "fecha": "1932–1933 · Ucrania soviética",
+    "titulo": "Holodomor",
+    "hecho": "La colectivización forzosa y las requisas de alimentos bajo Stalin contribuyeron a la hambruna masiva.",
+    "fuentes": [
+      "requisas",
+      "hambre",
+      "leyHambre"
+    ],
+    "recursos": [
+      "requisas.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "09b",
+    "fecha": "1939–1945",
+    "titulo": "Ocupación y destrucción",
+    "hecho": "En Ucrania la ocupación nazi trajo persecución y asesinatos masivos, especialmente de judíos. La guerra dejó memorias enfrentadas.",
+    "fuentes": [
+      "yalta",
+      "bando"
+    ],
+    "recursos": [
+      "yalta.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "09c",
+    "fecha": "Mayo de 1944 · Crimea",
+    "titulo": "Una comunidad deportada",
+    "hecho": "Las autoridades soviéticas expulsaron a los tártaros de Crimea. El exilio rompió vínculos familiares y territoriales durante décadas.",
+    "fuentes": [
+      "tatar",
+      "tatLey",
+      "ne"
+    ],
+    "recursos": [
+      "peninsula.svg"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "10a",
+    "fecha": "Antes de febrero de 1954",
+    "titulo": "Una frontera interna",
+    "hecho": "La región de Crimea pertenecía a la república soviética rusa. Rusia y Ucrania formaban parte de la misma Unión.",
+    "fuentes": [
+      "decreto",
+      "crimea",
+      "ne"
+    ],
+    "recursos": [
+      "crimea-rusa.svg"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "10b",
+    "fecha": "19 febrero 1954",
+    "titulo": "De una república soviética a otra",
+    "hecho": "El decreto dispuso el traslado de la región de Crimea de la república rusa a la ucraniana dentro de la URSS.",
+    "fuentes": [
+      "decreto",
+      "crimea",
+      "ne"
+    ],
+    "recursos": [
+      "crimea-1954.svg",
+      "decreto.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "11a",
+    "fecha": "1949 · mientras Crimea aún pertenecía a la república rusa",
+    "titulo": "El Tratado del Atlántico Norte",
+    "hecho": "Doce países fundaron la OTAN. La defensa colectiva organizó sus compromisos de seguridad.",
+    "fuentes": [
+      "otan",
+      "mapaFrio",
+      "fria"
+    ],
+    "recursos": [
+      "bloques.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "11b",
+    "fecha": "1955 · Europa",
+    "titulo": "El Pacto de Varsovia",
+    "hecho": "La URSS y gobiernos de Europa oriental crearon una alianza propia. Ucrania seguía siendo una república soviética.",
+    "fuentes": [
+      "varsovia",
+      "mapaFrio"
+    ],
+    "recursos": [
+      "bloques.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "11c",
+    "fecha": "1991",
+    "titulo": "Se disuelve el Pacto",
+    "hecho": "Al terminar la Guerra Fría se disolvió el Pacto de Varsovia. La disolución de la URSS fue otro proceso, culminado en diciembre.",
+    "fuentes": [
+      "varsovia",
+      "mapaFrio",
+      "diplomacia"
+    ],
+    "recursos": [
+      "bloques.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "12a",
+    "fecha": "24 agosto 1991",
+    "titulo": "El Parlamento declara la independencia",
+    "hecho": "La Rada aprobó el Acta de Independencia y sometió la decisión a referéndum.",
+    "fuentes": [
+      "acta91",
+      "archivo91",
+      "constitucion"
+    ],
+    "recursos": [
+      "acta1991.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "12b",
+    "fecha": "1 diciembre 1991",
+    "titulo": "La ciudadanía ratifica el Acta",
+    "hecho": "La ciudadanía ratificó el Acta de Independencia. Incluso en Crimea ganó el sí.",
+    "fuentes": [
+      "voto",
+      "escrutinio",
+      "constitucion"
+    ],
+    "recursos": [],
+    "fuera": []
+  },
+  {
+    "id": "12c",
+    "fecha": "Diciembre de 1991",
+    "titulo": "Una frontera internacional",
+    "hecho": "La URSS se disolvió. Ucrania ingresó en el nuevo orden internacional como Estado independiente con Crimea dentro de sus fronteras.",
+    "fuentes": [
+      "diplomacia",
+      "constitucion",
+      "onu",
+      "ne",
+      "sombreado"
+    ],
+    "recursos": [
+      "soberania.svg"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "13a",
+    "fecha": "5 diciembre 1994",
+    "titulo": "El memorándum",
+    "hecho": "Ucrania se incorporó al Tratado de No Proliferación como Estado sin armas nucleares. Rusia, Estados Unidos y el Reino Unido formularon compromisos de seguridad.",
+    "fuentes": [
+      "budapest",
+      "transcripcion"
+    ],
+    "recursos": [],
+    "fuera": []
+  },
+  {
+    "id": "13b",
+    "fecha": "Budapest · párrafos 1, 2 y 6",
+    "titulo": "El alcance de la firma",
+    "hecho": "Los firmantes reafirmaron el respeto a la independencia y las fronteras existentes. El texto prevé consultas, sin una cláusula automática de defensa militar.",
+    "fuentes": [
+      "budapest",
+      "transcripcion"
+    ],
+    "recursos": [],
+    "fuera": []
+  },
+  {
+    "id": "14a",
+    "fecha": "1999 · Europa central",
+    "titulo": "Cambian las alianzas",
+    "hecho": "Polonia, Hungría y la República Checa ingresaron en la OTAN. Buscaban seguridad; el Gobierno ruso consideró amenazadora la ampliación.",
+    "fuentes": [
+      "ingreso",
+      "discurso"
+    ],
+    "recursos": [],
+    "fuera": []
+  },
+  {
+    "id": "14b",
+    "fecha": "2004 · Ucrania",
+    "titulo": "Una elección disputada",
+    "hecho": "Las protestas de la Revolución Naranja y la impugnación de resultados condujeron a la repetición de la segunda vuelta presidencial.",
+    "fuentes": [
+      "osce04"
+    ],
+    "recursos": [],
+    "fuera": []
+  },
+  {
+    "id": "14c",
+    "fecha": "3 abril 2008 · Bucarest",
+    "titulo": "Una aspiración futura",
+    "hecho": "Los aliados declararon que Ucrania y Georgia llegarían a ser miembros de la OTAN. La declaración dejó abierto el calendario.",
+    "fuentes": [
+      "bucarest"
+    ],
+    "recursos": [],
+    "fuera": []
+  },
+  {
+    "id": "14d",
+    "fecha": "Noviembre de 2013",
+    "titulo": "Se suspende la firma con la UE",
+    "hecho": "El gobierno de Yanukóvich suspendió los preparativos del acuerdo de asociación con la Unión Europea. La cuestión inmediata era el vínculo con la UE.",
+    "fuentes": [
+      "plaza",
+      "maidan",
+      "ohchr14"
+    ],
+    "recursos": [
+      "plaza.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "15a",
+    "fecha": "Noviembre de 2013 · Kiev",
+    "titulo": "La decisión llega a la plaza",
+    "hecho": "La suspensión del acuerdo europeo desencadenó protestas en la plaza de la Independencia.",
+    "fuentes": [
+      "plaza",
+      "maidan"
+    ],
+    "recursos": [
+      "plaza.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "15b",
+    "fecha": "30 noviembre 2013",
+    "titulo": "Cambia la protesta",
+    "hecho": "La violencia policial amplió la movilización. A la orientación europea se sumó la demanda de responsabilidad política.",
+    "fuentes": [
+      "ohchr14",
+      "maidan"
+    ],
+    "recursos": [
+      "maidan-informe.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "15c",
+    "fecha": "Febrero–mayo de 2014",
+    "titulo": "Cambia el gobierno",
+    "hecho": "Tras la violencia mortal, Yanukóvich abandonó Kiev. El Parlamento convocó elecciones presidenciales, celebradas en mayo. Moscú calificó el relevo de golpe de Estado.",
+    "fuentes": [
+      "plaza",
+      "maidan",
+      "ohchr14"
+    ],
+    "recursos": [
+      "plaza.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "16a",
+    "fecha": "Marzo de 2014",
+    "titulo": "Crimea bajo control ruso",
+    "hecho": "Fuerzas rusas tomaron el control de Crimea. Rusia proclamó su anexión tras una consulta celebrada bajo ese control.",
+    "fuentes": [
+      "ne",
+      "onu"
+    ],
+    "recursos": [
+      "peninsula.svg"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "16b",
+    "fecha": "Primavera de 2014",
+    "titulo": "Guerra en el Donbás",
+    "hecho": "En partes de Donetsk y Lugansk, fuerzas separatistas respaldadas por Rusia se enfrentaron a las ucranianas y proclamaron entidades propias.",
+    "fuentes": [
+      "ne",
+      "minsk",
+      "ohchr14"
+    ],
+    "recursos": [
+      "donbas.svg"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "16c",
+    "fecha": "27 marzo 2014 · marco jurídico",
+    "titulo": "La frontera reconocida",
+    "hecho": "La Asamblea General reafirmó la integridad territorial de Ucrania y rechazó que la consulta alterase el estatuto de Crimea.",
+    "fuentes": [
+      "archivo68",
+      "onu"
+    ],
+    "recursos": [
+      "resolucion68.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "17a",
+    "fecha": "Septiembre de 2014 · Minsk",
+    "titulo": "El primer alto el fuego",
+    "hecho": "Las conversaciones produjeron un protocolo para frenar la guerra del Donbás. Los combates continuaron.",
+    "fuentes": [
+      "minsk",
+      "protocolo"
+    ],
+    "recursos": [],
+    "fuera": []
+  },
+  {
+    "id": "17b",
+    "fecha": "Febrero de 2015",
+    "titulo": "Seguridad y política",
+    "hecho": "El nuevo paquete combinó alto el fuego, medidas de seguridad y un proceso político. El orden de aplicación se convirtió en una disputa.",
+    "fuentes": [
+      "minsk"
+    ],
+    "recursos": [],
+    "fuera": []
+  },
+  {
+    "id": "17c",
+    "fecha": "2016–2021",
+    "titulo": "El conflicto permanece abierto",
+    "hecho": "Los acuerdos y las negociaciones coexistieron con hostilidades en el este. La invasión a gran escala llegaría en 2022.",
+    "fuentes": [
+      "ne",
+      "minsk",
+      "informe19"
+    ],
+    "recursos": [
+      "donbas.svg"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "18a",
+    "fecha": "2021–21 febrero 2022",
+    "titulo": "De un relato al reconocimiento",
+    "hecho": "Putin presentó a rusos y ucranianos como «un solo pueblo». En febrero Rusia reconoció a las entidades separatistas del este.",
+    "fuentes": [
+      "kremlin",
+      "estatuto",
+      "ne"
+    ],
+    "recursos": [
+      "ucrania.svg"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "18b",
+    "fecha": "24 febrero 2022",
+    "titulo": "La invasión a gran escala",
+    "hecho": "Rusia invadió Ucrania a una escala que desbordó la guerra del Donbás. El Kremlin invocó la OTAN, la protección del Donbás y la «desnazificación».",
+    "fuentes": [
+      "ne",
+      "discurso",
+      "onu22"
+    ],
+    "recursos": [
+      "ucrania.svg"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "18c",
+    "fecha": "2 marzo 2022",
+    "titulo": "Atribuir y contrastar",
+    "hecho": "La Asamblea General deploró la agresión y exigió la retirada rusa. Los argumentos políticos del Kremlin y la evaluación jurídica tienen autores distintos.",
+    "fuentes": [
+      "discurso",
+      "onu22",
+      "yale"
+    ],
+    "recursos": [],
+    "fuera": []
+  },
+  {
+    "id": "19a",
+    "fecha": "Marzo de 2014",
+    "titulo": "La península",
+    "hecho": "Rusia pasó a controlar Crimea. La Asamblea General reafirmó las fronteras de Ucrania.",
+    "fuentes": [
+      "ne",
+      "onu"
+    ],
+    "recursos": [
+      "region-2014.svg"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "19b",
+    "fecha": "2015–2021",
+    "titulo": "Dos situaciones distintas",
+    "hecho": "Crimea siguió bajo control ruso. En partes del Donbás actuaron las entidades separatistas respaldadas por Rusia.",
+    "fuentes": [
+      "ne",
+      "onu",
+      "minsk"
+    ],
+    "recursos": [
+      "region-2015-21.svg"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "19c",
+    "fecha": "30 marzo 2022",
+    "titulo": "La invasión alcanza el norte",
+    "hecho": "La ocupación afectó también sectores de provincias del norte, incluida la de Kiev.",
+    "fuentes": [
+      "ne",
+      "control-2022-03-30",
+      "onu22"
+    ],
+    "recursos": [
+      "region-2022-03-30.svg"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "19d",
+    "fecha": "14 noviembre 2022",
+    "titulo": "El peso vuelve al este y al sur",
+    "hecho": "La comparación con marzo muestra la retirada rusa de las provincias del norte.",
+    "fuentes": [
+      "ne",
+      "control-2022-11-15",
+      "anexion"
+    ],
+    "recursos": [
+      "region-2022-11-15.svg"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "19e",
+    "fecha": "10 julio 2024",
+    "titulo": "Un arco meridional",
+    "hecho": "La ocupación alcanzaba partes de las provincias continentales junto al mar de Azov y la península de Crimea.",
+    "fuentes": [
+      "ne",
+      "control-20240710",
+      "onu"
+    ],
+    "recursos": [
+      "region-20240710.svg"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "19f",
+    "fecha": "20 noviembre 2026",
+    "titulo": "El territorio al corte",
+    "hecho": "En Donetsk, la proporción provincial estimada pasó del intervalo 50–74 % al de 75 % o más. La frontera reconocida sigue siendo la misma.",
+    "fuentes": [
+      "ne",
+      "control-20261120",
+      "onu"
+    ],
+    "recursos": [
+      "region-20261120.svg"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "20a",
+    "fecha": "Junio de 2023 · bajo Dniéper",
+    "titulo": "La ruptura de Kajovka",
+    "hecho": "La destrucción de la presa alteró el embalse y las poblaciones río abajo. La imagen Sentinel-2 permite situar el cambio del paisaje.",
+    "fuentes": [
+      "satelite"
+    ],
+    "recursos": [
+      "kajovka.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "20b",
+    "fecha": "Junio 2024 · febrero 2025",
+    "titulo": "Acuerdos y llamamientos",
+    "hecho": "Una cumbre en Suiza reunió a gobiernos sin participación rusa. En 2025 el Consejo de Seguridad pidió una paz duradera.",
+    "fuentes": [
+      "suiza",
+      "onu25"
+    ],
+    "recursos": [],
+    "fuera": []
+  },
+  {
+    "id": "20c",
+    "fecha": "20 noviembre 2026 · corte informativo",
+    "titulo": "Berlín y la negociación",
+    "hecho": "Según las crónicas de Berlín, aliados europeos de Ucrania pidieron representación en futuras conversaciones. Fue una posición negociadora.",
+    "fuentes": [
+      "berlin",
+      "dw"
+    ],
+    "recursos": [],
+    "fuera": []
+  },
+  {
+    "id": "20d",
+    "fecha": "Síntesis histórica",
+    "titulo": "Historia, seguridad y decisión",
+    "hecho": "El Kremlin invocó un pasado común y riesgos de seguridad. La agencia política de Ucrania y la decisión rusa de invadir también son indispensables para explicar la guerra.",
+    "fuentes": [
+      "archivo",
+      "kremlin",
+      "bucarest",
+      "onu22"
+    ],
+    "recursos": [
+      "dnieper.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "21a",
+    "fecha": "Pregunta 1 de 3",
+    "titulo": "¿Qué península localizamos al sur de Ucrania?",
+    "hecho": "",
+    "fuentes": [
+      "ne",
+      "onu"
+    ],
+    "recursos": [
+      "quiz-peninsula.svg"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "21b",
+    "fecha": "Pregunta 1 de 3",
+    "titulo": "¿Qué península localizamos al sur de Ucrania?",
+    "hecho": "Crimea se adentra en el mar Negro. En 1991 quedó dentro de las fronteras de Ucrania.",
+    "fuentes": [
+      "ne",
+      "onu"
+    ],
+    "recursos": [
+      "ucrania.svg"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "21c",
+    "fecha": "Pregunta 2 de 3",
+    "titulo": "¿Qué secuencia respeta la cronología?",
+    "hecho": "",
+    "fuentes": [
+      "acta91",
+      "onu",
+      "onu22"
+    ],
+    "recursos": [],
+    "fuera": []
+  },
+  {
+    "id": "21d",
+    "fecha": "Pregunta 2 de 3",
+    "titulo": "¿Qué secuencia respeta la cronología?",
+    "hecho": "Ucrania declaró su independencia en 1991. La anexión rusa de Crimea data de 2014 y la invasión a gran escala comenzó en 2022.",
+    "fuentes": [
+      "acta91",
+      "onu",
+      "onu22"
+    ],
+    "recursos": [],
+    "fuera": []
+  },
+  {
+    "id": "21e",
+    "fecha": "Pregunta 3 de 3",
+    "titulo": "¿Qué permite concluir la herencia de la Rus de Kiev?",
+    "hecho": "",
+    "fuentes": [
+      "yale",
+      "onu"
+    ],
+    "recursos": [
+      "1100.svg"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "21f",
+    "fecha": "Pregunta 3 de 3",
+    "titulo": "¿Qué permite concluir la herencia de la Rus de Kiev?",
+    "hecho": "Un pasado relacionado ayuda a entender las memorias actuales. La soberanía contemporánea se examina en su propio marco jurídico.",
+    "fuentes": [
+      "yale",
+      "onu"
+    ],
+    "recursos": [
+      "1100.svg"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "22a",
+    "fecha": "Memoria",
+    "titulo": "Un pasado, varias historias",
+    "hecho": "La Rus dejó herencias compartidas. En 1991 la sociedad ucraniana decidió su futuro político.",
+    "fuentes": [
+      "archivo",
+      "constitucion",
+      "yale"
+    ],
+    "recursos": [
+      "dnieper.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "22b",
+    "fecha": "Decisiones",
+    "titulo": "La guerra tuvo autores",
+    "hecho": "Las tensiones de seguridad ayudan a explicar el contexto. Invadir en 2022 fue una decisión del Gobierno ruso.",
+    "fuentes": [
+      "archivo",
+      "discurso",
+      "onu22"
+    ],
+    "recursos": [
+      "dnieper.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "22c",
+    "fecha": "Soberanía",
+    "titulo": "Comprender abre una pregunta",
+    "hecho": "A mi juicio, una salida duradera exige escuchar a quienes viven con las consecuencias y tomar en serio su soberanía.",
+    "fuentes": [
+      "archivo",
+      "onu22",
+      "onu25"
+    ],
+    "recursos": [
+      "dnieper.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "23a",
+    "fecha": "Historia completada",
+    "titulo": "Tres perspectivas, un conflicto",
+    "hecho": "Historia",
+    "fuentes": [
+      "mar",
+      "trigo",
+      "vida"
+    ],
+    "recursos": [
+      "atlas.webp",
+      "trigo.webp",
+      "vida.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "23b",
+    "fecha": "Cambio de expositor",
+    "titulo": "Tres perspectivas, un conflicto",
+    "hecho": "Economía",
+    "fuentes": [
+      "mar",
+      "trigo",
+      "vida"
+    ],
+    "recursos": [
+      "atlas.webp",
+      "trigo.webp",
+      "vida.webp"
+    ],
+    "fuera": []
+  },
+  {
+    "id": "24a",
+    "fecha": "Capítulo II",
+    "titulo": "Consecuencias económicas",
+    "hecho": "",
+    "fuentes": [
+      "trigo"
+    ],
+    "recursos": [
+      "trigo.webp"
+    ],
+    "fuera": []
+  }
+]

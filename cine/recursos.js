@@ -48,4 +48,45 @@ Object.assign(referencias,{
 });
 referencias.plokhy[1]='https://search.worldcat.org/search?q=Serhii+Plokhy+The+Gates+of+Europe';referencias.tatar[1]='https://search.worldcat.org/search?q=Greta+Uehling+Beyond+Memory';
 referencias.protocolo=['OSCE · Protocolo de Minsk, 5 de septiembre de 2014','https://www.osce.org/home/123257','Documento del Grupo de Contacto Trilateral que precedió al paquete de medidas de febrero de 2015.'];
-referencias.informe19=['ACNUDH · informes periódicos sobre los derechos humanos en Ucrania','https://www.ohchr.org/en/countries/ukraine','Documentación periódica sobre el conflicto desde 2014. Alcance temporal del paso 2016–2019.'];
+referencias.informe19=['ACNUDH · informes periódicos sobre los derechos humanos en Ucrania','https://www.ohchr.org/en/countries/ukraine','Documentación periódica sobre el conflicto desde 2014. Alcance temporal del paso 2016–2021.'];
+
+registrar('cine','webp','requisas');
+registrar('cine','svg','orientacion quiz-peninsula crimea-rusa');
+creditos.requisas='6 diciembre 1932 · edición de lectura de la resolución soviética';
+referencias.requisas=['Gobierno soviético ucraniano y comité central del partido · 6 diciembre 1932','https://github.com/decolonial-ist/archive/tree/5ea3b662888d722ab18046a5bb115d5c0b7dcc1e/239','Resolución que incluyó aldeas en listas de castigo por las entregas de grano. Documento oficial en edición de consulta, primera página.'];
+const fichaMedio={
+ atlas:['mar','1911','Dominio público en EE. UU.','Detalle de mapa impreso'],
+ nicolas:['zar','Edición de 1909','Dominio público en EE. UU.','Recorte de silueta con alfa'],
+ kiev:['archivo','Edición de 1909','Dominio público en EE. UU.','Copia WebP'],
+ dnieper:['archivo','Edición de 1909','Dominio público en EE. UU.','Recorte y conversión WebP'],
+ acta1991:['archivo91','24 agosto 1991','Texto oficial ucraniano; edición de consulta','Página renderizada'],
+ resolucion68:['archivo68','27 marzo 2014','Documento oficial ONU; atribución de la edición','Página renderizada'],
+ 'maidan-informe':['ohchr14','15 junio 2014','Documento público del ACNUDH, fragmento atribuido','Recorte del párrafo 24'],
+ kajovka:['satelite','18 junio 2023','Copernicus Sentinel-2 modificado; Apache 2.0 para la figura','Falso color en la figura del estudio; WebP'],
+ invierno:['palacio','Edición de 1909','Dominio público en EE. UU.','Lámina 27 convertida en plano de fondo'],
+ plaza:['plaza','Fecha exacta de toma pendiente','CC BY 2.0','Reencuadre y conversión WebP de la copia de OpenStax'],
+ yalta:['yalta','4–11 febrero 1945','Dominio público, NARA','Conversión WebP'],
+ petrogrado:['petrogrado','Revolución de febrero de 1917','Dominio público según crédito de OpenStax','Conversión WebP'],
+ trigo:['trigo','Toma sin fechar','Pexels License','Fotograma de secuencia real, uso ilustrativo'],
+ bosforo:['bosforo','Toma sin fechar','Pexels License','Fotograma del estrecho'],
+ vida:['vida','Toma sin fechar','Pexels License','Fotograma del plano civil'],
+ decreto:['decreto','19 febrero 1954','Texto oficial soviético; edición de consulta','Primera página en WebP'],
+ requisas:['requisas','6 diciembre 1932','Texto oficial soviético; edición de consulta','Página renderizada'],
+ manifiesto:['imp1783','1783','Texto oficial; edición de consulta','Primera página en WebP'],
+ bloques:['mapaFrio','Datos de 1949 y 1955','OpenStax CC BY-NC-SA 4.0; base de dominio público','Conversión WebP con la misma licencia'],
+ umbral:['bosforo trigo vida','Fechas de rodaje sin especificar','Pexels License por sus tres planos','Selección, montaje de 7,6 s, ajuste tonal y supresión del sonido']
+};
+referencias.escrutinio=['Centre for Democracy Studies Aarau · Referendum Database, registro ua011991','https://github.com/zdaarau/rdb/blob/02ba3f1ca68ff9cb2841f8dd250b36a12040815c/data-raw/backups/rdb.rds','Consulta del registro 5bbbf32692a21351232e24af. Ucrania, 1 diciembre 1991. Votos por el sí: 28.804.071; por el no: 2.417.544. La barra compara únicamente ambas respuestas. El registro no desglosa votos en blanco o inválidos.'];
+for (const id of Object.keys(medios)) {
+ if (fichaMedio[id]) continue;
+ const historico=['1100','1200','1500','1650','1783'].includes(id);
+ const corte=cortesFuente(id);
+ fichaMedio[id]=historico?['atlas ne',id,'Historical Basemaps, GPL-3.0; Natural Earth, dominio público','Selección, proyección y rótulos']:
+ corte?[corte,'Fecha indicada en la ficha','Base Natural Earth de dominio público; ver atribución de la observación consultada','Generalización provincial; línea internacional fija']:
+ ['ne'+(id==='soberania'?' sombreado':''),'Geografía física; período indicado en la escena','Natural Earth, dominio público','Localizador editorial; proyección, rotulación y realce de la región'];
+}
+function cortesFuente(id){
+ if(id==='region-2014')return 'ne onu';
+ if(id==='region-2015-21')return 'ne onu minsk';
+ if(id.startsWith('region-'))return 'ne control-'+id.slice(7);
+}

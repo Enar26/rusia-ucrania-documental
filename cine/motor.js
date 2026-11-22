@@ -12,7 +12,7 @@
  function presentarPortal(inicial=false){
    sala.hidden=true;portal.hidden=false;cancelar();
    const guardado=leer(clave);el('reanudar').hidden=indice(guardado)<0;
-   if(!inicial||sessionLeida()||reducido.matches){finIntro();return;}
+   if(!inicial||sessionLeida()||reducido.matches){portal.classList.remove('filmando');finIntro();return;}
    video.src=ruta('umbral');video.muted=true;video.play().catch(finIntro);
    timerVideo=setTimeout(()=>{if(video.readyState<2)finIntro()},2700);
  }
@@ -72,6 +72,7 @@
    nuevo.innerHTML=vista(x.s,x.p,x.i);escenario.append(nuevo);cursor=n;
    const dur=dir?transicion(anterior,nuevo,prev,x,dir):(anterior?.remove(),0);
    bloqueo=performance.now()+dur;el('pos').textContent=x.id.slice(0,2)+' / 24  ·  '+(x.i+1)+' / '+x.s.pasos.length;
+   el('anterior').disabled=n===0;el('siguiente').disabled=n===estados.length-1;
    guardar(clave,x.id);url('#ver/'+x.id);
  }
  function avanzar(dir){
@@ -89,19 +90,34 @@
  }
  function alternativa(){el('aviso').textContent='Modo ventana · En escritorio puedes usar F11.';clearTimeout(avisoTimer);avisoTimer=setTimeout(()=>el('aviso').textContent='',4500);}
  function despertar(){sala.classList.remove('quieta');clearTimeout(ocultar);ocultar=setTimeout(()=>sala.classList.add('quieta'),1800)}
+ document.addEventListener('fullscreenchange',()=>{sala.dataset.pantalla=document.fullscreenElement?'completa':'ventana'});
  lienzo.addEventListener('pointermove',despertar);
+ el('anterior').onclick=()=>avanzar(-1);el('siguiente').onclick=e=>{if(e.detail<2)avanzar(1)};
  el('presentar').onclick=()=>iniciar(0,true);el('reanudar').onclick=()=>iniciar(Math.max(0,indice(leer(clave))),true);
  el('volver').onclick=()=>{if(document.fullscreenElement)document.exitFullscreen().catch(()=>{});url('#inicio');presentarPortal();el('presentar').focus()};
  lienzo.addEventListener('click',e=>{if(e.button!==0||e.target.closest('button,a')||e.detail>1)return;const now=performance.now();if(now-ultimoClic<210)return;ultimoClic=now;lienzo.focus();avanzar(1)});
  document.addEventListener('keydown',e=>{
    if(sala.hidden||dialogo.open||e.altKey||e.ctrlKey||e.metaKey||e.target.matches('input,select,textarea'))return;
+   if(e.key==='Escape'&&document.fullscreenElement){document.exitFullscreen().catch(()=>{});return;}
    if(e.target.closest('button,a')&&['Enter',' '].includes(e.key))return;
    const d=['ArrowRight','PageDown',' '].includes(e.key)?1:['ArrowLeft','PageUp'].includes(e.key)?-1:0;
    if(d){e.preventDefault();if(!e.repeat)avanzar(d);}
  });
  function fichar(id){
-   const x=estados[indice(id)], refs=x?x.p.refs:['bosforo','puertoFicha','trigo','trigoFicha','vida','vidaFicha','coleccion'];
-   const f=el('lista-fuentes'); f.innerHTML=refs.map(k=>{const v=referencias[k];return '<article><a rel="noreferrer" target="_blank" href="'+seguro(v[1])+'">'+seguro(v[0])+' ↗</a><p>'+seguro(v[2])+'</p></article>'}).join('');
+   const x=estados[indice(id)];
+   const refs=new Set(x?x.p.refs:['bosforo','puertoFicha','trigo','trigoFicha','vida','vidaFicha','coleccion']);
+   if(x){
+     const actual=escenario.querySelector('.cuadro:not(.sale)');
+     let contenido=actual;
+     if(actual?.dataset.id!==x.id){
+       const plantilla=document.createElement('template');
+       plantilla.innerHTML=vista(x.s,x.p,x.i);contenido=plantilla.content;
+     }
+     for(const n of contenido.querySelectorAll('[data-medio]')){
+       for(const r of fichaMedio[n.dataset.medio][0].split(' ')) refs.add(r);
+     }
+   }
+   const f=el('lista-fuentes'); f.innerHTML=Array.from(refs).map(k=>{const v=referencias[k];return '<article><a rel="noreferrer" target="_blank" href="'+seguro(v[1])+'">'+seguro(v[0])+' ↗</a><p>'+seguro(v[2])+'</p></article>'}).join('');
  }
  function abrirFuentes(){
    const id=sala.hidden?'portal':estados[cursor].id;
@@ -112,5 +128,9 @@
  el('fuentes').onclick=el('biblioteca').onclick=abrirFuentes;el('cerrar').onclick=()=>dialogo.close();
  dialogo.addEventListener('close',()=>{if(!sala.hidden)lienzo.focus()});
  reducido.addEventListener('change',()=>{cancelar();if(reducido.matches)finIntro()});
+ window.addEventListener('hashchange',()=>{
+   const n=indice(location.hash.replace('#ver/',''));
+   if(n>=0)iniciar(n,false);else if(location.hash==='#inicio')presentarPortal();
+ });
  const inicial=indice(location.hash.replace('#ver/',''));if(inicial>=0)iniciar(inicial,false);else presentarPortal(true);
 })();

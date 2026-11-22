@@ -27,3 +27,7 @@ Una ronda de Chromium comprobó todos los estados hacia delante y atrás tanto e
 ## Rediseño posterior a V8
 
 Rama `redisenio-documental-post-v8`, desde `e66a010`. Menú, reproductor, guion y fuentes por paso. La nueva escena del fin imperial y cuatro cortes territoriales amplían la V8 a 21 escenas y 63 pasos. La proyección termina en la portada de Economía. [Instrucciones de uso](README.md) · [Pruebas y comparación](revision/post-v8/REVISION.md)
+
+## Reconstrucción cinematográfica desde 3697243
+
+Rama `reconstruccion-documental-cine-2026`. El recorrido contiene 24 escenas y 71 estados y termina en la portada del Capítulo II. Se comprobó la continuidad del portal, las cinco secuencias prioritarias y la exportación sin red. La guía de estudio está en la entrega privada. [Matriz R01–R24 y evidencias](revision/cine/README.md)
