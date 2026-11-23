@@ -1,0 +1,44 @@
+.consulta-edicion,.balance-plano{position:absolute;inset:0 0 4.6%;--acento:#efc88e;--base:#14262b;background:var(--base);color:#fcf3e5}
+.consulta-edicion.hum{--acento:#ffc69c;--base:#292423}
+.consulta-columna{position:absolute;inset:6% 5% 5% 44%;display:flex;flex-direction:column;justify-content:center}
+.consulta-cap{font:600 1.12cqw/1.4 var(--sans);color:var(--acento);letter-spacing:.08em;text-transform:uppercase}
+.consulta-cap span{padding:0 .45em}
+.consulta-edicion h2,.balance-plano h2{font:500 3.95cqw/1.02 var(--serif);letter-spacing:-.025em;text-wrap:balance;margin:1.35cqw 0 1.5cqw}
+.consulta-opciones{list-style:none;padding:0;margin:0;border-bottom:1px solid #ffffff42}
+.consulta-opciones li{padding:0;border-top:1px solid #ffffff42}
+.consulta-opciones button,.consulta-opciones.resuelta li{display:flex;align-items:center;gap:1cqw;text-align:left;color:inherit;font:400 1.59cqw/1.32 var(--sans);width:100%;padding:.9cqw .65cqw;background:none}
+.consulta-opciones button{border:0}
+.consulta-letra{border:1px solid #fbefd488;border-radius:50%;width:2cqw;height:2cqw;flex:none;display:grid;place-items:center;font:500 1.05cqw var(--sans)}
+.consulta-opciones button:is(:hover,:focus-visible),.consulta-opciones button[aria-pressed="true"]{background:#eee8da15}
+.consulta-opciones button[aria-pressed="true"] .consulta-letra,.consulta-opciones.resuelta .correcta .consulta-letra{background:var(--acento);color:var(--base);border-color:var(--acento)}
+.consulta-opciones.resuelta .correcta{color:var(--acento)}
+.consulta-explicacion,.consulta-indicacion{font:400 1.38cqw/1.35 var(--sans);color:#e4ddd1;margin:1.1cqw 0 0}
+.consulta-explicacion strong{color:var(--acento);margin-right:.25em}
+.consulta-indicacion{font-size:1.15cqw}
+.consulta-figura{position:absolute;inset:0 62% 0 0;overflow:hidden;background:#1e3739}
+.consulta-figura>img,.balance-plano figure img{width:100%;height:100%;object-fit:cover}
+.consulta-figura figcaption,.balance-plano figcaption{position:absolute;z-index:1;bottom:3%;left:6%;max-width:88%;font:500 1.06cqw/1.35 var(--sans);padding:.25em .6em;color:#fff6e8;background:#101c21d9}
+.consulta-figura.grafica-frontera{background:#162b2d}
+.consulta-figura.grafica-frontera img{object-fit:contain}
+.consulta-porcentaje,.consulta-swift,.consulta-plan{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:.8cqw;background:radial-gradient(ellipse at 10% 10%,#48615c,transparent 75%),#193034}
+.consulta-porcentaje strong,.consulta-plan strong{font:500 12cqw/1.05 var(--serif);letter-spacing:-.06em}
+.consulta-porcentaje strong small{font-size:4cqw}
+.consulta-porcentaje span,.consulta-plan span{font:500 1.45cqw var(--sans);letter-spacing:.12em}
+.consulta-porcentaje i{display:block;height:.65cqw;width:65%;margin-top:1.7cqw;background:linear-gradient(to right,#edc389 45%,#6c827b 45%)}
+.consulta-swift{background:linear-gradient(145deg,#385552,#132e33)}
+.consulta-swift>span{font:400 6.8cqw var(--serif);letter-spacing:.02em}
+.consulta-swift>div{display:flex;align-items:center;gap:1.4cqw;color:#efc88e}
+.consulta-swift i{width:1.5cqw;height:1.5cqw;border:2px solid currentColor;border-radius:50%}
+.consulta-swift b{font:400 5cqw/.8 var(--serif)}
+.consulta-plan{background:linear-gradient(150deg,#634c42,#302724)}
+.consulta-plan strong{font-size:8.7cqw;padding-bottom:.4cqw}
+.consulta-plan i{height:1px;background:#e9bf9a;width:50%}
+.balance-plano{background:#172126}
+.balance-plano figure{position:absolute;inset:0}
+.balance-plano figure:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#111c20f5 0%,#162429d9 25%,#1624297d 52%,transparent 78%)}
+.balance-plano figcaption{left:auto;right:3%;bottom:3%}
+.balance-palabra{position:absolute;left:5.5%;top:12%;bottom:12%;width:49%;display:flex;flex-direction:column;justify-content:center}
+.balance-plano h2{font-size:6.25cqw;line-height:.95;margin:1.5cqw 0}
+.balance-palabra>p:last-child{font:400 1.8cqw/1.38 var(--sans);max-width:90%;text-shadow:0 1px 5px #10181d}
+.balance-1 figure img{object-position:60% 52%}
+.balance-2 figure img{object-position:center 47%}

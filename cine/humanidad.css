@@ -1,0 +1,135 @@
+/* La cartografía conserva el lienzo de Economía. Las otras composiciones se
+   apoyan en la escala y en la orientación real de cada fotografía. */
+.humana {
+  position:absolute; inset:0; overflow:hidden; isolation:isolate;
+  background:#172b2b; color:#fcf7e9;
+  --tinta:#fcf7e9; --suave:#e0e6d9; --marca:#f3bf8f; --linea:#c5d5c076;
+}
+.hum-cab,.hum-pie {
+  position:absolute; z-index:4; left:4.7%; right:4.7%;
+  display:flex; align-items:center; justify-content:space-between; gap:1.4cqw;
+}
+.hum-cab {top:4.3%; padding-bottom:.8cqw; border-bottom:1px solid var(--linea); font:550 1.16cqw/1.25 var(--sans); letter-spacing:.025em}
+.hum-cab span:last-child{font-weight:400}
+.hum-cab i{padding:0 .45em; color:var(--marca); font-style:normal}
+.hum-pie{bottom:6.6%; font:500 1.12cqw/1.25 var(--sans)}
+.hum-pie>span:last-child{display:flex;align-items:center;gap:.36cqw;font-variant-numeric:tabular-nums}
+.hum-pie i{width:.34cqw}.hum-pie b{width:1.24cqw;height:.24cqw;background:var(--linea)}.hum-pie .activo{background:var(--marca)}
+.hum-copy{position:absolute;z-index:2;left:4.7%;top:28%;width:39%;color:var(--tinta)}
+.hum-fecha{font:650 1.27cqw/1.35 var(--sans);color:var(--marca);letter-spacing:.045em}
+.humana .hum-copy h2{font:500 5.25cqw/.99 var(--serif);letter-spacing:-.042em;text-wrap:balance;margin:.23em 0}
+.hum-bajada{font:400 1.7cqw/1.4 var(--sans);text-wrap:pretty;color:var(--suave)}
+.hum-foto{position:absolute;overflow:hidden;isolation:isolate;margin:0}
+.hum-foto img{width:100%;height:100%;display:block;object-fit:cover}
+.hum-foto figcaption{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:2cqw 1.2cqw .72cqw;background:linear-gradient(transparent,#111f21ed 65%);color:#fff9e9;text-shadow:0 1px 3px #182121;font:500 1.05cqw/1.28 var(--sans);text-wrap:pretty}
+.hum-paisaje{inset:0 0 4.6%}
+.hum-paisaje::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#102425f7 0%,#102425d4 27%,#12282a27 68%),linear-gradient(0deg,#0c1d22bc,transparent 22%,transparent 74%,#132425bf)}
+.hum-paisaje figcaption{left:auto;max-width:48%;right:5.2%;bottom:8.8%;background:#102021c9;padding:.45cqw .64cqw}
+.h01a .hum-copy,.h10a .hum-copy{top:35%;width:42%}
+.h01a .hum-copy h2,.h10a .hum-copy h2{font-size:6cqw}
+.humana .hum-sombra-atlas{position:absolute;inset:0;background:linear-gradient(90deg,#102826 0%,#102826ee 28%,#10282683 48%,transparent 66%),linear-gradient(0deg,#112b28e0 0%,transparent 25%,transparent 85%,#112b28ca)}
+.humana.eco-vista .hum-copy{top:27%;width:39%}
+.humana.eco-vista .hum-copy h2{font-size:5.3cqw}
+.hum-leyenda{position:absolute;left:53%;bottom:15%;display:flex;align-items:center;gap:.7cqw;background:#0e2426e0;color:#f7f1df;padding:.6cqw .85cqw;font:1.14cqw/1.25 var(--sans)}
+.hum-leyenda i{width:1.25cqw;height:.65cqw;background:#b29e75;border:1px solid #f3c997}
+.h02b,.h04b,.h05a,.h05c,.h10b{background:#e8e2d3;color:#1b3537;--tinta:#183032;--suave:#30494a;--marca:#81462c;--linea:#596c655c}
+.h02b .hum-copy,.h02c .hum-copy,.h07b .hum-copy{top:18%;width:68%}
+.h02b .hum-copy h2,.h02c .hum-copy h2,.h07b .hum-copy h2{font-size:4.8cqw}
+.h02b .hum-copy .hum-bajada,.h02c .hum-copy .hum-bajada,.h07b .hum-copy .hum-bajada{max-width:54ch}
+.hum-frontera{position:absolute;left:4.7%;right:4.7%;top:48%;bottom:15%;display:grid;grid-template-columns:1fr 1fr;align-items:center;border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.hum-frontera::before{content:"";position:absolute;left:50%;top:.6cqw;bottom:0;border-left:2px dashed #7b8c7c}
+.hum-frontera>section{padding:1.1cqw 5cqw 1.1cqw 0}
+.hum-frontera>section+section{padding-left:5cqw}
+.hum-frontera small,.hum-observacion h3,.hum-agenda h3,.hum-registro em{font:650 1.25cqw/1.3 var(--sans);color:var(--marca)}
+.hum-frontera h3{font:550 3.4cqw/1.05 var(--serif);margin:.5cqw 0}
+.hum-frontera p,.hum-observacion p{font:1.55cqw/1.4 var(--sans);max-width:42ch}
+.hum-frontera>span{position:absolute;left:50%;transform:translateX(-50%);bottom:-.68cqw;background:#e8e2d3;padding:0 .9cqw;font:500 1.13cqw/1.3 var(--sans)}
+.h02c,.h07b{background:#173836;--marca:#f7c18d}
+.hum-par{position:absolute;display:grid;grid-template-columns:1fr 1fr;left:4.7%;right:4.7%;top:48%;bottom:14%;border-top:1px solid var(--linea);padding-top:1.7cqw}
+.hum-par .hum-observacion{padding-right:3.1cqw}
+.hum-par .hum-observacion:nth-child(2){border-left:1px solid var(--linea);padding-left:3.1cqw}
+.hum-observacion strong,.hum-indice strong,.hum-dato-salud strong{display:block;font:500 4.7cqw/.99 var(--serif);letter-spacing:-.045em;margin:.4cqw 0;color:var(--tinta)}
+.hum-observacion p{margin:.5cqw 0}
+.hum-observacion small,.hum-registro small,.hum-agenda small,.hum-dato-salud small{display:block;font:500 1.15cqw/1.35 var(--sans)}
+.hum-lamina{top:14%;bottom:14%;left:47%;right:4.7%}
+.h03a .hum-copy,.h04a .hum-copy,.h05a .hum-copy,.h06a .hum-copy,.h08b .hum-copy{top:25%}
+.h03a .hum-lamina{top:0;bottom:4.6%;left:49%;right:0}
+.h03a .hum-lamina::after,.h06a .hum-lamina::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#102126ee,transparent 21%,transparent 73%,#122325c9)}
+.h03a .hum-lamina figcaption,.h06a .hum-lamina figcaption{left:4%;right:8%;bottom:7%;padding:.3cqw .6cqw;background:#102022d9}
+.h03b,.h06b{background:#243b38}
+.hum-franja{left:4.7%;width:39%;top:17%;bottom:15%}
+.h03b .hum-copy,.h05b .hum-copy,.h06b .hum-copy{left:49%;top:19%;width:46%}
+.h03b .hum-copy h2,.h05b .hum-copy h2,.h06b .hum-copy h2{font-size:4.9cqw}
+.hum-servicios,.hum-cuidados,.hum-regreso-servicios,.hum-horario{display:flex;align-items:flex-start;justify-content:space-between;gap:.8cqw}
+.hum-servicios,.hum-cuidados{position:absolute;left:49%;right:4.7%;top:66%;border-top:1px solid var(--linea);padding-top:1.4cqw}
+.hum-concepto{min-width:0;flex:1;display:flex;align-items:flex-start;flex-direction:column;gap:.75cqw}
+.hum-concepto svg,.hum-respuestas svg{width:3.2cqw;height:3.2cqw;color:var(--marca)}
+.hum-concepto span{font:550 1.35cqw/1.25 var(--sans)}
+.h04a{background:#242e31;--marca:#f2c5a1}
+.h04a .hum-lamina{left:4.7%;right:48%;bottom:16%}
+.h04a .hum-copy{left:56%;width:39%;top:24%}
+.h04a .hum-copy h2{font-size:4.8cqw}
+.h04b .hum-tira{left:4.7%;right:57%;top:19%;height:22%}
+.h04b .hum-copy{top:47%;width:45%}
+.h04b .hum-copy h2{font-size:4.4cqw}
+.hum-registro{position:absolute;left:56%;right:5%;top:29%;padding:2cqw 0;border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.hum-registro em{font-style:normal}
+.hum-registro div{display:flex;gap:1cqw;align-items:baseline;font:500 1.65cqw/1.15 var(--sans);padding:1.2cqw 0}
+.hum-registro strong{font:500 4.4cqw/.95 var(--serif);color:var(--tinta)}
+.h05a .hum-lamina{left:42%;top:16%;bottom:13%}
+.h05a .hum-copy{width:32%}
+.h05a .hum-copy h2{font-size:4.8cqw}
+.h05b{background:#384139;--marca:#f6d5a4}
+.h05b .hum-franja{width:34%}
+.h05b .hum-copy,.h05b .hum-recuadro{left:45%;right:5%;width:auto}
+.hum-recuadro{position:absolute;top:62%;border-top:1px solid var(--linea);padding-top:1cqw}
+.hum-recuadro .hum-observacion strong{font-size:3.6cqw}
+.hum-recuadro .hum-observacion p{margin:.22cqw 0}
+.h05c .hum-copy{width:39%;top:25%}
+.hum-agenda{position:absolute;left:50%;right:5%;top:27%;border-top:.32cqw solid var(--marca);border-bottom:1px solid var(--linea);padding:2cqw 0}
+.hum-indice,.hum-dato-salud{display:flex;align-items:center;gap:1.4cqw;margin-bottom:1.5cqw}
+.hum-indice span,.hum-dato-salud span{font:500 1.35cqw/1.35 var(--sans)}
+.hum-indice strong,.hum-dato-salud strong{white-space:nowrap}
+.hum-horario{margin:1.5cqw 0 1.2cqw;border-bottom:1px solid var(--linea);padding-bottom:1.4cqw}
+.hum-horario .hum-concepto + .hum-concepto{border-left:1px dashed var(--linea);padding-left:1.3cqw}
+.h06a{background:#123638;--marca:#a8e5d2}
+.h06a .hum-copy{width:39%;top:19%}
+.h06a .hum-lamina{inset:0 0 4.6% 50%}
+.h06a .hum-dato-salud{position:absolute;left:4.7%;right:55%;top:63%;padding-top:1cqw;border-top:1px solid var(--linea)}
+.h06b{--marca:#b5ead9}
+.h07a{background:#203a39}
+.h07a .hum-lamina{left:4.7%;right:55%;top:32%;bottom:14%}
+.h07a .hum-copy{top:15%;width:75%}
+.h07a .hum-copy>p:last-child{position:absolute;top:100%;left:61%;width:58%;padding-top:1cqw}
+.h07a .hum-copy h2{font-size:4.5cqw}
+.hum-respuestas{position:absolute;left:51%;right:4.7%;top:41.5%;margin:0}
+.hum-respuestas>div{display:grid;grid-template-columns:.94fr 1.3fr;gap:1cqw;align-items:center;border-bottom:1px solid var(--linea);padding:.67cqw 0}
+.hum-respuestas dt{display:flex;gap:.8cqw;align-items:center;color:#f9ead6;font-weight:600}
+.hum-respuestas dd,.hum-respuestas dt{font-size:1.42cqw;line-height:1.3;margin:0}
+.hum-respuestas svg{width:1.85cqw;height:1.85cqw;flex-shrink:0}
+.hum-proporcion{position:absolute;bottom:-.8cqw;left:0;right:0;background:#bdc6a7;height:.68cqw}
+.hum-proporcion i{display:block;background:#f8bb7f;height:100%;border-right:2px solid #122e30}
+.h08b .hum-copy{top:22%;width:40%}
+.h08b .hum-lamina{left:52%;bottom:16%}
+.hum-regreso-servicios{position:absolute;left:4.7%;right:52%;top:68%;border-top:1px solid var(--linea);padding-top:1.2cqw}
+.hum-regreso-servicios .hum-concepto svg{width:2.65cqw;height:2.65cqw}
+.hum-regreso-servicios .hum-concepto span{font-size:1.16cqw}
+.h10a .hum-paisaje img{object-position:center 40%}
+.h10b .hum-copy{top:14%;width:91%;display:grid;grid-template-columns:1fr 1fr;column-gap:3cqw;align-items:end}
+.h10b .hum-copy .hum-fecha{grid-column:1/-1}
+.h10b .hum-copy h2{font-size:4.3cqw;margin-bottom:0}
+.h10b .hum-copy .hum-bajada{font-size:1.45cqw}
+.hum-triptico{position:absolute;inset:38% 4.7% 14%;display:grid;grid-template-columns:repeat(3,1fr);gap:1.35cqw}
+.hum-triptico>div{position:relative;display:flex;flex-direction:column;justify-content:flex-end}
+.hum-triptico .hum-foto{inset:0 0 3.5cqw}
+.hum-triptico .hum-foto figcaption{font-size:1cqw;padding:1.8cqw .7cqw .4cqw}
+.hum-triptico h3{font:500 2.9cqw/1 var(--serif)}
+.h10c{background:#192725;--marca:#ecc394}
+.hum-apertura-final{position:absolute;inset:0 0 4.6% 61%;display:grid;grid-template-columns:repeat(3,1fr);gap:.22cqw}
+.hum-apertura-final>div{overflow:hidden;position:relative}
+.hum-apertura-final img{width:100%;height:100%;object-fit:cover}
+.hum-apertura-final>div::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#172822 1%,#17282255 23%,transparent 47%,#172822bc)}
+.hum-apertura-final span{position:absolute;bottom:10%;left:0;right:0;text-align:center;color:#fff7df;z-index:1;font:550 1.4cqw var(--sans)}
+.h10c .hum-copy{top:30%;width:51%}
+.h10c .hum-copy h2{margin-top:1.3cqw;border-top:1px solid var(--linea);padding-top:1.8cqw;font-size:6.5cqw;color:#f4ce9f}
+.h10c .hum-bajada{max-width:40ch}
