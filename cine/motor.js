@@ -11,7 +11,7 @@
  let pasoPortal=null;
  function pausarPortal(){
    video.pause();portal.classList.add('lista');el('omitir').textContent='Reproducir vídeo';
-   if(!portal.classList.contains('filmando'))el('plano').textContent='Estambul · estrecho del Bósforo';
+   if(!portal.classList.contains('filmando'))el('plano').textContent='Járkiv · Saltivka del Norte, reportaje de 2023';
  }
  function reproducirPortal(){
    if(!video.getAttribute('src'))video.src=ruta('umbral');
@@ -27,7 +27,8 @@
  video.addEventListener('error',()=>{portal.classList.remove('filmando');pausarPortal()});
  video.addEventListener('playing',()=>{portal.classList.add('filmando');el('omitir').textContent='Pausar vídeo'});
  video.addEventListener('timeupdate',()=>{
-   const t=video.currentTime;el('plano').textContent=t<2||t>=6?'Estambul · estrecho del Bósforo':t>=3&&t<5?'Campo de trigo · plano ilustrativo':'Bósforo y trigo · montaje documental';
+   const t=video.currentTime;
+   el('plano').textContent=t<2.90||t>=9.94?'Járkiv · Saltivka del Norte, reportaje de 2023':t<6.42?'Río Desná · extracción de arena, 2017':'Járkiv · vecinos junto al manantial, reportaje de 2023';
  });
  el('omitir').onclick=()=>video.paused?reproducirPortal():pausarPortal();
  function cancelar(){animaciones.forEach(a=>a.cancel());animaciones=[];escenario.querySelectorAll('.sale,.vuelo').forEach(n=>n.remove());bloqueo=0;}

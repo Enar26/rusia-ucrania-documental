@@ -6,8 +6,8 @@ const referenciasHumanitarias = {
     'Documento de ACNUR, p. 4. Al cierre de diciembre de 2025 se estimaban 5,9 millones de personas refugiadas de Ucrania registradas en el mundo. La fecha de publicación es mayo de 2026. La serie procede de registros de países de acogida y tiene salvedades de cobertura. En la p. 1, los cruces fronterizos cuentan movimientos y una persona puede cruzar varias veces.'
   ],
   humOim: [
-    'OIM · Ukraine Displacement Data: IDP Estimates, Displacement Tracking Matrix',
-    'https://data.humdata.org/dataset/ukraine-idp-estimates',
+    'OIM · General Population Survey, ronda 24, perfiles regionales de agosto de 2026',
+    'https://dtm.iom.int/reports/ukraine-oblast-profiles-general-population-survey-round-24-august-2026',
     'Seguimiento de personas que permanecen desplazadas dentro de Ucrania. Una estimación por encuesta y un registro administrativo utilizan métodos distintos. No se proyecta una estimación nacional fechada en agosto de 2026 sin cotejar la ronda correspondiente.'
   ],
   humServicios: [
@@ -36,14 +36,14 @@ const referenciasHumanitarias = {
     'La publicación identifica a la infancia desplazada y permite hablar de más de un tercio. El registro de ReliefWeb 4198888 reproduce el título y la autoría. Se distingue el desplazamiento dentro de Ucrania de la búsqueda de protección fuera del país.'
   ],
   humAlertas: [
-    'UNICEF Ucrania · informes de situación humanitaria',
-    'https://www.unicef.org/ukraine/en/reports',
-    'El calendario de aprendizaje explica cómo se interrumpe una jornada. Una alerta puede afectar parte de un día con clases. No se muestra una tasa si faltan la cobertura y la definición de la observación.'
+    'ONU Noticias · declaración de Ricardo Pires, UNICEF, 15 de septiembre de 2026',
+    'https://news.un.org/en/story/2026/09/1168336',
+    'El portavoz de UNICEF describe el traslado al refugio y la vuelta al aula al terminar la alerta. El calendario de la escena explica ese mecanismo. No representa observaciones de una escuela concreta ni una tasa de días afectados.'
   ],
   humSalud: [
     'OMS · Attacks on Ukraine’s health care increased by 20% in 2025, 23 de febrero de 2026',
     'https://www.who.int/news/item/23-02-2026-attacks-on-ukraine-s-health-care-increased-by-20-in-2025',
-    'Registro de la publicación oficial OMS en ReliefWeb 4199764. Variación anual del número de ataques a la atención sanitaria en Ucrania durante 2025. El indicador mide ataques al sistema sanitario, una categoría que puede incluir personal, transporte, instalaciones y otros recursos.'
+    'Registro de la publicación oficial OMS en ReliefWeb 4199764. El título comunica un aumento del 20 % en los ataques a la atención sanitaria en Ucrania en 2025. La ficha de catálogo no identifica explícitamente el período de comparación. El indicador mide ataques al sistema sanitario, una categoría que puede incluir personal, transporte, instalaciones y otros recursos.'
   ],
   humApoyo: [
     'OMS Europa · respuesta sanitaria en Ucrania',

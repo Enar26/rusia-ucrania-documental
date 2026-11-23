@@ -1,0 +1,14 @@
+{
+  "fotogramas": 264,
+  "fps": 25,
+  "ancho": 1920,
+  "alto": 1080,
+  "diferenciaAbsolutaMediaRGB": {
+    "ultimoAlPrimero": 1.044,
+    "primeroAlSegundo": 0.797,
+    "penultimoAlUltimo": 0.568,
+    "mediana": 0.975
+  },
+  "fotogramasConsecutivosIdenticos": 0,
+  "menorLuminanciaMediaDeUnFotograma": 88.25
+}

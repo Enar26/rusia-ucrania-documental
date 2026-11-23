@@ -74,7 +74,7 @@ const fichaMedio={
  requisas:['requisas','6 diciembre 1932','Texto oficial soviético; edición de consulta','Página renderizada'],
  manifiesto:['imp1783','1783','Texto oficial; edición de consulta','Primera página en WebP'],
  bloques:['mapaFrio','Datos de 1949 y 1955','OpenStax CC BY-NC-SA 4.0; base de dominio público','Conversión WebP con la misma licencia'],
- umbral:['bosforo trigo vida','Fechas de rodaje sin especificar','Pexels License por sus tres planos','Selección, montaje de 7,6 s, ajuste tonal y supresión del sonido']
+
 };
 referencias.escrutinio=['Centre for Democracy Studies Aarau · Referendum Database, registro ua011991','https://github.com/zdaarau/rdb/blob/02ba3f1ca68ff9cb2841f8dd250b36a12040815c/data-raw/backups/rdb.rds','Consulta del registro 5bbbf32692a21351232e24af. Ucrania, 1 diciembre 1991. Votos por el sí: 28.804.071; por el no: 2.417.544. La barra compara únicamente ambas respuestas. El registro no desglosa votos en blanco o inválidos.'];
 for (const id of Object.keys(medios)) {
@@ -91,11 +91,19 @@ function cortesFuente(id){
  if(id.startsWith('region-'))return 'ne control-'+id.slice(7);
 }
 
-registrar('economia','webp','planisferio mar-negro poster red abono silo mercado andenes lima');
+registrar('economia','webp','planisferio mar-negro red abono silo mercado andenes lima');
 const geoficha=['ne sombreado','Relieve contemporáneo y fronteras de referencia','Natural Earth, dominio público','Atlas propio. Crimea se integra en Ucrania. Las conexiones económicas son esquemas temáticos.'];
 fichaMedio.planisferio=fichaMedio['mar-negro']=geoficha;
-fichaMedio.poster=['bosforo puertoFicha','Fecha de toma sin documentar','Pexels License','Primer fotograma del nuevo montaje.'];
-fichaMedio.umbral=['bosforo puertoFicha trigo trigoFicha','Fechas de rodaje sin documentar','Pexels License','Montaje cíclico de 8 s, 24 fotogramas por segundo, dos fundidos y sin pista de sonido.'];
+registrar('portal','webp','portada');
+medios.poster=medios.portada;
+Object.assign(referencias,{
+ portalSaltivka:['TEXTY y Nakypilo · Saltivka del Norte, Járkiv','https://texty.org.ua/d/2023/saltivka/','Reportaje de 2023 de Anna Chernenko, Andrii Mariienko, Ihor Leptuha, Vlad Liashchenko, Inna Hadzynska y Denys Hubashov. Dos planos del trabajo de campo: calle Hvardiytsiv-Shyronintsiv y personas junto al manantial. Fecha de rodaje individual sin precisar.'],
+ portalDesna:['Dmytro Demchenko · extracción de arena en el río Desná','https://texty.org.ua/d/2019/sand/','Plano acreditado al autor en el reportaje de TEXTY sobre la construcción en la región de Kiev. Metadatos del archivo de cámara: 27 de septiembre de 2017. Publicado en 2019.'],
+ portalLicencia:['TEXTY · autorización de uso de sus materiales','https://github.com/texty/principles/blob/d292a64e446e378540fd78eb8b9c0c3b4ae6fee1/index.html#L320','El editor especifica Creative Commons Atribución 4.0. Selección, recorte temporal, tres fundidos, reducción a 1080p, montaje sin el sonido original.'],
+ portalCC:['Creative Commons · Atribución 4.0 Internacional','https://creativecommons.org/licenses/by/4.0/deed.es','Conserva los créditos de los reportajes, el vínculo a la licencia y la indicación de los cambios.']
+});
+fichaMedio.portada=fichaMedio.poster=['portalSaltivka portalLicencia portalCC','Reportaje publicado en 2023','CC BY 4.0','Fotograma inicial de la calle de Saltivka.'];
+fichaMedio.umbral=['portalSaltivka portalDesna portalLicencia portalCC','Ucrania · reportajes de 2019 y 2023','CC BY 4.0','Bucle de 10,56 segundos. Tres planos originales de 2,7K y 4K, montaje a 1920 × 1080 y 25 fps.'];
 const ecoLibros='https://github.com/saylordotorg/text_world-regional-geography-people-places-and-globalization/blob/6aaa87dcf49ba0e664423b1cc9f29f35618f7124/';
 const ecoAntro='https://github.com/openstax/osbooks-introduction-anthropology/blob/e466666414f1900a783141339dc5ef3106dba5dd/modules/';
 const recursosEco={

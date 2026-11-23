@@ -8,7 +8,9 @@ for(let i=0;i<total;i++){
  for(let j=0;j<bytesPorFotograma;j++){dif+=Math.abs(video[actual+j]-video[anterior+j]);luz+=video[actual+j]}
  cambios.push(dif/bytesPorFotograma);luminancia=Math.min(luminancia,luz/bytesPorFotograma);
 }
-const tres=n=>Number(n.toFixed(3)),orden=[...cambios].sort((a,b)=>a-b),mediana=(orden[95]+orden[96])/2;
-const informeBucle={fotogramas:total,fps:24,diferenciaAbsolutaMediaRGB:{ultimoAlPrimero:tres(cambios[0]),primeroAlSegundo:tres(cambios[1]),penultimoAlUltimo:tres(cambios.at(-1)),mediana:tres(mediana)},fotogramasConsecutivosIdenticos:cambios.filter(d=>d===0).length,menorLuminanciaMediaDeUnFotograma:Number(luminancia.toFixed(2))};
-assert.equal(total,192);assert.equal(informeBucle.fotogramasConsecutivosIdenticos,0);assert.ok(cambios[0]<Math.max(2,mediana*3));assert.ok(luminancia>15);
+const tres=n=>Number(n.toFixed(3)),orden=[...cambios].sort((a,b)=>a-b),mediana=(orden[Math.floor((total-1)/2)]+orden[Math.floor(total/2)])/2;
+const meta=JSON.parse(cp.execFileSync('ffprobe',['-v','error','-select_streams','v:0','-show_entries','stream=avg_frame_rate,nb_frames,width,height','-of','json',archivo])).streams[0];
+const [numerador,denominador]=meta.avg_frame_rate.split('/').map(Number);
+const informeBucle={fotogramas:total,fps:numerador/denominador,ancho:meta.width,alto:meta.height,diferenciaAbsolutaMediaRGB:{ultimoAlPrimero:tres(cambios[0]),primeroAlSegundo:tres(cambios[1]),penultimoAlUltimo:tres(cambios.at(-1)),mediana:tres(mediana)},fotogramasConsecutivosIdenticos:cambios.filter(d=>d===0).length,menorLuminanciaMediaDeUnFotograma:Number(luminancia.toFixed(2))};
+assert.equal(total,Number(meta.nb_frames));assert.equal(informeBucle.fotogramasConsecutivosIdenticos,0);assert.ok(cambios[0]<Math.max(2,mediana*3));assert.ok(luminancia>15);
 fs.writeFileSync(informe,JSON.stringify(informeBucle,null,2)+'\n');
