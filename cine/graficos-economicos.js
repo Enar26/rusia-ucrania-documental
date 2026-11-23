@@ -29,7 +29,7 @@ function indiceFao(dos){
  const fila=(mes,valor,y)=>'<g class="fao-marca"><text x="0" y="'+(y-13)+'">'+mes+'</text><path d="M0 '+y+'H480" class="fao-guia"/><path d="M0 '+y+'H'+(valor/180*480)+'" class="fao-valor"/><circle cx="'+(valor/180*480)+'" cy="'+y+'" r="6"/><text class="fao-n" x="475" y="'+(y-13)+'" text-anchor="end">'+valor.toFixed(1).replace('.',',')+'</text></g>';
  return '<div class="eco-fao" role="img" aria-label="Índice FAO en puntos, base 2014–2016 igual a cien">'+
   '<div class="eco-graf-titulo">Índice FAO <span>2014–2016 = 100</span></div><svg viewBox="0 0 500 209">'+
-  '<path d="M267 11V174" class="fao-base"/>'+fila('Marzo de 2022',160.2,59)+(dos?fila('Octubre de 2026',133.9,143):'')+
+  '<path d="M267 11V174" class="fao-base"/>'+(dos?fila('Marzo de 2022',160.2,59)+fila('Octubre de 2026',133.9,143):fila('Febrero de 2022',141.7,59)+fila('Marzo de 2022',160.2,143))+
   '<text class="fao-eje" x="0" y="197">0</text><text class="fao-eje" x="267" y="197" text-anchor="middle">100</text><text class="fao-eje" x="480" y="197" text-anchor="end">180 puntos</text></svg></div>';
 }
 function redEco(){
@@ -53,7 +53,7 @@ function graficoEco(p){
  case 'abonar':return fotoEco('abono','ventana','Aplicación de amoníaco · USDA / NRCS')+'<div class="eco-pie-frase">Costo del insumo → decisión de uso → posible efecto en la oferta</div>';
  case 'swift':return redEco();
  case 'reservas':return '<div class="eco-libro"><div><span>Activos</span><b>Reservas inmovilizadas</b></div><div><span>Operaciones</span><b>Sanciones selectivas</b></div><div><span>Intercambios</span><b>Reorganización comercial</b></div></div>';
- case 'pib':return cifraEco('−28,8 <em>%</em>','PIB real · variación respecto de 2021')+'<div class="eco-pib" aria-hidden="true"><i></i></div>';
+ case 'pib':return cifraEco('−28,8 <em>%</em>','PIB real · variación respecto de 2021')+'<div class="eco-pib" aria-hidden="true"><i></i><div class="eco-extremos"><span>−100 %</span><span>0 %</span></div></div>';
  case 'reconstruir':return cifraEco('≈ 588','mil millones de dólares estadounidenses','Necesidades estimadas a diez años')+fotoEco('hangar','detalle','Hostómel, abril de 2022 · O. Ratushniak');
  case 'rusia':return '<div class="eco-comercio-ruso"><span>Ventas al exterior</span><i>↗</i><strong>Reorientación comercial</strong></div>';
  case 'peru':return '<div class="eco-origen">'+iconoEco('frasco')+'<span>Importaciones peruanas</span><strong>Urea</strong></div>';

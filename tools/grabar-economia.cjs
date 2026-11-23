@@ -1,10 +1,11 @@
 // Vídeo de la salida del navegador mientras el motor responde a pulsaciones reales.
 const {chromium}=require('playwright'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),os=require('node:os'),cp=require('node:child_process');
-const [url,dest]=process.argv.slice(2);
+const [url,dest,solo]=process.argv.slice(2);
 const etapas=[2,2,3,2,3,2,2,3,3,2].flatMap((n,j)=>Array.from({length:n},(_,i)=>'E'+String(j+1).padStart(2,'0')+String.fromCharCode(65+i)));
 const pruebas=[];
 const pausa=(p,n)=>p.waitForTimeout(n);
 async function grabar(b,nombre,id,tarea){
+ if(solo&&solo!==nombre)return;
  const c=await b.newContext({viewport:{width:1280,height:720},reducedMotion:'no-preference',recordVideo:{dir:os.tmpdir(),size:{width:1280,height:720}}}),p=await c.newPage();
  try{
   await p.goto(url+(id?'#ver/'+id:''));await p.evaluate(()=>document.fonts.ready);await p.mouse.move(2,2);
@@ -52,6 +53,7 @@ async function paso(p,tecla,esperado,duracion=1210){
     pruebas.push({prueba:nombre,intermedioDiferente:true,regresoExacto:true,inversionDuranteViaje:true});
    });
   }
+  if(solo)return;
   const c=await b.newContext(),p=await c.newPage();await p.route('**/umbral.mp4',r=>r.abort());await p.goto(url);
   await p.waitForFunction(()=>document.querySelector('video').error!==null);assert.ok(await p.locator('#poster').evaluate(i=>i.complete&&i.naturalWidth>0));await p.locator('#biblioteca').click();await p.locator('#cerrar').click();await p.locator('#presentar').click();await p.waitForTimeout(920);assert.equal(await p.locator('.cuadro').getAttribute('data-id'),'01a');
   pruebas.push({prueba:'Portal sin vídeo, acceso a fuentes y entrada',resultado:'PASS'});await c.close();

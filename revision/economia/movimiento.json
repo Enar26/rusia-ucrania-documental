@@ -1,0 +1,50 @@
+[
+  {
+    "prueba": "Portal, bucle y empalme con reproducción activa",
+    "costura": {
+      "vueltas": [
+        {
+          "anterior": 7.958333,
+          "primero": 0,
+          "esperaMs": 33
+        },
+        {
+          "anterior": 7.958333,
+          "primero": 0,
+          "esperaMs": 83
+        }
+      ],
+      "fotogramasPresentados": 364,
+      "esperaMaximaMs": 133,
+      "segundos": 8
+    },
+    "empalme": {
+      "ambasVisibles": true,
+      "videoEnMarcha": true,
+      "fullscreen": true
+    }
+  },
+  {
+    "prueba": "energia-puertos",
+    "intermedioDiferente": true,
+    "regresoExacto": true,
+    "inversionDuranteViaje": true
+  },
+  {
+    "prueba": "rusia-peru",
+    "intermedioDiferente": true,
+    "regresoExacto": true,
+    "inversionDuranteViaje": true
+  },
+  {
+    "prueba": "Portal sin vídeo, acceso a fuentes y entrada",
+    "resultado": "PASS"
+  },
+  {
+    "prueba": "Viaje a Perú en Chromium, CPU simulada 4 veces más lenta",
+    "fotogramas": 119,
+    "medianaMs": 17,
+    "p95Ms": 33,
+    "maximoMs": 100
+  }
+]

@@ -31,3 +31,7 @@ Rama `redisenio-documental-post-v8`, desde `e66a010`. Menú, reproductor, guion 
 ## Reconstrucción cinematográfica desde 3697243
 
 Rama `reconstruccion-documental-cine-2026`. El recorrido contiene 24 escenas y 71 estados y termina en la portada del Capítulo II. Se comprobó la continuidad del portal, las cinco secuencias prioritarias y la exportación sin red. La guía de estudio está en la entrega privada. [Matriz R01–R24 y evidencias](revision/cine/README.md)
+
+## Capítulo II · Consecuencias económicas
+
+La rama `revision-capitulo-economia-v3` parte de `c9ede76`. Se recuperaron sin commit el montaje de entrada, los 24 estados, el atlas y los primeros gráficos. La entrega integra y comprueba el flujo completo de 96 estados, con Fuentes por paso y cierre estable en la portada de Humanidad. Se corrigió una repetición de fotogramas en el montaje y se sustituyó la imagen del centro comercial. El ZIP incluye todos los medios para el aula. Quedan pendientes el cotejo de dos cifras, una foto de terminal ucraniana y la prueba por doble clic en el equipo de exposición. [Evaluación, capturas y películas](revision/economia/README.md)

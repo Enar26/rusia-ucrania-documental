@@ -1,0 +1,12 @@
+{
+  "fotogramas": 192,
+  "fps": 24,
+  "diferenciaAbsolutaMediaRGB": {
+    "ultimoAlPrimero": 1.251,
+    "primeroAlSegundo": 0.204,
+    "penultimoAlUltimo": 0.073,
+    "mediana": 0.529
+  },
+  "fotogramasConsecutivosIdenticos": 0,
+  "menorLuminanciaMediaDeUnFotograma": 96.72
+}

@@ -1,0 +1,37 @@
+{
+  "navegador": "156.0.8078.79",
+  "casos": [
+    {
+      "prueba": "Contornos de Natural Earth y soberanía reconocida de Crimea",
+      "resultado": "PASS",
+      "ubicacion": {
+        "Crimea": true,
+        "Moscú": true,
+        "Lima": true
+      }
+    },
+    {
+      "prueba": "24 estados adelante y atrás, acceso a Fuentes, límites, imágenes y 16:9",
+      "resultado": "PASS",
+      "formatos": 4
+    },
+    {
+      "prueba": "Ruta integral, quiz, tres conclusiones históricas, clic, espacio, mando PageDown/PageUp, fullscreen, Esc, reanudar, repetición y doble clic",
+      "resultado": "PASS",
+      "estados": 96
+    },
+    {
+      "prueba": "ZIP extraído, 96 estados sin conexión, vídeo decodificado, fuentes y fotos locales",
+      "resultado": "PASS",
+      "modo": "Documento autocontenido en memoria. Apertura directa: page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///tmp/economia-offline/Rusia-y-Ucrania-Economia.html",
+      "video": {
+        "ancho": 960,
+        "alto": 540,
+        "segundos": 8,
+        "loop": true
+      },
+      "solicitudesHttp": 0
+    }
+  ],
+  "errores": []
+}

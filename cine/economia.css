@@ -83,3 +83,40 @@
 .modal-logistica{top:41%;padding-top:5.9cqw;align-items:flex-start}
 .modal-logistica>span{position:absolute;top:1.05cqw;left:2cqw;right:2cqw;border-bottom:1px solid #d6ba7d88;padding-bottom:.65cqw;font-size:1.4cqw;font-weight:600;color:var(--acento)}
 .modal-logistica>div{border-left:1px solid #d6ba7d80;padding-left:.8cqw;position:relative}.modal-logistica>div:before{content:"";position:absolute;top:-1.9cqw;height:1.9cqw;border-left:1px solid #d6ba7d80;left:-1px}
+/* El paso de las cotizaciones al mercado cambia un espacio de medición por uno de observación. */
+.modo-faoPico .eco-texto,.modo-faoDos .eco-texto{top:17%;width:90.6%;display:grid;grid-template-columns:1.15fr 1fr;column-gap:5%;align-items:start}
+.modo-faoPico .eco-fecha,.modo-faoDos .eco-fecha{grid-column:1/-1}
+.modo-faoPico h2,.modo-faoDos h2{font-size:4.6cqw}
+.modo-faoPico .eco-explica,.modo-faoDos .eco-explica{padding-top:.7cqw;font-size:1.55cqw}
+.eco-fao{top:42%;width:63%;left:5%;right:auto;padding:1.1cqw 1.6cqw}
+.eco-fao svg{margin:.55cqw 0 0;height:18.4cqw}
+.modo-mercado .eco-instrumentos{z-index:-1}.modo-mercado .eco-mapa{z-index:-2}
+.modo-mercado .eco-foto.ventana{inset:0 44% 0 0;border:none;box-shadow:none}
+.modo-mercado .eco-foto figcaption{bottom:11%;padding-left:4.7cqw}
+.modo-mercado .eco-texto{left:59%;width:36%;top:25%}
+.modo-mercado .eco-veladura{background:linear-gradient(90deg,#14292b35 0%,transparent 35%,#13272bef 58%,#13272beb 97%),linear-gradient(0deg,#12272cdd,transparent 25%,transparent 84%,#12272c99)}
+.modo-abonar .eco-mapa{z-index:-2}.modo-abonar .eco-instrumentos{z-index:-1}
+.modo-abonar .eco-foto.ventana{inset:0;border:0;box-shadow:none}.modo-abonar .eco-foto img{object-position:60% 47%}
+.modo-abonar .eco-veladura{background:linear-gradient(90deg,#102629f5 4%,#102629e3 32%,#10262945 66%,transparent),linear-gradient(0deg,#102629d9,transparent 35%,transparent 75%,#10262990)}
+.modo-abonar .eco-foto figcaption{bottom:13.2%;text-align:right;padding-right:4.7cqw;background:transparent;text-shadow:0 1px 4px black}
+.modo-abonar .eco-pie-frase{left:4.7%;right:4.7%;top:auto;bottom:10%;color:white;text-shadow:0 1px 3px black;text-align:right}
+.modo-swift .eco-texto,.modo-reservas .eco-texto{left:56%;width:39%;top:24%}
+.modo-swift .eco-veladura,.modo-reservas .eco-veladura{background:linear-gradient(90deg,#152a2d40 0%,#10262a55 30%,#10262ae8 61%,#10262af0),linear-gradient(0deg,#12272cdd,transparent 30%)}
+.eco-red,.eco-libro{left:4.7%;right:auto}.eco-red{top:21%;width:42%}
+.eco-pib .eco-extremos{margin-top:.4cqw}
+@media(prefers-reduced-motion:no-preference){
+ .eco-red .limitada{animation:cortar-mensaje .9s ease-out both}
+ .eco-red .aislado path{animation:suspender-nodo .85s ease-out both}
+}
+@keyframes cortar-mensaje{0%,30%{stroke:#efd18f;opacity:1;stroke-dasharray:25 0}100%{stroke:#c3b7a2;opacity:.35;stroke-dasharray:5 7}}
+@keyframes suspender-nodo{0%,32%{opacity:0}100%{opacity:1}}
+/* La tinta se aplica a la fotografía y deja las leyendas en el primer plano. */
+:is(.modo-mercado,.modo-abonar,.modo-civil) .eco-instrumentos{z-index:0}
+:is(.modo-mercado,.modo-abonar,.modo-civil) .eco-texto{z-index:1}
+:is(.modo-mercado,.modo-abonar,.modo-civil) .eco-foto:after{content:"";position:absolute;inset:0;pointer-events:none}
+:is(.modo-mercado,.modo-abonar,.modo-civil) .eco-foto figcaption{z-index:1;text-shadow:0 1px 3px #101b1a;background:#11272cdb;left:auto;right:4.7cqw;padding:.35cqw .6cqw}
+.modo-mercado .eco-foto:after{background:linear-gradient(0deg,#12272c66,transparent 29%,transparent 78%,#12272c7d)}
+.modo-mercado .eco-foto figcaption{left:4.7cqw;right:auto}
+.modo-abonar .eco-foto:after{background:linear-gradient(90deg,#102629f5 4%,#102629e3 32%,#10262945 66%,transparent),linear-gradient(0deg,#102629ef,transparent 36%,transparent 75%,#102629a8)}
+.modo-abonar .eco-pie-frase{background:#11272cd9;border:0;padding:.4cqw .6cqw;left:auto;bottom:9%}
+.modo-civil .eco-foto:after{background:linear-gradient(90deg,#11292df5,#132b30b5 47%,transparent 88%)}
