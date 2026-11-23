@@ -1,0 +1,42 @@
+{
+  "resultado": "PASS",
+  "bucle": {
+    "duracion": 10.56,
+    "ancho": 1920,
+    "alto": 1080,
+    "vueltas": [
+      {
+        "ultimo": 10.52,
+        "primero": 0,
+        "intervaloMs": 100
+      },
+      {
+        "ultimo": 10.52,
+        "primero": 0,
+        "intervaloMs": 117
+      }
+    ]
+  },
+  "empalme": {
+    "portal": true,
+    "portada": true,
+    "reproduciendo": true,
+    "pantallaCompleta": true
+  },
+  "dosPulsacionesCon110ms": {
+    "primera": "H02B",
+    "segunda": "H02B",
+    "retrocesoDuranteAnimacion": "H02A"
+  },
+  "botonInicio": {
+    "duranteEmpalme": true,
+    "trasEmpalme": true,
+    "regresoAlPortal": true
+  },
+  "secuencias": [
+    "portal-y-presentar",
+    "de-economia-al-atlas",
+    "vida-cotidiana-y-asistencia",
+    "del-retorno-al-cierre"
+  ]
+}
