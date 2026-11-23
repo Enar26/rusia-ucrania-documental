@@ -1,24 +1,34 @@
 # Rusia y Ucrania
 
-**Conflicto, impacto económico y humanitario** es un documental interactivo para una exposición de Ciencias Sociales. El recorrido contiene 96 estados manuales. Los primeros 71 corresponden a la apertura, Historia y el relevo a Economía. Siguen las diez escenas económicas con 24 estados y, al último clic, la portada de Humanidad.
+**Conflicto, impacto económico y humanitario** es una presentación interactiva de Ciencias Sociales. Cada expositor controla las revelaciones de su capítulo, las tres preguntas del quiz y su conclusión. El recorrido termina con «Muchas gracias por su atención».
 
 ## Abrir en clase
 
-Descarga el ZIP, extrae **Rusia-y-Ucrania-Economia.html** y ábrelo en un navegador de escritorio. Pulsa **Presentar** para iniciar la exposición. El archivo incluye vídeo, fotografías, atlas, tipografías y fichas documentales. Los enlaces a publicaciones externas requieren conexión. [Descarga offline](https://github.com/Enar26/rusia-ucrania-documental/raw/refs/heads/revision-capitulo-economia-v3/descargas/Rusia-y-Ucrania-Economia.zip)
+Descarga el ZIP, extrae **Rusia-y-Ucrania.html** y abre ese archivo en el navegador. En el portal, pulsa **Presentar**. El HTML incluye el vídeo, las fotografías, el atlas, las tipografías y las fichas documentales. Para visitar los sitios de las instituciones se necesita conexión. [Descargar el ZIP](https://github.com/Enar26/rusia-ucrania-documental/raw/refs/heads/revision-tres-capitulos-humanidad/descargas/Rusia-y-Ucrania.zip)
 
 | Acción | Control |
 |---|---|
-| Avanzar una revelación o mostrar la respuesta histórica | Clic en el lienzo, →, espacio o Av Pág |
-| Volver al paso anterior | ←, Re Pág o flecha inferior |
-| Consultar el dato, el autor de la foto y su licencia | **Fuentes**. Cerrar devuelve al mismo paso |
+| Avanzar una revelación o mostrar la respuesta del quiz | Clic en el lienzo, →, espacio o Av Pág |
+| Volver un paso | ←, Re Pág o flecha inferior |
+| Participar en los quizzes | En Historia se responde en voz alta. En Economía y Humanidad también se puede pulsar una opción. El expositor avanza para revelar la respuesta. |
+| Consultar el respaldo de un dato o los créditos de una imagen | **Fuentes**. Al cerrar se recupera el mismo paso. |
 | Salir de pantalla completa | Esc |
-| Recuperar el paso guardado | **Inicio** y **Continuar exposición** |
-| Pausar o reanudar el bucle de la entrada | Botón inferior del portal |
+| Volver al portal y recuperar el punto de lectura | **Inicio**, después **Continuar exposición** |
+| Pausar o reanudar el vídeo del portal | Botón inferior del portal |
 
-El portal alterna el estrecho del Bósforo y un campo de trigo. El modo de movimiento reducido ofrece una imagen fija. El presupuesto de exposición de Economía es de **5 min 50 s**, pendiente de ensayo. El expositor controla cada avance.
+## Recorrido
 
-## Revisar el proyecto
+| Tramo | Estados |
+|---|---:|
+| Apertura, Historia, quiz, conclusión y relevo hasta la portada de Economía | 71 |
+| Diez escenas económicas | 24 |
+| Quiz y conclusión de Economía | 9 |
+| Portada de Humanidad | 1 |
+| Ocho escenas humanitarias, quiz y conclusión final | 27 |
+| **Total** | **132** |
 
-La rama económica parte de `reconstruccion-documental-cine-2026` en `c9ede76`. Para probar el sitio modular, ejecuta `python3 -m http.server 8000` desde la raíz y abre `http://localhost:8000/`. Para generar el HTML autónomo, ejecuta `python3 tools/exportar.py Rusia-y-Ucrania-Economia.html`.
+La pantalla **Fuentes** distingue las publicaciones que respaldan cada afirmación de los créditos de los medios proyectados. Los datos humanitarios conservan su fecha, población de referencia y unidad. [Fuentes del capítulo III](revision/humanidad/fuentes.md) · [Catálogo del documental](fuentes.csv)
 
-La revisión incluye capturas por estado, grabaciones reales, fuentes y resultados de las pruebas, además de las cifras que quedaron pendientes de cotejo. [Evaluación y evidencias de Economía](revision/economia/README.md) · [Catálogo de fuentes y derechos](fuentes.csv) · [Entrega histórica anterior](revision/cine/README.md)
+## Desarrollo y revisión
+
+La rama de los tres capítulos parte de la entrega económica aprobada en `7e6ba82`. Desde la raíz, `python3 -m http.server 8000` sirve la edición modular en `http://localhost:8000/`. Con `python3 tools/exportar.py Rusia-y-Ucrania.html` se genera un archivo autónomo. [Pruebas y capturas de los tres bloques](revision/humanidad/README.md) · [Entrega económica anterior](revision/economia/README.md) · [Entrega histórica anterior](revision/cine/README.md)

@@ -1,0 +1,17 @@
+{
+  "resultado": "PASS",
+  "metodo": "HTML extraído del ZIP, cargado en un documento en memoria sin red",
+  "aperturaDirecta": "page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///workspace/shared/downloads/Rusia-y-Ucrania.html",
+  "sha256": "df108118e224720f6878f2fd68f2353c8ff8a1421952292ba1dfbd4544cd5ee1",
+  "bytes": 17242909,
+  "metraje": {
+    "ancho": 1920,
+    "alto": 1080,
+    "segundos": 10.56,
+    "bucle": true
+  },
+  "ida": 132,
+  "retroceso": 132,
+  "solicitudesHttp": [],
+  "errores": []
+}

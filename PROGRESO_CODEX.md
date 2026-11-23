@@ -35,3 +35,7 @@ Rama `reconstruccion-documental-cine-2026`. El recorrido contiene 24 escenas y 7
 ## Capítulo II · Consecuencias económicas
 
 La rama `revision-capitulo-economia-v3` parte de `c9ede76`. Se recuperaron sin commit el montaje de entrada, los 24 estados, el atlas y los primeros gráficos. La entrega integra y comprueba el flujo completo de 96 estados, con Fuentes por paso y cierre estable en la portada de Humanidad. Se corrigió una repetición de fotogramas en el montaje y se sustituyó la imagen del centro comercial. El ZIP incluye todos los medios para el aula. Quedan pendientes el cotejo de dos cifras, una foto de terminal ucraniana y la prueba por doble clic en el equipo de exposición. [Evaluación, capturas y películas](revision/economia/README.md)
+
+## Humanidad y cierre de las tres perspectivas
+
+Rama `revision-tres-capitulos-humanidad`, base económica `7e6ba82`. Se recuperaron las escenas y los quizzes que estaban sin commit. La edición integra los 27 estados humanitarios, el quiz y la conclusión económicos y el portal con vídeo documental ucraniano de 10,56 segundos. Se comprobó el recorrido de 132 estados hacia delante y atrás en Chromium y con el HTML extraído del ZIP sin red. Las cifras sin cotejo y los límites de la prueba en el aula figuran en la revisión. [Entrega y evidencias](revision/humanidad/README.md)
