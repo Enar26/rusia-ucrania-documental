@@ -1,0 +1,1619 @@
+[
+  {
+    "id": "EQ1A",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 0
+  },
+  {
+    "id": "EQ1B",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 0
+  },
+  {
+    "id": "EQ2A",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 0
+  },
+  {
+    "id": "EQ2B",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 0
+  },
+  {
+    "id": "EQ3A",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "lima",
+        "ancho": 800,
+        "alto": 599
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "EQ3B",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "lima",
+        "ancho": 800,
+        "alto": 599
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "EC1",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "trigo-lviv",
+        "ancho": 1250,
+        "alto": 490
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "EC2",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hangar",
+        "ancho": 1250,
+        "alto": 432
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "EC3",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "plaza-lviv",
+        "ancho": 720,
+        "alto": 479
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "III",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "plaza-lviv",
+        "ancho": 720,
+        "alto": 479
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H01A",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-vida",
+        "ancho": 1499,
+        "alto": 1000
+      },
+      {
+        "id": "mar-negro",
+        "ancho": 2200,
+        "alto": 1350
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H01B",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 1
+  },
+  {
+    "id": "H02A",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 1
+  },
+  {
+    "id": "H02B",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 0
+  },
+  {
+    "id": "H02C",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 0
+  },
+  {
+    "id": "H03A",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-hogar",
+        "ancho": 1500,
+        "alto": 1000
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H03B",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-hogar",
+        "ancho": 1500,
+        "alto": 1000
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H04A",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-civil",
+        "ancho": 720,
+        "alto": 480
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H04B",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-civil",
+        "ancho": 720,
+        "alto": 480
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H05A",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-escuela",
+        "ancho": 1680,
+        "alto": 1120
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H05B",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-escuela",
+        "ancho": 1680,
+        "alto": 1120
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H05C",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 0
+  },
+  {
+    "id": "H06A",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-salud",
+        "ancho": 1008,
+        "alto": 756
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H06B",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-salud",
+        "ancho": 1008,
+        "alto": 756
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H07A",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-ayuda",
+        "ancho": 1500,
+        "alto": 1000
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H07B",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 0
+  },
+  {
+    "id": "H08A",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 1
+  },
+  {
+    "id": "H08B",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-regreso",
+        "ancho": 1392,
+        "alto": 928
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H09A",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "region",
+        "ancho": 230,
+        "alto": 150
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H09B",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "region",
+        "ancho": 230,
+        "alto": 150
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H09C",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 0
+  },
+  {
+    "id": "H09D",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 0
+  },
+  {
+    "id": "H09E",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "plaza-lviv",
+        "ancho": 720,
+        "alto": 479
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H09F",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "plaza-lviv",
+        "ancho": 720,
+        "alto": 479
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H10A",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-vida",
+        "ancho": 1499,
+        "alto": 1000
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H10B",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-hogar",
+        "ancho": 1500,
+        "alto": 1000
+      },
+      {
+        "id": "hum-escuela",
+        "ancho": 1680,
+        "alto": 1120
+      },
+      {
+        "id": "hum-salud",
+        "ancho": 1008,
+        "alto": 756
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H10C",
+    "width": 1280,
+    "height": 720,
+    "ancho": 1280,
+    "alto": 720,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "atlas",
+        "ancho": 1800,
+        "alto": 1046
+      },
+      {
+        "id": "trigo-lviv",
+        "ancho": 1250,
+        "alto": 490
+      },
+      {
+        "id": "hum-vida",
+        "ancho": 1499,
+        "alto": 1000
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "EQ1A",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 0
+  },
+  {
+    "id": "EQ1B",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 0
+  },
+  {
+    "id": "EQ2A",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 0
+  },
+  {
+    "id": "EQ2B",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 0
+  },
+  {
+    "id": "EQ3A",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "lima",
+        "ancho": 800,
+        "alto": 599
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "EQ3B",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "lima",
+        "ancho": 800,
+        "alto": 599
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "EC1",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "trigo-lviv",
+        "ancho": 1250,
+        "alto": 490
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "EC2",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hangar",
+        "ancho": 1250,
+        "alto": 432
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "EC3",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "plaza-lviv",
+        "ancho": 720,
+        "alto": 479
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "III",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "plaza-lviv",
+        "ancho": 720,
+        "alto": 479
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H01A",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-vida",
+        "ancho": 1499,
+        "alto": 1000
+      },
+      {
+        "id": "mar-negro",
+        "ancho": 2200,
+        "alto": 1350
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H01B",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 1
+  },
+  {
+    "id": "H02A",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 1
+  },
+  {
+    "id": "H02B",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 0
+  },
+  {
+    "id": "H02C",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 0
+  },
+  {
+    "id": "H03A",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-hogar",
+        "ancho": 1500,
+        "alto": 1000
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H03B",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-hogar",
+        "ancho": 1500,
+        "alto": 1000
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H04A",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-civil",
+        "ancho": 720,
+        "alto": 480
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H04B",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-civil",
+        "ancho": 720,
+        "alto": 480
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H05A",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-escuela",
+        "ancho": 1680,
+        "alto": 1120
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H05B",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-escuela",
+        "ancho": 1680,
+        "alto": 1120
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H05C",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 0
+  },
+  {
+    "id": "H06A",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-salud",
+        "ancho": 1008,
+        "alto": 756
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H06B",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-salud",
+        "ancho": 1008,
+        "alto": 756
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H07A",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-ayuda",
+        "ancho": 1500,
+        "alto": 1000
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H07B",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 0
+  },
+  {
+    "id": "H08A",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 1
+  },
+  {
+    "id": "H08B",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-regreso",
+        "ancho": 1392,
+        "alto": 928
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H09A",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "region",
+        "ancho": 230,
+        "alto": 150
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H09B",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "region",
+        "ancho": 230,
+        "alto": 150
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H09C",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 0
+  },
+  {
+    "id": "H09D",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 0
+  },
+  {
+    "id": "H09E",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "plaza-lviv",
+        "ancho": 720,
+        "alto": 479
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H09F",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "plaza-lviv",
+        "ancho": 720,
+        "alto": 479
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H10A",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-vida",
+        "ancho": 1499,
+        "alto": 1000
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H10B",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-hogar",
+        "ancho": 1500,
+        "alto": 1000
+      },
+      {
+        "id": "hum-escuela",
+        "ancho": 1680,
+        "alto": 1120
+      },
+      {
+        "id": "hum-salud",
+        "ancho": 1008,
+        "alto": 756
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H10C",
+    "width": 1920,
+    "height": 1080,
+    "ancho": 1920,
+    "alto": 1080,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "atlas",
+        "ancho": 1800,
+        "alto": 1046
+      },
+      {
+        "id": "trigo-lviv",
+        "ancho": 1250,
+        "alto": 490
+      },
+      {
+        "id": "hum-vida",
+        "ancho": 1499,
+        "alto": 1000
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "EQ1A",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 0
+  },
+  {
+    "id": "EQ1B",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 0
+  },
+  {
+    "id": "EQ2A",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 0
+  },
+  {
+    "id": "EQ2B",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 0
+  },
+  {
+    "id": "EQ3A",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "lima",
+        "ancho": 800,
+        "alto": 599
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "EQ3B",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "lima",
+        "ancho": 800,
+        "alto": 599
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "EC1",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "trigo-lviv",
+        "ancho": 1250,
+        "alto": 490
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "EC2",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hangar",
+        "ancho": 1250,
+        "alto": 432
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "EC3",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "plaza-lviv",
+        "ancho": 720,
+        "alto": 479
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "III",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "plaza-lviv",
+        "ancho": 720,
+        "alto": 479
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H01A",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-vida",
+        "ancho": 1499,
+        "alto": 1000
+      },
+      {
+        "id": "mar-negro",
+        "ancho": 2200,
+        "alto": 1350
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H01B",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 1
+  },
+  {
+    "id": "H02A",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 1
+  },
+  {
+    "id": "H02B",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 0
+  },
+  {
+    "id": "H02C",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 0
+  },
+  {
+    "id": "H03A",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-hogar",
+        "ancho": 1500,
+        "alto": 1000
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H03B",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-hogar",
+        "ancho": 1500,
+        "alto": 1000
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H04A",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-civil",
+        "ancho": 720,
+        "alto": 480
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H04B",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-civil",
+        "ancho": 720,
+        "alto": 480
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H05A",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-escuela",
+        "ancho": 1680,
+        "alto": 1120
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H05B",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-escuela",
+        "ancho": 1680,
+        "alto": 1120
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H05C",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 0
+  },
+  {
+    "id": "H06A",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-salud",
+        "ancho": 1008,
+        "alto": 756
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H06B",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-salud",
+        "ancho": 1008,
+        "alto": 756
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H07A",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-ayuda",
+        "ancho": 1500,
+        "alto": 1000
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H07B",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 0
+  },
+  {
+    "id": "H08A",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 1
+  },
+  {
+    "id": "H08B",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-regreso",
+        "ancho": 1392,
+        "alto": 928
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H09A",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "region",
+        "ancho": 230,
+        "alto": 150
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H09B",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "region",
+        "ancho": 230,
+        "alto": 150
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H09C",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 0
+  },
+  {
+    "id": "H09D",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [],
+    "lienzos": 0
+  },
+  {
+    "id": "H09E",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "plaza-lviv",
+        "ancho": 720,
+        "alto": 479
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H09F",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "plaza-lviv",
+        "ancho": 720,
+        "alto": 479
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H10A",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-vida",
+        "ancho": 1499,
+        "alto": 1000
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H10B",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "hum-hogar",
+        "ancho": 1500,
+        "alto": 1000
+      },
+      {
+        "id": "hum-escuela",
+        "ancho": 1680,
+        "alto": 1120
+      },
+      {
+        "id": "hum-salud",
+        "ancho": 1008,
+        "alto": 756
+      }
+    ],
+    "lienzos": 0
+  },
+  {
+    "id": "H10C",
+    "width": 1024,
+    "height": 768,
+    "ancho": 1024,
+    "alto": 576,
+    "recortes": [],
+    "fotos": [
+      {
+        "id": "atlas",
+        "ancho": 1800,
+        "alto": 1046
+      },
+      {
+        "id": "trigo-lviv",
+        "ancho": 1250,
+        "alto": 490
+      },
+      {
+        "id": "hum-vida",
+        "ancho": 1499,
+        "alto": 1000
+      }
+    ],
+    "lienzos": 0
+  }
+]

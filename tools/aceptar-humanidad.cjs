@@ -254,9 +254,9 @@ async function movimiento(b) {
     for(const id of ['EQ3B','EC1','EC2','EC3','III','H01A','H01B','H02A','H02B','H02C']) await pulso(p,'ArrowRight',id);
     await pulso(p,'ArrowLeft','H02B');
   });
-  await filmar(b,'escuela-salud-y-asistencia','H05A',async p=>{
+  await filmar(b,'vida-cotidiana-y-asistencia','H02C',async p=>{
     await p.waitForTimeout(900);
-    for(const id of ['H05B','H05C','H06A','H06B','H07A','H07B']) await pulso(p,'ArrowRight',id);
+    for(const id of ['H03A','H03B','H04A','H04B','H05A','H05B','H05C','H06A','H06B','H07A','H07B','H08A']) await pulso(p,'ArrowRight',id);
   });
   await filmar(b,'del-retorno-al-cierre','H08A',async p=>{
     await p.waitForTimeout(750);
@@ -285,7 +285,7 @@ async function movimiento(b) {
   guardar('movimiento.json',{resultado:'PASS',bucle,empalme,
     dosPulsacionesCon110ms:{primera,segunda,retrocesoDuranteAnimacion:regreso},
     botonInicio:{duranteEmpalme:inicioDuranteEmpalme,trasEmpalme:inicioTrasEmpalme,regresoAlPortal:true},
-    secuencias:['portal-y-presentar','de-economia-al-atlas','escuela-salud-y-asistencia','del-retorno-al-cierre']});
+    secuencias:['portal-y-presentar','de-economia-al-atlas','vida-cotidiana-y-asistencia','del-retorno-al-cierre']});
 }
 (async()=>{
   assert.ok(url&&archivo&&salida && ['web','offline','filmar','todo'].includes(modo),'URL HTML_EXTRAIDO DIRECTORIO [web|offline|filmar|todo]');
