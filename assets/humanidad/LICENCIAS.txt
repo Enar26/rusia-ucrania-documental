@@ -1,0 +1,40 @@
+FOTOGRAFÍA DOCUMENTAL · CAPÍTULO III
+
+Reportaje «Північна Салтівка» (Saltivka norte, Járkiv). TEXTY y Nakypilo, 2023.
+https://texty.org.ua/d/2023/saltivka/
+Pies originales y archivos reproducidos por la redacción
+https://github.com/texty/project_saltivka_prod/tree/f0003efd31274d03354e0123e2efb607a8344cba
+Participaron Anna Chernenko, Andrii Marienko, Ihor Leptuha, Vlad Liashchenko,
+Inna Hadzynska y Denys Hubashov. Cuando la ficha no identifica fotógrafo
+personal se acredita a las redacciones del reportaje.
+
+hum-vida.webp       MA203387.jpg · Una familia recoge el árbol de Navidad de su casa.
+                    Saltivka norte, invierno de 2022–23. Día exacto sin identificar.
+hum-hogar.webp      MA203352.jpg · Edificio residencial con una inscripción.
+                    Andrii Marienko. Metadatos originales de 10 de diciembre de 2022.
+hum-salud.webp      vulitsa_Metrobudbvnikiv_19_bolnitsa_№10 · Policlínico n.º 10.
+                    18 de enero de 2023. La ficha w89737052 del inventario publicado
+                    acredita daños en ventanas y fachada del mismo edificio.
+hum-ayuda.webp      MA207089.JPG · Vitalii se calienta en un punto de apoyo del barrio.
+                    Saltivka norte, invierno de 2022–23. Día exacto sin identificar.
+hum-regreso.webp    DSC_8141.JPG · Trabajos en un edificio residencial del barrio.
+                    Metadatos originales de 26 de diciembre de 2022.
+
+hum-escuela.webp    Escuela Logos de Kiev. Reportaje «Школа по сусідству», 2018.
+                    TEXTY. Yaroslava Tymoshchuk, Nadya Kelm y Mykola Dobysh.
+                    La publicación no individualiza al fotógrafo ni la fecha de la toma.
+https://texty.org.ua/d/2018/schools/
+https://github.com/texty/schools/blob/9c5edb3fa968ada722206a2a22a598670ed9978f/index.html
+https://github.com/texty/schools/blob/9c5edb3fa968ada722206a2a22a598670ed9978f/img/good.jpg
+
+Los materiales editoriales de TEXTY se publican bajo CC BY 4.0.
+https://github.com/texty/principles/blob/d292a64e446e378540fd78eb8b9c0c3b4ae6fee1/index.html#L320
+https://creativecommons.org/licenses/by/4.0/
+
+hum-civil.webp      Teatro de Ópera y Ballet de Odesa. George Chernilevsky, 2016.
+                    Dominio público según la ficha del catálogo.
+https://commons.wikimedia.org/wiki/File:Odessa_Opera_Theatre_2016_G1.jpg
+https://github.com/RowanFlynnPilot/together-with-ukraine/blob/8ba4c36cb777383743f0b4aab36e632f19440d37/culture.py
+
+Tratamiento para esta presentación: reducción de tamaño cuando corresponde,
+conversión de formato a WebP y encuadre en pantalla. Se conservó el color documental.

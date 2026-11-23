@@ -1,7 +1,7 @@
 (() => {
  const el=id=>document.getElementById(id), sala=el('sala'), portal=el('umbral'), escenario=el('pantallas'), lienzo=el('lienzo'), dialogo=el('archivo');
  const reducido=matchMedia('(prefers-reduced-motion: reduce)'), video=el('pelicula');
- const estados=escenas.sort((a,b)=>a.numero-b.numero).flatMap(s=>s.pasos.map((p,i)=>({s,p,i,id:p.codigo||(s.numero===35?'III':String(s.numero).padStart(2,'0')+String.fromCharCode(97+i))})));
+ const estados=escenas.sort((a,b)=>a.numero-b.numero).flatMap(s=>s.pasos.map((p,i)=>({s,p,i,id:p.codigo||String(s.numero).padStart(2,'0')+String.fromCharCode(97+i)})));
  const clave='cine-ucrania-2026-v1', ease='cubic-bezier(.22,.78,.18,1)';
  let cursor=0, animaciones=[], bloqueo=0,ultimoClic=-Infinity, ocultar, avisoTimer;
  const guardar=(k,v)=>{try{localStorage.setItem(k,v)}catch{}};
@@ -80,6 +80,19 @@
        const barra=nuevo.querySelector('.eco-regla i'),fin=x.p.tipo==='gasDespues'?13:45;
        anim(barra,[{width:(x.p.tipo==='gasDespues'?45:13)+'%'},{width:fin+'%'}],850);
      }
+   }else if(s.estilo==='relato-humano'){
+     total=transicionHumana(nuevo,prev,x,dir,anim);
+   }else if(s.estilo==='consulta'){
+     if(esCambio || prev.s.estilo!=='consulta' || Math.floor(i/2)!==Math.floor(prev.i/2)){
+       anim(nuevo,[{opacity:0},{opacity:1}],dur);
+       mueve(nuevo.querySelector('.consulta-figura'),'translateX('+(-dir*3)+'%)','none',dur);
+     }else{
+       anim(nuevo.querySelector('.consulta-explicacion'),[{opacity:0,translate:'0 8px'},{opacity:1,translate:'0 0'}],400);
+     }
+   }else if(s.estilo==='balance-economico'){
+     total=800;
+     anim(nuevo,[{opacity:0},{opacity:1}],total);
+     mueve(nuevo.querySelector('figure img'),'scale(1.035)','scale(1)',total);
    }else if(s.estilo==='humanidad'){
      anim(nuevo,[{opacity:0},{opacity:1}],920);total=920;
    }else if(sal&&llegada){
@@ -124,7 +137,7 @@
    const durCam=x.p.camara?camaraEconomica.mostrar(nuevo.querySelector('.eco-vista'),x.p,x.s.tono,prev,dir&&!reducido.matches):0;
    if(!x.p.camara)camaraEconomica.parar();
    const dur=dir?transicion(anterior,nuevo,prev,x,dir):(anterior?.remove(),0);
-   bloqueo=performance.now()+Math.max(dur,durCam);el('pos').textContent=x.p.codigo?x.p.codigo+' · Economía':x.s.numero===35?'Capítulo III':x.id.slice(0,2)+' / 24  ·  '+(x.i+1)+' / '+x.s.pasos.length;
+   bloqueo=performance.now()+Math.max(dur,durCam);el('pos').textContent=x.id==='III'?'Capítulo III':x.p.codigo?x.id+' · '+(x.id.startsWith('H')?'Humanidad':'Economía'):x.id.slice(0,2)+' / 24  ·  '+(x.i+1)+' / '+x.s.pasos.length;
    el('anterior').disabled=n===0;el('siguiente').disabled=n===estados.length-1;
    guardar(clave,x.id);url('#ver/'+x.id);
  }
@@ -152,8 +165,15 @@
  document.addEventListener('fullscreenchange',()=>{sala.dataset.pantalla=document.fullscreenElement?'completa':'ventana'});
  lienzo.addEventListener('pointermove',despertar);
  el('anterior').onclick=()=>avanzar(-1);el('siguiente').onclick=e=>{if(e.detail<2)avanzar(1)};
- el('presentar').onclick=()=>iniciar(0,true);el('reanudar').onclick=()=>iniciar(Math.max(0,indice(leer(clave))),true);
+ el('presentar').onclick=()=>{seleccionesConsulta.clear();iniciar(0,true)};el('reanudar').onclick=()=>iniciar(Math.max(0,indice(leer(clave))),true);
  el('volver').onclick=()=>{if(document.fullscreenElement)document.exitFullscreen().catch(()=>{});url('#inicio');presentarPortal();el('presentar').focus()};
+ lienzo.addEventListener('click',e=>{
+   const opcion=e.target.closest('button[data-opcion]');
+   if(!opcion)return;
+   const actual=estados[cursor];
+   if(actual.s.estilo!=='consulta'||actual.i%2)return;
+   marcarOpcion(opcion,actual);
+ });
  lienzo.addEventListener('click',e=>{if(e.button!==0||e.target.closest('button,a')||e.detail>1)return;const now=performance.now();if(now-ultimoClic<210)return;ultimoClic=now;lienzo.focus();avanzar(1)});
  document.addEventListener('keydown',e=>{
    if(sala.hidden||dialogo.open||e.altKey||e.ctrlKey||e.metaKey||e.target.matches('input,select,textarea'))return;

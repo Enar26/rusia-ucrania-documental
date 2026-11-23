@@ -133,3 +133,20 @@
 .h10c .hum-copy{top:30%;width:51%}
 .h10c .hum-copy h2{margin-top:1.3cqw;border-top:1px solid var(--linea);padding-top:1.8cqw;font-size:6.5cqw;color:#f4ce9f}
 .h10c .hum-bajada{max-width:40ch}
+.hum-recuerdo{position:absolute;z-index:1;inset:0;opacity:0;pointer-events:none;background:#19353d}
+.hum-recuerdo img{width:100%;height:100%;object-fit:cover;filter:brightness(.7)}
+.hum-agenda{top:21%;padding:1.2cqw 0 1cqw}
+.hum-calendario{display:grid;grid-template-columns:1fr 1fr;gap:2.2cqw;padding:.65cqw 0 1.45cqw}
+.hum-calendario section+section{border-left:1px solid var(--linea);padding-left:1.3cqw}
+.hum-calendario h4{margin:.1cqw 0 .8cqw;font:550 2.3cqw/1.1 var(--serif);color:var(--tinta)}
+.hum-mes{display:grid;grid-template-columns:repeat(7,1fr);row-gap:.45cqw;font:500 1.12cqw/1.3 var(--sans);text-align:center;font-variant-numeric:tabular-nums;color:#425857}
+.hum-mes b{border-bottom:1px solid var(--linea);padding-bottom:.25cqw;color:var(--marca)}
+.hum-servicios .hum-concepto,.hum-cuidados .hum-concepto{position:relative}
+.hum-servicios .hum-concepto:not(:last-child)::after{content:"";height:1px;background:var(--linea);position:absolute;top:1.5cqw;left:4.5cqw;right:1.7cqw}
+.hum-proporcion small{position:absolute;left:0;bottom:1.14cqw;display:flex;align-items:center;gap:.5cqw;color:#f9e9ca;font:550 1.08cqw/1.25 var(--sans)}
+.hum-proporcion small::before{content:"";width:.63cqw;height:.63cqw;background:#f8bb7f;display:block}
+.hum-registro>div:only-of-type{font:500 4.5cqw/1 var(--serif);letter-spacing:-.035em}
+.hum-jornada{display:flex;align-items:flex-start;justify-content:space-between;gap:.8cqw;border-top:1px solid var(--linea);padding-top:1.05cqw;margin-top:1.1cqw}
+.hum-jornada .hum-concepto{flex-direction:row;gap:.5cqw;align-items:center}
+.hum-jornada .hum-concepto svg{width:1.7cqw;height:1.7cqw;flex-shrink:0}
+.hum-jornada .hum-concepto span{font-size:1.08cqw;line-height:1.15}

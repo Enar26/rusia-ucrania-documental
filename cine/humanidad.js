@@ -2,15 +2,16 @@
 // cifra documenta el concepto sin dibujar una escala o un porcentaje ficticio.
 const observacionesHumanas = {
   internos: {nombre:'Desplazamiento interno', alcance:'Personas que han dejado su hogar y permanecen en Ucrania.', fuente:'OIM'},
-  refugiados: {nombre:'Refugio en el extranjero', alcance:'Personas de Ucrania registradas como refugiadas fuera del país.', fuente:'ACNUR'},
-  infancia: {nombre:'Infancia desplazada', alcance:'Dentro de Ucrania y en los países de acogida.', fuente:'UNICEF'},
+  refugiados: {nombre:'Refugio en el extranjero', valor:'5,9 millones', alcance:'Personas refugiadas de Ucrania registradas en el mundo.', fecha:'Diciembre de 2025', fuente:'ACNUR'},
+  infancia: {nombre:'Infancia desplazada', valor:'Más de un tercio', alcance:'De la infancia de Ucrania seguía desplazada cuatro años después de la invasión a gran escala.', fecha:'17 de febrero de 2026', fuente:'UNICEF'},
+  salud: {valor:'+20 %', alcance:'Aumento de los ataques contra la atención sanitaria en Ucrania.', fecha:'2025'},
   necesidades: {nombre:'Necesidad estimada', valor:'10,8 millones', fecha:'Plan de 2026', millones:10.8, alcance:'Personas que necesitan asistencia humanitaria en Ucrania.', fuente:'OCHA'},
   prioridad: {nombre:'Población objetivo', valor:'4,1 millones', fecha:'Plan de 2026', millones:4.12, alcance:'Personas a las que el plan se propone llegar.', fuente:'OCHA'}
 };
 
 const relatosHumanos = [
   ['Detrás de cada cifra hay personas', [
-    ['Vida cotidiana', 'Una vida entre otras', 'Una calle conocida, el encuentro con un vecino, el camino a clase. Ahí también se sienten las consecuencias de la guerra.', 'humAcnur humServicios', 'hum-vida'],
+    ['Járkiv · invierno de 2022–2023', 'Un árbol de Navidad en casa', 'Una familia recoge su árbol de Navidad. Entre decisiones sobre dónde vivir o cómo pasar el invierno, también importan los objetos que alguien quiere conservar.', 'humAcnur humServicios', 'hum-vida'],
     ['Ucrania', '¿Cómo cambió la vida de las personas?', 'La respuesta empieza en cada lugar que alguien ha tenido que dejar y en cada comunidad que lo recibe.', 'humOim humAcnur', 'planisferio', [32,49.1,23], 'territorioCivil']
   ]],
   ['Millones de personas desplazadas', [
@@ -19,24 +20,24 @@ const relatosHumanos = [
     ['Dos poblaciones', 'Cómo se cuenta el desplazamiento', 'Cada organismo observa una población y un momento. Sumar los dos registros distorsionaría la comparación.', 'humOim humAcnur', 'planisferio']
   ]],
   ['Hogares y servicios básicos', [
-    ['Hogar y comunidad', 'Al dejar una vivienda', 'También se pierde la cercanía de los vecinos, de la escuela y de las personas que comparten los cuidados.', 'humServicios humOim', 'hum-hogar'],
+    ['Saltivka, Járkiv · diciembre de 2022', 'Al dejar una vivienda', 'También se pierde la cercanía de los vecinos, de la escuela y de las personas que comparten los cuidados.', 'humServicios humOim', 'hum-hogar'],
     ['Servicios esenciales', 'Pasar el invierno', 'Cuando falta electricidad pueden fallar las bombas de agua y la calefacción. El efecto depende de la red de cada localidad.', 'humServicios', 'hum-hogar']
   ]],
   ['Protección de la población civil', [
-    ['Derecho internacional humanitario', 'Proteger a la población civil', 'Las partes deben distinguir entre civiles y combatientes, y entre bienes civiles y objetivos militares. Deben tomar precauciones para evitar o reducir el daño a la población civil.', 'humDih', 'hum-civil'],
+    ['Espacio civil · Ópera de Odesa, 2016', 'Proteger a la población civil', 'Las partes deben distinguir entre civiles y combatientes, y entre bienes civiles y objetivos militares. Deben tomar precauciones para evitar o reducir el daño a la población civil.', 'humDih', 'hum-civil'],
     ['Documentación de Naciones Unidas', 'El registro del daño civil', 'La misión de derechos humanos de la ONU contrasta los casos. Las dificultades de acceso y verificación pueden dejar víctimas fuera del recuento.', 'humVictimas', 'hum-civil']
   ]],
   ['Infancia y educación interrumpida', [
-    ['La escuela', 'Un lugar para aprender y encontrarse', 'La escuela permite seguir aprendiendo y mantener el contacto con compañeros y docentes, incluso cuando cambian la vivienda o el aula.', 'humEscuela humInfancia', 'hum-escuela'],
+    ['Escuela Logos de Kiev · archivo de 2018', 'Un lugar para aprender y encontrarse', 'Esta era la entrada de la escuela antes de la invasión a gran escala. Cuando una familia se desplaza, lo que cambia incluye el camino a clase y el contacto con los compañeros.', 'humEscuela humInfancia', 'hum-escuela'],
     ['Infancia desplazada', 'Cambiar de casa, cambiar de aula', 'Para un niño desplazado, retomar las clases puede significar llegar a otra escuela, seguir a distancia o aprender en otro idioma.', 'humInfancia humEscuela', 'hum-escuela'],
-    ['Tiempo escolar', 'Cuando suena una alerta', 'Un día con una alerta puede incluir clases antes o después de la interrupción. Contarlo como una jornada entera perdida daría una impresión equivocada.', 'humAlertas humEscuela', 'hum-escuela']
+    ['Tiempo escolar · Ucrania', 'Cuando suena una alerta', 'El grupo puede pasar del aula al refugio y reanudar la clase cuando cesa la alerta. Un día afectado puede incluir horas de enseñanza.', 'humAlertas humEscuela', 'hum-escuela']
   ]],
   ['Salud física y mental', [
-    ['Atención sanitaria', 'Mantener abierta la consulta', 'Los daños a la atención sanitaria dificultan traslados, interrumpen tratamientos y añaden presión sobre el personal que sigue atendiendo.', 'humSalud', 'hum-salud'],
+    ['Policlínico n.º 10, Járkiv · enero de 2023', 'Mantener abierta la consulta', 'Los daños a la atención sanitaria dificultan traslados, interrumpen tratamientos y añaden presión sobre el personal que sigue atendiendo.', 'humSalud', 'hum-salud'],
     ['Continuidad de los cuidados', 'Cuidar también después', 'Recibir medicamentos, recuperar movilidad y encontrar apoyo psicológico forman parte de una misma recuperación. Cada persona puede necesitar una combinación distinta.', 'humSalud humApoyo', 'hum-salud']
   ]],
   ['Respuesta humanitaria', [
-    ['Asistencia', 'De la necesidad a la respuesta', 'Las organizaciones acuerdan con las comunidades qué apoyo hace falta y cómo hacerlo llegar.', 'humPlan', 'hum-ayuda'],
+    ['Asistencia', 'De la necesidad a la respuesta', 'En Saltivka, Vitalii encontró un lugar para calentarse. El tipo de ayuda cambia según la necesidad.', 'humPlan', 'hum-ayuda'],
     ['Plan de respuesta · Ucrania, 2026', 'A quién se propone llegar', 'El plan fija una meta a partir de las necesidades. Para saber cuántas personas recibieron ayuda hay que consultar los resultados de la respuesta.', 'humPlan', 'hum-ayuda']
   ]],
   ['El difícil camino de regreso', [
@@ -62,7 +63,7 @@ relatosHumanos.forEach(([nombre,filas],i) => registrarRelatoHumano(39+i,i+1,nomb
 
 function agregarConclusionHumana() {
   registrarRelatoHumano(48,10,'Conclusión del documental',[
-    ['Desplazamiento', 'Una familia sigue siendo una familia', 'La distancia modifica cómo se cuida, se estudia y se trabaja. Las decisiones de quienes se han desplazado siguen contando en su propio futuro.', 'humOim humAcnur humRetorno', 'hum-vida'],
+    ['Desplazamiento', 'Lo que una familia lleva consigo', 'La distancia cambia cómo se cuida, se estudia y se trabaja. Algunas familias vuelven; otras rehacen su vida en el lugar de acogida.', 'humOim humAcnur humRetorno', 'hum-vida'],
     ['Vida cotidiana', 'Hogar, educación y salud', 'La recuperación se reconoce en cosas concretas: poder habitar una casa, continuar aprendiendo y recibir atención cuando se necesita.', 'humServicios humEscuela humSalud', 'hum-hogar'],
     ['Historia · Economía · Humanidad', 'Muchas gracias por su atención', 'Conocer el pasado y seguir sus efectos nos devuelve a las personas. Su seguridad y su dignidad dan sentido a la recuperación.', 'humRetorno humPlan', 'hum-vida']
   ]);

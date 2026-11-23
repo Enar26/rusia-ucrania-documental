@@ -1,5 +1,5 @@
 const firmasHumanas = {
-  humOim:'OIM',humAcnur:'ACNUR',humServicios:'Vivienda y servicios',humDih:'Derecho humanitario',
+  humOim:'OIM',humAcnur:'ACNUR',humServicios:'ACNUR',humDih:'CICR',
   humVictimas:'ACNUDH',humEscuela:'UNICEF',humInfancia:'UNICEF',humAlertas:'UNICEF',
   humSalud:'OMS',humApoyo:'OMS',humPlan:'OCHA',humRetorno:'ACNUR'
 };
@@ -36,6 +36,18 @@ function fichaObservacion(o) {
 function conceptosHumanos(pares) {
   return pares.map(([id,t])=>'<div class="hum-concepto">'+iconoHumano(id)+'<span>'+seguro(t)+'</span></div>').join('');
 }
+function almanaqueHumano() {
+  const meses = ['Septiembre','Octubre'];
+  const dias = ['L','M','X','J','V','S','D'];
+  const hojas = meses.map((nombre,i) => {
+    const mes = 8+i;
+    const primero = (new Date(Date.UTC(2026,mes,1)).getUTCDay()+6)%7;
+    const ultimo = new Date(Date.UTC(2026,mes+1,0)).getUTCDate();
+    const fechas = Array.from({length:ultimo},(_,n)=>'<span'+(n===0?' style="grid-column:'+(primero+1)+'"':'')+'>'+(n+1)+'</span>').join('');
+    return '<section><h4>'+nombre+'</h4><div class="hum-mes">'+dias.map(d=>'<b>'+d+'</b>').join('')+fechas+'</div></section>';
+  });
+  return '<div class="hum-calendario" aria-label="Calendario de septiembre y octubre de 2026, sin observaciones por día">'+hojas.join('')+'</div>';
+}
 function escenaHumana(s,p,i) {
   const codigo=p.codigo, fuente=[...new Set(p.refs.map(k=>firmasHumanas[k]).filter(Boolean))].join(' · ');
   const foto=(clase='')=>fotoHumana(p.imagen,clase);
@@ -43,7 +55,9 @@ function escenaHumana(s,p,i) {
   let composicion;
   switch(codigo){
     case 'H01A': case 'H10A':
-      composicion=foto('hum-paisaje')+copy;break;
+      composicion=foto('hum-paisaje')+copy;
+      if(codigo==='H01A')composicion+='<div class="hum-recuerdo" aria-hidden="true">'+img('mar-negro','','Atlas del mar Negro')+'</div>';
+      break;
     case 'H01B': case 'H02A': case 'H08A':
       composicion='<div class="hum-sombra-atlas"></div>'+copy+
        '<div class="hum-leyenda"><i></i><span>Ucrania · fronteras internacionalmente reconocidas</span></div>';break;
@@ -66,7 +80,7 @@ function escenaHumana(s,p,i) {
     case 'H05C':{
       const alertas=observacionesHumanas.alertas;
       composicion=copy+'<div class="hum-agenda">'+(alertas?'<div class="hum-indice"><strong>'+seguro(alertas.valor)+'</strong><span>'+seguro(alertas.alcance)+'<small>'+seguro(alertas.fecha)+'</small></span></div>':'')+
-        '<h3>Durante la jornada</h3><div class="hum-horario">'+conceptosHumanos([['escuela','Clase'],['alerta','Alerta'],['tiempo','Posible reanudación']])+'</div><small>Secuencia ilustrativa · duración variable</small></div>';break;
+        almanaqueHumano()+'<small>Calendario de referencia · 2026</small><div class="hum-jornada">'+conceptosHumanos([['escuela','Aula'],['seguro','Refugio'],['tiempo','Reanudación posible']])+'</div></div>';break;
     }
     case 'H06A':{
       const salud=observacionesHumanas.salud;
@@ -80,7 +94,7 @@ function escenaHumana(s,p,i) {
     }
     case 'H07B':{
       const a=observacionesHumanas.necesidades,b=observacionesHumanas.prioridad;
-      const regla=a.millones&&b.millones?'<div class="hum-proporcion" aria-hidden="true"><i style="width:'+100*b.millones/a.millones+'%"></i></div>':'';
+      const regla=a.millones&&b.millones?'<div class="hum-proporcion"><small>Objetivo respecto a la necesidad estimada</small><i style="width:'+100*b.millones/a.millones+'%"></i></div>':'';
       composicion=copy+'<div class="hum-par">'+fichaObservacion(a)+fichaObservacion(b)+regla+'</div>';break;
     }
     case 'H08B':
@@ -98,6 +112,15 @@ function escenaHumana(s,p,i) {
 }
 
 function transicionHumana(nuevo,prev,x,dir,anim) {
+  if(x.p.codigo==='H01A' && dir>0){
+    const atlas=nuevo.querySelector('.hum-recuerdo');
+    anim(atlas,[{opacity:.65,transform:'scale(1)'},{opacity:0,transform:'scale(1.07)'}],760);
+  }
+  if(x.p.codigo==='H05C'){
+    nuevo.querySelectorAll('.hum-calendario section').forEach((mes,i)=>{
+      anim(mes,[{opacity:0,translate:'.7cqw 0'},{opacity:0,offset:.05+i*.12},{opacity:1,translate:'0 0'}],720);
+    });
+  }
   const foto=nuevo.querySelector('.hum-foto'), copia=nuevo.querySelector('.hum-copy');
   const datos=nuevo.querySelector('.hum-par,.hum-agenda,.hum-registro,.hum-proporcion,.hum-recuadro');
   const fin=x.p.codigo==='H10C', dur=fin?1100:780;

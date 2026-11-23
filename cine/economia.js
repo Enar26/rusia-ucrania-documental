@@ -34,7 +34,7 @@ const capitulosEco = [
   ['Lima Metropolitana · 2022','¿Qué pasó con los precios?','El IPC recogió múltiples presiones sobre la canasta familiar. La cifra anual incluye factores internos y externos.','ecoIpc ecoIpcSerie',[-77.04,-12.05,21],'lima']]],
  ['Balance de 2026 · mercados y vidas','comercio',[
   ['Balance · noviembre de 2026','Los mercados se adaptan','Los costos de la guerra persisten aun cuando cambian los proveedores y las rutas.','ecoGas ecoCorredores ecoRdna',[0,25,222],'balance'],
-  ['Del intercambio a la vida cotidiana','Detrás de cada cifra hay personas','','ecoRdna',[30.5,50.4,57],'civil']]]
+  ['Del intercambio a la vida cotidiana','El ajuste también llega a los hogares','','ecoRdna',[30.5,50.4,57],'civil']]]
 ];
 capitulosEco.forEach(([nombre,tono,filas], j)=>{
  const numero=25+j;
@@ -44,4 +44,5 @@ capitulosEco.forEach(([nombre,tono,filas], j)=>{
  escenaEco.pasos.forEach((p,i)=>Object.assign(p,{camara:filas[i][4],tipo:filas[i][5],
   codigo:'E'+String(j+1).padStart(2,'0')+String.fromCharCode(65+i)}));
 });
-escena(35,'humanidad','Consecuencias humanitarias',[['Capítulo III','Consecuencias humanitarias','','plaza-lviv','urbana']]);
+escena(38,'humanidad','Consecuencias humanitarias',[['Capítulo III','Consecuencias humanitarias','','plaza-lviv','urbana']]);
+escenas[escenas.length-1].pasos[0].codigo='III';

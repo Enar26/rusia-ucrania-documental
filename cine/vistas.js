@@ -26,6 +26,9 @@ function vista(s,p,i){
  case 'atlas':return atlas(s,p,i);
  case 'preguntas':return quiz(s,p,i);
  case 'cierre':return img('dnieper','rio','El Dniéper en Kiev, lámina publicada en 1909')+'<div class="cierre-luz"></div>'+copy(p,'Conclusión del primer expositor · '+p.fecha)+credito('dnieper');
+ case 'consulta':return vistaConsulta(s,p,i);
+ case 'balance-economico':return vistaBalance(p,i);
+ case 'relato-humano':return escenaHumana(s,p,i);
  case 'economica':return escenaEconomica(s,p,i);
  case 'humanidad':return img('plaza-lviv','sangre','Plaza del Mercado de Leópolis, Ucrania')+'<div class="ocaso"></div>'+copy(p)+credito('plaza-lviv');
  case 'economia':return img('trigo','sangre','Espigas de trigo en un campo','data-vuelo="trigo"')+'<div class="ocaso"></div>'+copy(p)+credito('trigo');

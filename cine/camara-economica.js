@@ -4,15 +4,16 @@ const camaraEconomica=(()=>{
  const lienzo=document.createElement('canvas'), ctx=lienzo.getContext('2d',{alpha:false});
  lienzo.setAttribute('aria-hidden','true');
  const formas=Object.fromEntries(Object.entries(contornosEco).map(([k,v])=>[k,new Path2D(v)]));
- const capas={}, colores={energia:'#8dd8d0',comercio:'#edc983',agricultura:'#bbd29a',presion:'#e9a486'};
+ const capas={}, colores={energia:'#8dd8d0',comercio:'#edc983',agricultura:'#bbd29a',presion:'#e9a486',humanidad:'#f0c291'};
  const lugares={
   'Mar Negro':[33.5,43.2,'mar'],'Mar Mediterráneo':[16,35.3,'mar'],'Océano Atlántico':[-34,13,'mar'],
   'Rusia':[42,54],'Ucrania':[31,49.3],'Perú':[-75.5,-9.8],'Europa':[15,53],'África':[21,6],
   'América del Sur':[-59,-20],'Odesa':[30.73,46.48,'ciudad'],'Lima':[-77.04,-12.05,'ciudad'],
-  'Polonia':[19.3,52.4],'Rumanía':[24.9,45.8],'Turquía':[34.9,39.5],'Mar Báltico':[18.6,57.1,'mar'],
+  'Eslovaquia':[19.5,48.7],'Moldavia':[28.6,47.2],'Polonia':[19.3,52.4],'Rumanía':[24.9,45.8],'Turquía':[34.9,39.5],'Mar Báltico':[18.6,57.1,'mar'],
   'Kiev':[30.52,50.45,'ciudad'],'Cusco':[-71.97,-13.52,'ciudad'],'Océano Pacífico':[-88,-15,'mar']
  };
  const etiquetas={
+  territorioCivil:['Ucrania','Mar Negro','Kiev'],vecindad:['Ucrania','Polonia','Rumanía','Eslovaquia','Moldavia'],retornoCivil:['Ucrania','Mar Negro'],
   umbral:['Mar Negro','Ucrania','Turquía'],mundo:['Ucrania','Rusia','África','América del Sur','Océano Atlántico'],
   productores:['Ucrania','Rusia','Mar Negro'],mercancias:['Ucrania','Mar Negro','Rusia'],gasAntes:['Europa','Rusia','Mar Báltico'],
   industria:['Europa','Mar Báltico'],gasDespues:['Europa','Rusia','Mar Báltico'],puerto:['Mar Negro'],
@@ -45,7 +46,7 @@ const camaraEconomica=(()=>{
   const [lon,lat,span]=cam,k=W/span,ky=k/Math.cos(Math.min(55,Math.abs(lat))*Math.PI/180), x=ancla-lon*k,y=altura+lat*ky;
   imagen('planisferio',-180,90,180,-90,x,y,k,ky);if(span<105)imagen('mar-negro',10,60,54,33,x,y,k,ky);
   const marcas=parada.tipo==='mundo'||parada.tipo==='productores'||parada.tipo==='mercancias'?['UKR','RUS']:
-   ['peru','campo','lima'].includes(parada.tipo)?['PER']:['pib','reconstruir','puerto','umbral'].includes(parada.tipo)?['UKR']:parada.tipo==='rusia'?['RUS']:[];
+   ['peru','campo','lima'].includes(parada.tipo)?['PER']:['pib','reconstruir','puerto','umbral','territorioCivil','vecindad','retornoCivil'].includes(parada.tipo)?['UKR']:parada.tipo==='rusia'?['RUS']:[];
   ctx.save();ctx.translate(x,y);ctx.scale(k,ky);ctx.fillStyle=colores[tono];ctx.globalAlpha=.32*opacidad;
   for(const codigo of marcas)ctx.fill(formas[codigo],'evenodd');ctx.restore();
   const salto=span<35?2:span<95?10:30;
@@ -85,9 +86,12 @@ const camaraEconomica=(()=>{
  function mostrar(nodo,p,color,prev,mover){
   cancelAnimationFrame(frame);cargar();
   nodo.prepend(lienzo);lienzo.className='eco-mapa';
-  const desde=cam&&prev?.p.camara?cam:p.camara,hasta=p.camara;
+  // Después de un reportaje civil, situamos el encuadre en un lugar documentado.
+  const origenHumano=prev?.id==='H01A'&&p.tipo==='territorioCivil'?[36.23,49.99,12]:
+    prev?.id==='H07B'&&p.tipo==='retornoCivil'?[25.5,50.4,62]:null;
+  const desde=cam&&prev?.p.camara?cam:origenHumano||p.camara,hasta=p.camara;
   const viaje=[p.tipo,prev?.p.tipo].includes('rusia')&&[p.tipo,prev?.p.tipo].includes('peru');
-  const dur=!mover?0:viaje?2250:prev?.p.camara?1050:850;
+  const dur=!mover?0:viaje?2250:origenHumano?1180:prev?.p.camara?1050:850;
   cam=desde;parada=p;tono=color;const t0=performance.now(), mundo=[-18,29,245];
   function paso(now){
    const t=dur?Math.min(1,(now-t0)/dur):1;

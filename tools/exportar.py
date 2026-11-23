@@ -20,7 +20,8 @@ html = (root/"index.html").read_text()
 html = re.sub(r'<link rel="stylesheet" href="\./([^"]+)">', estilo, html)
 rutas = re.findall(r'<script defer src="\./([^"]+)"></script>', html)
 html = re.sub(r'<script defer src="\./[^"]+"></script>',"",html)
-catalogo = (root/"cine/recursos.js").read_text()
+# Las colecciones fotográficas de cada capítulo se registran en su propio módulo.
+catalogo = "\n".join((root/ruta).read_text() for ruta in rutas)
 archivos = {"assets/cine/umbral.mp4"}
 for carpeta, extension, nombres in re.findall(r"registrar\('([^']+)','([^']+)','([^']+)'\)",catalogo):
     archivos.update(f"assets/{carpeta}/{nombre}.{extension}" for nombre in nombres.split())
