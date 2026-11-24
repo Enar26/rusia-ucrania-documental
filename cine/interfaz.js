@@ -15,7 +15,8 @@ function mostrarPaneles(menu, seleccionar){
  };
 }
 function mostrarIndice(dialogo,g,estados,actual,abrir,retomar,menu,movimiento,origen){
- const grupos=Map.groupBy(estados,x=>x.s);
+ const grupos=new Map();
+ for(const x of estados){if(!grupos.has(x.s))grupos.set(x.s,[]);grupos.get(x.s).push(x);}
  const lista=[...grupos];
  dialogo.innerHTML='<header class="indice-portada" style="--color:'+g.color+'">'+img(g.foto)+'<div><button data-volver>‹ Capítulos</button><button data-cerrar>Cerrar ×</button><p>Capítulo '+g.romano+'</p><h2>'+g.titulo+'</h2><button data-comenzar>Comenzar capítulo →</button>'+(retomar?'<button data-retomar>Retomar exposición</button>':'')+'</div></header><div class="indice-cuerpo"><section><label for="buscar-escena">Buscar escenas</label><input id="buscar-escena" type="search" placeholder="Tema o lugar" autocomplete="off"><div id="escenas-indice" aria-label="Escenas y temas"></div></section><section id="detalle-indice"></section></div>';
  const listaEl=dialogo.querySelector('#escenas-indice'),detalle=dialogo.querySelector('#detalle-indice'),buscar=dialogo.querySelector('input');

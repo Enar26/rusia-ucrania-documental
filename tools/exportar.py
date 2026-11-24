@@ -25,6 +25,7 @@ catalogo = "\n".join((root/ruta).read_text() for ruta in rutas)
 archivos = {"assets/cine/umbral.mp4"}
 for carpeta, extension, nombres in re.findall(r"registrar\('([^']+)','([^']+)','([^']+)'\)",catalogo):
     archivos.update(f"assets/{carpeta}/{nombre}.{extension}" for nombre in nombres.split())
+archivos.update(p.relative_to(root).as_posix() for p in (root/"assets/miniaturas").glob("*.webp"))
 integrados = {ruta:uri(root/ruta) for ruta in sorted(archivos)}
 script = "globalThis.integrados="+json.dumps(integrados)+";\n"+"\n".join((root/ruta).read_text() for ruta in rutas)
 licencias = "\n\n".join(p.name+"\n"+p.read_text() for p in sorted((root/"assets").rglob("*.txt")))
