@@ -1,0 +1,30 @@
+Rusia y Ucrania — película de entrada
+Reportajes originales: Saltivka del Norte, https://texty.org.ua/d/2023/saltivka/
+y extracción de arena en el río Desná, https://texty.org.ua/d/2019/sand/
+
+HISTORIA — Calle Hvardiytsiv-Shyronintsiv, Saltivka del Norte, Járkiv, Ucrania.
+HUMANIDAD — Personas caminando con carros junto al manantial, en el mismo barrio.
+Trabajo de campo de TEXTY y Nakypilo. Equipo acreditado: Anna Chernenko, Andrii Mariienko,
+Ihor Leptuha, Vlad Liashchenko, Inna Hadzynska y Denys Hubashov. El reportaje se publicó
+en 2023. El archivo identifica la fecha de exportación en enero de 2023; no se le
+atribuye un día preciso de rodaje. Ninguna de las personas se presenta como refugiada.
+Fuentes 3840 × 2160, 25 fps:
+https://github.com/texty/project_saltivka/blob/05598622e7f24c1b0a7191877d067936f0ecabc5/web/video/Hvardiytsiv_Shyronintsiv_108.mp4
+https://github.com/texty/project_saltivka/blob/05598622e7f24c1b0a7191877d067936f0ecabc5/web/video/TheSourceOfManzhosYar.mp4
+
+ECONOMÍA — Draga en el río Desná, cerca de Kiev, Ucrania. Dmytro Demchenko,
+acreditado en el pie del vídeo de la investigación «Як миють пісок», de TEXTY.
+Metadatos de cámara: 27/09/2017. Reportaje publicado en 2019.
+Fuente 2704 × 1520, 25 fps:
+https://github.com/texty/sand/blob/a1df0bc0ea6d40f5d807ed2b74b75fa8dfb8697e/video/DJI_0022.MP4
+
+La política del editor permite utilizar los materiales con atribución (CC BY 4.0):
+https://github.com/texty/principles/blob/d292a64e446e378540fd78eb8b9c0c3b4ae6fee1/index.html#L320
+https://creativecommons.org/licenses/by/4.0/
+
+Adaptación escolar: selección de fragmentos, reencuadre del Desná para 16:9,
+reducción a 1920 × 1080, eliminación del sonido y tres fundidos cruzados.
+Duración: 264 fotogramas a 25 fps. El corte de repetición cae en dos fotogramas
+sucesivos del mismo plano. El cartel procede del primer fotograma del montaje.
+Los cambios de lugar y período se indican en pantalla. Los planos no documentan
+un único momento ni una relación causal entre los lugares.
