@@ -1,0 +1,11 @@
+{
+  "adaptacion": {
+    "formatos": 5
+  },
+  "offline": {
+    "apertura": "page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///workspace/shared/downloads/Interfaz-final/Rusia-y-Ucrania.html",
+    "estados": 132,
+    "sha256": "fa8919af6dbf1752c7f86bb2875f7645245f773d6d7673570dc56aad2fdffb83",
+    "solicitudes": []
+  }
+}

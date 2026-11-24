@@ -1,0 +1,37 @@
+{
+  "portal": {
+    "duracion": 10.56,
+    "antesDelBucle": 10.52,
+    "primerCuadro": 0,
+    "visAntes": 0,
+    "pausa": true,
+    "salto": true,
+    "retornoInmediato": true,
+    "autoplayBloqueado": true
+  },
+  "navegacion": {
+    "estados": 132,
+    "retroceso": 132,
+    "quizzes": 9,
+    "menusIntermedios": 2,
+    "cierreEstable": true,
+    "controlesOcultos": true
+  },
+  "cola": {
+    "dosOrdenesA110ms": [
+      "H02B",
+      "H02C"
+    ],
+    "cambioSentido": "H02B",
+    "mantenida": "H02C",
+    "barreraPregunta": "H09A",
+    "indiceLimpiaCola": true
+  },
+  "indices": {
+    "salto": "04a",
+    "retorno": "H06B",
+    "fuentes": true,
+    "reanudacion": true,
+    "pantallaCompleta": true
+  }
+}
