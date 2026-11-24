@@ -6,7 +6,7 @@ body{background:#101e2b}
 #umbral.lista .sitebar,#umbral.lista .descarga-web{animation:revela .46s .24s both}
 @keyframes revela{from{opacity:0;translate:0 10px}to{opacity:1;translate:0 0}}
 .entrada .lema{color:#f5d3a4;margin-top:.85em;font-family:var(--serif);font-style:italic}
-.descarga-web{position:absolute;right:5vw;bottom:clamp(65px,9vh,100px);color:#f1e8d7;font-size:.8rem}
+.descarga-web{display:table;margin-top:1rem;color:#f1e8d7;font-size:.8rem}
 #menu-capitulos{min-height:100svh;padding:clamp(20px,4vw,65px);background:radial-gradient(ellipse at 72% 0,#233e52,#101e2b 70%);color:#f1e8d7;outline:none}
 .menu-cab{display:flex;justify-content:space-between;gap:12px}
 #menu-capitulos button,#indice-capitulo button,#archivo-general button,#salida-cine button{border:1px solid #b5babb50;background:#152737;color:inherit;padding:.55em .9em}
@@ -67,7 +67,8 @@ body{background:#101e2b}
  #paneles-capitulos{display:grid;min-height:auto}
  #paneles-capitulos button{min-height:185px}
  #menu-capitulos h1{font-size:clamp(38px,11vw,65px)}
- .descarga-web{left:6vw;right:auto}
+ #umbral .acciones{flex-wrap:wrap}
+ #umbral .entrada{margin-bottom:clamp(66px,12svh,112px)}
  .indice-cuerpo{grid-template-columns:1fr}
  #escenas-indice{max-height:140px}
  #umbral .banda{align-items:flex-end;gap:12px}

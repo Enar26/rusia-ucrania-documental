@@ -39,3 +39,7 @@ La rama `revision-capitulo-economia-v3` parte de `c9ede76`. Se recuperaron sin c
 ## Humanidad y cierre de las tres perspectivas
 
 Rama `revision-tres-capitulos-humanidad`, base económica `7e6ba82`. Se recuperaron las escenas y los quizzes que estaban sin commit. La edición integra los 27 estados humanitarios, el quiz y la conclusión económicos y el portal con vídeo documental ucraniano de 10,56 segundos. Se comprobó el recorrido de 132 estados hacia delante y atrás en Chromium y con el HTML extraído del ZIP sin red. Las cifras sin cotejo y los límites de la prueba en el aula figuran en la revisión. [Entrega y evidencias](revision/humanidad/README.md)
+
+## Interfaz web final
+
+Rama `interfaz-web-final` a partir de `1bab09b`. Portal con primera vuelta real, menú por capítulo, índices de escenas, modo cine, archivo y cola de navegación. El sitio y el ZIP reutilizan los 132 estados. [Preparación del despliegue](docs/publicacion.md)
